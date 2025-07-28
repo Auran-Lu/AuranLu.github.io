@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>主题配置文件解析 | My New Hugo Site</title>
+<meta name="keywords" content="hexo, Blog, Theme">
+<meta name="description" content="1. Profile（个人资料）
+yaml复制编辑# 头像路径
+avatar: /avatar/Misaka.jpg
+# 作者名�?author: AuranLu
+# 个性签�?signature: witness me
+
+
+avatar：指定头像的图片路径，如果为空，某些主题可能不显示默认头像�?- author：网站作者的名字，通常不会影响 Hexo 运行，但部分主题可能需要�?- signature：个性签名，通常出现在个人资料区域�?
+📌 建议
+
+
+**避免空�?*，如�?avatar: &quot;&quot;，可能导致头像无法加载�?- author �?signature 为空时不会报错，但主题可能不会显示对应内容�?
+
+
+
+2. SNS（社交账号）
+yaml复制编辑social:
+  email: AuranLu@outlook.com
+  github: //github.com/Auran-Lu
+  wechat: /assets/example_qr.png
+  qq: 
+  telegram: 
+  weibo: 
+  zhihu: 
+  douban: 
+  facebook: 
+  twitter: 
+  instagram: 
+  stack-overflow: 
+  segmentFault: 
+  juejin: 
+  v2ex: 
+  bilibili: 
+  linkedin: 
+  steam: 
+  others: 
+  rss: /atom.xml
+
+
+email、github 这些参数设置社交链接，非必填�?- qq、telegram、weibo 等为空时，主题通常不会显示这些社交按钮，不会报错�?
+📌 建议
+
+
+可以留空，Hexo 解析时不会报错，但前端可能不显示相关图标�?- RSS 地址 /atom.xml 需要配�?Hexo 生成 RSS 才能生效�?
+
+
+
+3. Search（搜索功能）
+yaml复制编辑search:
+  enable: false
+  url: 
+  engine: bing
+
+
+enable: false 关闭搜索功能�?- url: 必须填写，否则某些搜索插件可能会报错�?- engine: bing 指定搜索引擎（可�?google、baidu）�?
+📌 建议">
+<meta name="author" content="AuranLu">
+<link rel="canonical" href="http://localhost:1313/auran_lu/hexohugo&#43;github%E6%9E%B6%E6%9E%84blog%E9%83%A8%E7%BD%B2%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/hexo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/auran_lu/hexohugo&#43;github%E6%9E%B6%E6%9E%84blog%E9%83%A8%E7%BD%B2%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/hexo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      主题配置文件解析
+    </h1>
+    <div class="post-meta"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="1-profile个人资料"><strong>1. Profile（个人资料）</strong><a hidden class="anchor" aria-hidden="true" href="#1-profile个人资料">#</a></h2>
+<pre tabindex="0"><code>yaml复制编辑# 头像路径
+avatar: /avatar/Misaka.jpg
+# 作者名�?author: AuranLu
+# 个性签�?signature: witness me
+</code></pre><ul>
+<li>
+<p><code>avatar</code>：指定头像的图片路径，如果为空，某些主题可能不显示默认头像�?- <code>author</code>：网站作者的名字，通常不会影响 Hexo 运行，但部分主题可能需要�?- <code>signature</code>：个性签名，通常出现在个人资料区域�?
+<strong>📌 建议</strong></p>
+</li>
+<li>
+<p>**避免空�?*，如�?<code>avatar: &quot;&quot;</code>，可能导致头像无法加载�?- <code>author</code> �?<code>signature</code> 为空时不会报错，但主题可能不会显示对应内容�?</p>
+</li>
+</ul>
+<hr>
+<h2 id="2-sns社交账号"><strong>2. SNS（社交账号）</strong><a hidden class="anchor" aria-hidden="true" href="#2-sns社交账号">#</a></h2>
+<pre tabindex="0"><code>yaml复制编辑social:
+  email: AuranLu@outlook.com
+  github: //github.com/Auran-Lu
+  wechat: /assets/example_qr.png
+  qq: 
+  telegram: 
+  weibo: 
+  zhihu: 
+  douban: 
+  facebook: 
+  twitter: 
+  instagram: 
+  stack-overflow: 
+  segmentFault: 
+  juejin: 
+  v2ex: 
+  bilibili: 
+  linkedin: 
+  steam: 
+  others: 
+  rss: /atom.xml
+</code></pre><ul>
+<li>
+<p><code>email</code>、<code>github</code> 这些参数设置社交链接，非必填�?- <code>qq</code>、<code>telegram</code>、<code>weibo</code> 等为空时，主题通常不会显示这些社交按钮，不会报错�?
+<strong>📌 建议</strong></p>
+</li>
+<li>
+<p>可以留空，Hexo 解析时不会报错，但前端可能不显示相关图标�?- RSS 地址 <code>/atom.xml</code> 需要配�?Hexo 生成 RSS 才能生效�?</p>
+</li>
+</ul>
+<hr>
+<h2 id="3-search搜索功能"><strong>3. Search（搜索功能）</strong><a hidden class="anchor" aria-hidden="true" href="#3-search搜索功能">#</a></h2>
+<pre tabindex="0"><code>yaml复制编辑search:
+  enable: false
+  url: 
+  engine: bing
+</code></pre><ul>
+<li>
+<p><code>enable: false</code> 关闭搜索功能�?- <code>url:</code> <strong>必须填写</strong>，否则某些搜索插件可能会报错�?- <code>engine: bing</code> 指定搜索引擎（可�?<code>google</code>、<code>baidu</code>）�?
+<strong>📌 建议</strong></p>
+</li>
+<li>
+<p>如果 <code>search.enable: true</code>，<code>url</code> 不能为空，否则搜索框可能无法使用�?</p>
+</li>
+</ul>
+<hr>
+<h2 id="4-seo搜索引擎优化"><strong>4. SEO（搜索引擎优化）</strong><a hidden class="anchor" aria-hidden="true" href="#4-seo搜索引擎优化">#</a></h2>
+<pre tabindex="0"><code>yaml复制编辑SEO_title: fi3ework&#39;s Studio
+SEO_keywords:
+  - hexo
+  - &#39;hexo-theme&#39;
+  - &#39;hexo-blog&#39;
+</code></pre><ul>
+<li>
+<p><code>SEO_title</code> 是网站的标题，用�?SEO 优化�?- <code>SEO_keywords</code> 是关键词数组，不建议为空，否�?SEO 可能受影响�?
+<strong>📌 建议</strong></p>
+</li>
+<li>
+<p>如果 <code>SEO_keywords</code> 为空，建议使�?<code>SEO_keywords: []</code>，避免解析错误�?</p>
+</li>
+</ul>
+<hr>
+<h2 id="5-主题设置"><strong>5. 主题设置</strong><a hidden class="anchor" aria-hidden="true" href="#5-主题设置">#</a></h2>
+<pre tabindex="0"><code>yaml复制编辑# 文章摘要长度
+truncate_length: 300
+# 是否显示“阅读更多”按�?read_more_button: false
+# 是否启用目录
+toc: true
+# 文章阅读信息（字�?&amp; 阅读时间�?reading_info: true
+</code></pre><ul>
+<li>
+<p><code>truncate_length: 300</code> 控制首页摘要长度，<code>0</code> 表示不显示摘要�?- <code>read_more_button: false</code> 关闭“阅读更多”按钮�?- <code>toc: true</code> 启用文章目录（Table of Contents）�?- <code>reading_info: true</code> 启用字数统计和阅读时间�?
+<strong>📌 建议</strong></p>
+</li>
+<li>
+<p>这些参数可以为空，Hexo 不会报错，但 <code>truncate_length:</code> 建议�?<code>0</code> �?<code>300</code>，避免前端解析异常�?</p>
+</li>
+</ul>
+<hr>
+<h2 id="6-评论系统"><strong>6. 评论系统</strong><a hidden class="anchor" aria-hidden="true" href="#6-评论系统">#</a></h2>
+<pre tabindex="0"><code>yaml复制编辑comment:
+  livere_uid: 
+  disqus_shortname: 
+  gitment_owner: 
+  gitment_repo: 
+  gitment_client_id: 
+  gitment_client_secret: 
+  youyan_uid: 
+  valine_appId: 
+  valine_appKey: 
+  valine_placeHolder: 
+  waline_serverURL: 
+  waline_placeHolder: 
+  waline_login: 
+  gitalk_client_id: 
+  gitalk_client_secret: 
+  gitalk_admin: 
+  gitalk_owner: 
+  gitalk_repo: 
+  gitalk_pathname_id: false
+  gitalk_create_issue_manually: true
+  utteranc_repo:  
+  utteranc_label: 
+  utteranc_theme: 
+  utteranc_issue_term: 
+</code></pre><ul>
+<li>
+<p>这里�?Hexo 主题�?<strong>评论插件</strong> 配置，例�?<code>Disqus</code>、<code>Gitalk</code>、<code>Valine</code>、<code>Waline</code> 等�?- 为空时，Hexo 不会报错，但相应插件不会启用�?
+<strong>📌 建议</strong></p>
+</li>
+<li>
+<p>仅在使用某个评论插件时填写相�?<code>ID</code> �?<code>Secret</code>，否则可以留空�?</p>
+</li>
+</ul>
+<hr>
+<h2 id="7-统计分析"><strong>7. 统计分析</strong><a hidden class="anchor" aria-hidden="true" href="#7-统计分析">#</a></h2>
+<pre tabindex="0"><code>yaml复制编辑busuanzi: true
+busuanzi_pv_or_uv: &#39;pv&#39;
+busuanzi_slug: &#39;PV: ${count} :)&#39;
+baidu_analytics: 
+google_analytics: 
+CNZZ_analytics: 
+</code></pre><ul>
+<li>
+<p><code>busuanzi: true</code> 开启不蒜子统计（访客统计）�?- <code>busuanzi_pv_or_uv: 'pv'</code> 统计 <code>pv</code>（页面浏览量）或 <code>uv</code>（独立访客）�?- <code>baidu_analytics:</code>、<code>google_analytics:</code>、<code>CNZZ_analytics:</code> 为空时不会报错，但需要填写正�?ID 才能使用相应分析功能�?
+<strong>📌 建议</strong></p>
+</li>
+<li>
+<p>如果不使�?Google Analytics，则 <code>google_analytics:</code> 可留空，不会影响 Hexo 运行�?</p>
+</li>
+</ul>
+<hr>
+<h2 id="8-其他设置"><strong>8. 其他设置</strong><a hidden class="anchor" aria-hidden="true" href="#8-其他设置">#</a></h2>
+<pre tabindex="0"><code>yaml复制编辑favicon: /assets/favicon.ico
+copyright:
+  enable: true
+  license: &#39;本文采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc/4.0/&#34;&gt;知识共享署名-非商业性使�?4.0 国际许可协议&lt;/a&gt;进行许可&#39;
+</code></pre><ul>
+<li><code>favicon</code> 是浏览器图标路径，留空可能导致部分主题报错（建议提供默认图标）�?- <code>copyright.enable: true</code> 开启版权声明，建议不留空�?</li>
+</ul>
+<hr>
+<h2 id="9-数学公式--图表"><strong>9. 数学公式 &amp; 图表</strong><a hidden class="anchor" aria-hidden="true" href="#9-数学公式--图表">#</a></h2>
+<pre tabindex="0"><code>yaml复制编辑math:
+  mathjax:
+    enable: false
+    version: 3.2.0
+</code></pre><ul>
+<li>
+<p><code>mathjax.enable: false</code> 关闭数学公式渲染�?- <code>version: 3.2.0</code> 指定 MathJax 版本�?
+<strong>📌 建议</strong></p>
+</li>
+<li>
+<p>如果 <code>mathjax.enable: true</code>�?<em>确保 <code>version</code> 不为�?</em>，否则可能导�?MathJax 加载失败�?</p>
+</li>
+</ul>
+<hr>
+<h2 id="10-实验功能"><strong>10. 实验功能</strong><a hidden class="anchor" aria-hidden="true" href="#10-实验功能">#</a></h2>
+<pre tabindex="0"><code>yaml复制编辑custom_font:
+  enable: false
+  name: &#39;Noto Sans SC:n3,n4,n5,n7&#39;
+  url: &#39;https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap&#39;
+</code></pre><ul>
+<li><code>enable: false</code> 关闭自定义字体�?- <code>name</code> �?<code>url</code> 需要正确填写，否则可能导致字体无法加载</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/hexo/">Hexo</a></li>
+      <li><a href="http://localhost:1313/tags/blog/">Blog</a></li>
+      <li><a href="http://localhost:1313/tags/theme/">Theme</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

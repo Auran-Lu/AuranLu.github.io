@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>字典 on 🌇 Endless Soar.</title>
+    <link>https://auranlu.cc/tags/%E5%AD%97%E5%85%B8/</link>
+    <description>Recent content in 字典 on 🌇 Endless Soar.</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh</language>
+    <copyright>©2024 auranlu&amp;rsquo;s Blog</copyright>
+    <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://auranlu.cc/tags/%E5%AD%97%E5%85%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web21</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web21/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web21/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/5c4eac463952b9a1028ee22a87876d19.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;链接靶场后提示需要登录密码&lt;img alt=&#34;image-20250310182454902&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310182454902.png&#34;&gt;输入密码登录尝试抓包&lt;/li&gt;
+&lt;li&gt;观察请求包发现，用户名与密码被base64编码后放入Authorization字段&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/f71e2fa2b1a1998cd6fc9563c8295285.png&#34;&gt;解码后观察组合格式&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/4d741f978adbda2d73faeb2e32faac4f.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;下载题目所给字典dic.zip，打开后发现仅有密码字。猜想用户名不变为admin，故仅添加八位后部分为payload&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/dc9eb966d691264bc65a8edccd6b6433.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/81a07a4f733c828fd843749c67c563ad.png&#34;&gt;导入字典，选择base64编码，取消url编码&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/c798ce1289bf2046a5a9d9ce63641b3a.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

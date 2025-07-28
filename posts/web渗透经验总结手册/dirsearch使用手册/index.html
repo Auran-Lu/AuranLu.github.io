@@ -1,0 +1,545 @@
+<!doctype html><html lang=zh dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>dirsearch使用手册 | 🌇 Endless Soar.</title><meta name=keywords content="dirsearch使用手册"><meta name=description content="
+
+1
+2
+3
+4
+5
+6
+7
+
+
+扫描的目标
+
+-u,--url                    目标url
+-l,--url-list=FILE          目标url文件路径 
+--stdin                     从标准输入中指定url
+--cidr                      目标网段
+--raw=File                  从文件中读取request报文,通过-schema指定策略(如--schema https)
+
+
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+扫描的字典类型
+
+-e,--extensions             包含的文件拓展名(逗号分隔)  如-e php,asp  
+-X,--exclude-extensions     排除的文件拓展名(逗号分隔)  如-X asp,jsp
+-f,--force-extensions       在字典的每条记录后面添加文件拓展名
+
+dirsearch默认只会替换字典中%EXT%为指定的extensions 
+如-e php  Wishlist.%EXT%-->Wishlist.php
+
+
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+
+
+字典格式设置
+
+-w,--wordlists              自定义wordlist(以逗号分隔)
+--prefixes                  添加自定义前缀
+--suffixes			        添加自定义后缀
+--only-selected      	    筛选出指定的文件拓展名或无文件拓展名的目录
+--remove-extensions   	    移除所有wordlist的后缀名 (admin.php --> admin)
+-U, --uppercase      	    将字典转换为大写
+-L, --lowercase		 	    将字典转换为小写
+-C, --capital        	    第一个字母大写剩下字母小写
+
+
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+响应结果的过滤
+-i                    		保留的响应状态码(以逗号分隔,支持指定范围) 如(-i 200,300-399)
+-x                    		排除的响应状态码(以逗号分隔,支持指定范围)  如(-x 301,500-599)
+--exclude-sizes             通过大小排除(以逗号分隔) 如(123B,4KB)
+--exclude-texts     		通过文本内容排除响应('Not found', 'Error')
+--exclude-regexps  			通过正则匹配排除响应('Not foun[a-z]{1}', '^Error$')
+--exclude-redirects 		通过正则跳转目标排除响应('https://okta.com/*')
+--minimal 					最小响应报文长度
+--maximal 					最大响应报文长度
+
+
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+请求相关设置
+-m,--http-method    	    HTTP请求方法 默认为GET
+-d,--data   				HTTP请求数据
+-H,--header  				请求头 如(-H 'Referer: example.com' -H 'Accept: */*')
+--header-list=FILE  		从文件中读取请求头
+-F,--follow-redirects  	    跟随HTTP跳转
+--user-agent  			    设置user-agent字段
+--cookie  				 	设置cookie
+
+
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+
+
+连接相关设置
+--timeout=TIMEOUT     		连接超时时间
+--ip=IP   					服务器ip地址
+-s DELAY, --delay=DELAY     每次请求间隔的时间
+--proxy=PROXY   			代理url 支持HTTP和SOCKS代理 如(localhost:8080, socks5://localhost:8088)
+--proxy-list=FILE 		    包含代理服务器的地址
+--matches-proxy=PROXY       Proxy to replay with found paths
+--scheme   					默认的策略 用于从文件中导入请求或url中不包含协议
+--max-retries 			    最大重连次数
+-b,--request-by-hostname 	强制通过域名连接，(默认为了速度,使用ip连接)
+--exit-on-error    		    出现错误时退出
+--debug					    Debug模式
+
+
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+
+
+通用设置
+--version  显示dirsearch的版本
+-h --help   帮助提示
+-r,--recursive        	    递归爆破
+-R,--recursion-depth  		最大递归的层数
+-t,--threads         		线程数
+--subdirs             		扫描子目录 如(admin/ 则www.example.com/admin/+字典)
+--exclude-subdirs     		在递归扫描中排除的子目录
+-q,--quiet-mode             安静模式
+--full-url                  打印出完整的url
+--no-color                  无颜色输出信息
+
+
+
+
+1
+2
+3
+4
+5
+6
+7
+
+
+输出模式
+--simple-report=OUTPUTFILE
+--plain-text-report=OUTPUTFILE
+--json-report=OUTPUTFILE
+--xml-report=OUTPUTFILE
+--markdown-report=OUTPUTFILE
+--csv-report=OUTPUTFILE
+
+
+
+可以通过修改default.conf文件去修改dirsearch的默认配置(默认文件拓展名，超时时间，wordlist所在目录等)"><meta name=author content="AuranLu"><link rel=canonical href=https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/dirsearch%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/><meta name=google-site-verification content="auranlu"><meta name=yandex-verification content="auranlu"><meta name=msvalidate.01 content="auranlu"><link crossorigin=anonymous href=/assets/css/stylesheet.8fe10233a706bc87f2e08b3cf97b8bd4c0a80f10675a143675d59212121037c0.css integrity="sha256-j+ECM6cGvIfy4Is8+XuL1MCoDxBnWhQ2ddWSEhIQN8A=" rel="preload stylesheet" as=style><link rel=icon href=https://auranlu.cc/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://auranlu.cc/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://auranlu.cc/favicon.ico><link rel=apple-touch-icon href=https://auranlu.cc/favicon.ico><link rel=mask-icon href=https://auranlu.cc/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh href=https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/dirsearch%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><script type=text/javascript async src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["[[","]]"]],processEscapes:!0,processEnvironments:!0,skipTags:["script","noscript","style","textarea","pre"],TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["AMSmath.js","AMSsymbols.js"]}}}),MathJax.Hub.Queue(function(){var e,t=MathJax.Hub.getAllJax();for(e=0;e<t.length;e+=1)t[e].SourceElement().parentNode.className+=" has-jax"})</script><style>code.has-jax{font:inherit;font-size:100%;background:inherit;border:inherit;color:#515151}</style><meta property="og:url" content="https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/dirsearch%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"><meta property="og:site_name" content="🌇 Endless Soar."><meta property="og:title" content="dirsearch使用手册"><meta property="og:description" content=" 1 2 3 4 5 6 7 扫描的目标 -u,--url 目标url -l,--url-list=FILE 目标url文件路径 --stdin 从标准输入中指定url --cidr 目标网段 --raw=File 从文件中读取request报文,通过-schema指定策略(如--schema https) 1 2 3 4 5 6 7 8 扫描的字典类型 -e,--extensions 包含的文件拓展名(逗号分隔) 如-e php,asp -X,--exclude-extensions 排除的文件拓展名(逗号分隔) 如-X asp,jsp -f,--force-extensions 在字典的每条记录后面添加文件拓展名 dirsearch默认只会替换字典中%EXT%为指定的extensions 如-e php Wishlist.%EXT%-->Wishlist.php 1 2 3 4 5 6 7 8 9 10 字典格式设置 -w,--wordlists 自定义wordlist(以逗号分隔) --prefixes 添加自定义前缀 --suffixes	添加自定义后缀 --only-selected 筛选出指定的文件拓展名或无文件拓展名的目录 --remove-extensions 移除所有wordlist的后缀名 (admin.php --> admin) -U, --uppercase 将字典转换为大写 -L, --lowercase	将字典转换为小写 -C, --capital 第一个字母大写剩下字母小写 1 2 3 4 5 6 7 8 9 响应结果的过滤 -i 保留的响应状态码(以逗号分隔,支持指定范围) 如(-i 200,300-399) -x 排除的响应状态码(以逗号分隔,支持指定范围) 如(-x 301,500-599) --exclude-sizes 通过大小排除(以逗号分隔) 如(123B,4KB) --exclude-texts 通过文本内容排除响应('Not found', 'Error') --exclude-regexps 通过正则匹配排除响应('Not foun[a-z]{1}', '^Error$') --exclude-redirects 通过正则跳转目标排除响应('https://okta.com/*') --minimal 最小响应报文长度 --maximal 最大响应报文长度 1 2 3 4 5 6 7 8 请求相关设置 -m,--http-method HTTP请求方法 默认为GET -d,--data HTTP请求数据 -H,--header 请求头 如(-H 'Referer: example.com' -H 'Accept: */*') --header-list=FILE 从文件中读取请求头 -F,--follow-redirects 跟随HTTP跳转 --user-agent 设置user-agent字段 --cookie 设置cookie 1 2 3 4 5 6 7 8 9 10 11 12 连接相关设置 --timeout=TIMEOUT 连接超时时间 --ip=IP 服务器ip地址 -s DELAY, --delay=DELAY 每次请求间隔的时间 --proxy=PROXY 代理url 支持HTTP和SOCKS代理 如(localhost:8080, socks5://localhost:8088) --proxy-list=FILE 包含代理服务器的地址 --matches-proxy=PROXY Proxy to replay with found paths --scheme 默认的策略 用于从文件中导入请求或url中不包含协议 --max-retries 最大重连次数 -b,--request-by-hostname 强制通过域名连接，(默认为了速度,使用ip连接) --exit-on-error 出现错误时退出 --debug	Debug模式 1 2 3 4 5 6 7 8 9 10 11 通用设置 --version 显示dirsearch的版本 -h --help 帮助提示 -r,--recursive 递归爆破 -R,--recursion-depth 最大递归的层数 -t,--threads 线程数 --subdirs 扫描子目录 如(admin/ 则www.example.com/admin/+字典) --exclude-subdirs 在递归扫描中排除的子目录 -q,--quiet-mode 安静模式 --full-url 打印出完整的url --no-color 无颜色输出信息 1 2 3 4 5 6 7 输出模式 --simple-report=OUTPUTFILE --plain-text-report=OUTPUTFILE --json-report=OUTPUTFILE --xml-report=OUTPUTFILE --markdown-report=OUTPUTFILE --csv-report=OUTPUTFILE 可以通过修改default.conf文件去修改dirsearch的默认配置(默认文件拓展名，超时时间，wordlist所在目录等)"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-03-10T00:00:00+00:00"><meta property="article:modified_time" content="2025-03-10T00:00:00+00:00"><meta property="article:tag" content="Dirsearch使用手册"><meta name=twitter:card content="summary"><meta name=twitter:title content="dirsearch使用手册"><meta name=twitter:description content="
+
+1
+2
+3
+4
+5
+6
+7
+
+
+扫描的目标
+
+-u,--url                    目标url
+-l,--url-list=FILE          目标url文件路径 
+--stdin                     从标准输入中指定url
+--cidr                      目标网段
+--raw=File                  从文件中读取request报文,通过-schema指定策略(如--schema https)
+
+
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+扫描的字典类型
+
+-e,--extensions             包含的文件拓展名(逗号分隔)  如-e php,asp  
+-X,--exclude-extensions     排除的文件拓展名(逗号分隔)  如-X asp,jsp
+-f,--force-extensions       在字典的每条记录后面添加文件拓展名
+
+dirsearch默认只会替换字典中%EXT%为指定的extensions 
+如-e php  Wishlist.%EXT%-->Wishlist.php
+
+
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+
+
+字典格式设置
+
+-w,--wordlists              自定义wordlist(以逗号分隔)
+--prefixes                  添加自定义前缀
+--suffixes			        添加自定义后缀
+--only-selected      	    筛选出指定的文件拓展名或无文件拓展名的目录
+--remove-extensions   	    移除所有wordlist的后缀名 (admin.php --> admin)
+-U, --uppercase      	    将字典转换为大写
+-L, --lowercase		 	    将字典转换为小写
+-C, --capital        	    第一个字母大写剩下字母小写
+
+
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+响应结果的过滤
+-i                    		保留的响应状态码(以逗号分隔,支持指定范围) 如(-i 200,300-399)
+-x                    		排除的响应状态码(以逗号分隔,支持指定范围)  如(-x 301,500-599)
+--exclude-sizes             通过大小排除(以逗号分隔) 如(123B,4KB)
+--exclude-texts     		通过文本内容排除响应('Not found', 'Error')
+--exclude-regexps  			通过正则匹配排除响应('Not foun[a-z]{1}', '^Error$')
+--exclude-redirects 		通过正则跳转目标排除响应('https://okta.com/*')
+--minimal 					最小响应报文长度
+--maximal 					最大响应报文长度
+
+
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+请求相关设置
+-m,--http-method    	    HTTP请求方法 默认为GET
+-d,--data   				HTTP请求数据
+-H,--header  				请求头 如(-H 'Referer: example.com' -H 'Accept: */*')
+--header-list=FILE  		从文件中读取请求头
+-F,--follow-redirects  	    跟随HTTP跳转
+--user-agent  			    设置user-agent字段
+--cookie  				 	设置cookie
+
+
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+
+
+连接相关设置
+--timeout=TIMEOUT     		连接超时时间
+--ip=IP   					服务器ip地址
+-s DELAY, --delay=DELAY     每次请求间隔的时间
+--proxy=PROXY   			代理url 支持HTTP和SOCKS代理 如(localhost:8080, socks5://localhost:8088)
+--proxy-list=FILE 		    包含代理服务器的地址
+--matches-proxy=PROXY       Proxy to replay with found paths
+--scheme   					默认的策略 用于从文件中导入请求或url中不包含协议
+--max-retries 			    最大重连次数
+-b,--request-by-hostname 	强制通过域名连接，(默认为了速度,使用ip连接)
+--exit-on-error    		    出现错误时退出
+--debug					    Debug模式
+
+
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+
+
+通用设置
+--version  显示dirsearch的版本
+-h --help   帮助提示
+-r,--recursive        	    递归爆破
+-R,--recursion-depth  		最大递归的层数
+-t,--threads         		线程数
+--subdirs             		扫描子目录 如(admin/ 则www.example.com/admin/+字典)
+--exclude-subdirs     		在递归扫描中排除的子目录
+-q,--quiet-mode             安静模式
+--full-url                  打印出完整的url
+--no-color                  无颜色输出信息
+
+
+
+
+1
+2
+3
+4
+5
+6
+7
+
+
+输出模式
+--simple-report=OUTPUTFILE
+--plain-text-report=OUTPUTFILE
+--json-report=OUTPUTFILE
+--xml-report=OUTPUTFILE
+--markdown-report=OUTPUTFILE
+--csv-report=OUTPUTFILE
+
+
+
+可以通过修改default.conf文件去修改dirsearch的默认配置(默认文件拓展名，超时时间，wordlist所在目录等)"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"/posts","item":"https://auranlu.cc/posts/"},{"@type":"ListItem","position":2,"name":"dirsearch使用手册","item":"https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/dirsearch%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"dirsearch使用手册","name":"dirsearch使用手册","description":" 1 2 3 4 5 6 7 扫描的目标 -u,--url 目标url -l,--url-list=FILE 目标url文件路径 --stdin 从标准输入中指定url --cidr 目标网段 --raw=File 从文件中读取request报文,通过-schema指定策略(如--schema https) 1 2 3 4 5 6 7 8 扫描的字典类型 -e,--extensions 包含的文件拓展名(逗号分隔) 如-e php,asp -X,--exclude-extensions 排除的文件拓展名(逗号分隔) 如-X asp,jsp -f,--force-extensions 在字典的每条记录后面添加文件拓展名 dirsearch默认只会替换字典中%EXT%为指定的extensions 如-e php Wishlist.%EXT%--\u0026gt;Wishlist.php 1 2 3 4 5 6 7 8 9 10 字典格式设置 -w,--wordlists 自定义wordlist(以逗号分隔) --prefixes 添加自定义前缀 --suffixes\t添加自定义后缀 --only-selected 筛选出指定的文件拓展名或无文件拓展名的目录 --remove-extensions 移除所有wordlist的后缀名 (admin.php --\u0026gt; admin) -U, --uppercase 将字典转换为大写 -L, --lowercase\t将字典转换为小写 -C, --capital 第一个字母大写剩下字母小写 1 2 3 4 5 6 7 8 9 响应结果的过滤 -i 保留的响应状态码(以逗号分隔,支持指定范围) 如(-i 200,300-399) -x 排除的响应状态码(以逗号分隔,支持指定范围) 如(-x 301,500-599) --exclude-sizes 通过大小排除(以逗号分隔) 如(123B,4KB) --exclude-texts 通过文本内容排除响应(\u0026#39;Not found\u0026#39;, \u0026#39;Error\u0026#39;) --exclude-regexps 通过正则匹配排除响应(\u0026#39;Not foun[a-z]{1}\u0026#39;, \u0026#39;^Error$\u0026#39;) --exclude-redirects 通过正则跳转目标排除响应(\u0026#39;https://okta.com/*\u0026#39;) --minimal 最小响应报文长度 --maximal 最大响应报文长度 1 2 3 4 5 6 7 8 请求相关设置 -m,--http-method HTTP请求方法 默认为GET -d,--data HTTP请求数据 -H,--header 请求头 如(-H \u0026#39;Referer: example.com\u0026#39; -H \u0026#39;Accept: */*\u0026#39;) --header-list=FILE 从文件中读取请求头 -F,--follow-redirects 跟随HTTP跳转 --user-agent 设置user-agent字段 --cookie 设置cookie 1 2 3 4 5 6 7 8 9 10 11 12 连接相关设置 --timeout=TIMEOUT 连接超时时间 --ip=IP 服务器ip地址 -s DELAY, --delay=DELAY 每次请求间隔的时间 --proxy=PROXY 代理url 支持HTTP和SOCKS代理 如(localhost:8080, socks5://localhost:8088) --proxy-list=FILE 包含代理服务器的地址 --matches-proxy=PROXY Proxy to replay with found paths --scheme 默认的策略 用于从文件中导入请求或url中不包含协议 --max-retries 最大重连次数 -b,--request-by-hostname 强制通过域名连接，(默认为了速度,使用ip连接) --exit-on-error 出现错误时退出 --debug\tDebug模式 1 2 3 4 5 6 7 8 9 10 11 通用设置 --version 显示dirsearch的版本 -h --help 帮助提示 -r,--recursive 递归爆破 -R,--recursion-depth 最大递归的层数 -t,--threads 线程数 --subdirs 扫描子目录 如(admin/ 则www.example.com/admin/+字典) --exclude-subdirs 在递归扫描中排除的子目录 -q,--quiet-mode 安静模式 --full-url 打印出完整的url --no-color 无颜色输出信息 1 2 3 4 5 6 7 输出模式 --simple-report=OUTPUTFILE --plain-text-report=OUTPUTFILE --json-report=OUTPUTFILE --xml-report=OUTPUTFILE --markdown-report=OUTPUTFILE --csv-report=OUTPUTFILE 可以通过修改default.conf文件去修改dirsearch的默认配置(默认文件拓展名，超时时间，wordlist所在目录等)\n","keywords":["dirsearch使用手册"],"articleBody":" 1 2 3 4 5 6 7 扫描的目标 -u,--url 目标url -l,--url-list=FILE 目标url文件路径 --stdin 从标准输入中指定url --cidr 目标网段 --raw=File 从文件中读取request报文,通过-schema指定策略(如--schema https) 1 2 3 4 5 6 7 8 扫描的字典类型 -e,--extensions 包含的文件拓展名(逗号分隔) 如-e php,asp -X,--exclude-extensions 排除的文件拓展名(逗号分隔) 如-X asp,jsp -f,--force-extensions 在字典的每条记录后面添加文件拓展名 dirsearch默认只会替换字典中%EXT%为指定的extensions 如-e php Wishlist.%EXT%--\u003eWishlist.php 1 2 3 4 5 6 7 8 9 10 字典格式设置 -w,--wordlists 自定义wordlist(以逗号分隔) --prefixes 添加自定义前缀 --suffixes\t添加自定义后缀 --only-selected 筛选出指定的文件拓展名或无文件拓展名的目录 --remove-extensions 移除所有wordlist的后缀名 (admin.php --\u003e admin) -U, --uppercase 将字典转换为大写 -L, --lowercase\t将字典转换为小写 -C, --capital 第一个字母大写剩下字母小写 1 2 3 4 5 6 7 8 9 响应结果的过滤 -i 保留的响应状态码(以逗号分隔,支持指定范围) 如(-i 200,300-399) -x 排除的响应状态码(以逗号分隔,支持指定范围) 如(-x 301,500-599) --exclude-sizes 通过大小排除(以逗号分隔) 如(123B,4KB) --exclude-texts 通过文本内容排除响应('Not found', 'Error') --exclude-regexps 通过正则匹配排除响应('Not foun[a-z]{1}', '^Error$') --exclude-redirects 通过正则跳转目标排除响应('https://okta.com/*') --minimal 最小响应报文长度 --maximal 最大响应报文长度 1 2 3 4 5 6 7 8 请求相关设置 -m,--http-method HTTP请求方法 默认为GET -d,--data HTTP请求数据 -H,--header 请求头 如(-H 'Referer: example.com' -H 'Accept: */*') --header-list=FILE 从文件中读取请求头 -F,--follow-redirects 跟随HTTP跳转 --user-agent 设置user-agent字段 --cookie 设置cookie 1 2 3 4 5 6 7 8 9 10 11 12 连接相关设置 --timeout=TIMEOUT 连接超时时间 --ip=IP 服务器ip地址 -s DELAY, --delay=DELAY 每次请求间隔的时间 --proxy=PROXY 代理url 支持HTTP和SOCKS代理 如(localhost:8080, socks5://localhost:8088) --proxy-list=FILE 包含代理服务器的地址 --matches-proxy=PROXY Proxy to replay with found paths --scheme 默认的策略 用于从文件中导入请求或url中不包含协议 --max-retries 最大重连次数 -b,--request-by-hostname 强制通过域名连接，(默认为了速度,使用ip连接) --exit-on-error 出现错误时退出 --debug\tDebug模式 1 2 3 4 5 6 7 8 9 10 11 通用设置 --version 显示dirsearch的版本 -h --help 帮助提示 -r,--recursive 递归爆破 -R,--recursion-depth 最大递归的层数 -t,--threads 线程数 --subdirs 扫描子目录 如(admin/ 则www.example.com/admin/+字典) --exclude-subdirs 在递归扫描中排除的子目录 -q,--quiet-mode 安静模式 --full-url 打印出完整的url --no-color 无颜色输出信息 1 2 3 4 5 6 7 输出模式 --simple-report=OUTPUTFILE --plain-text-report=OUTPUTFILE --json-report=OUTPUTFILE --xml-report=OUTPUTFILE --markdown-report=OUTPUTFILE --csv-report=OUTPUTFILE 可以通过修改default.conf文件去修改dirsearch的默认配置(默认文件拓展名，超时时间，wordlist所在目录等)\n简单用法 采用默认设置扫描目标url python3 dirsearch.py -u https://target 使用文件拓展名为php,html,js的字典扫描目标url python3 dirsearch.py -e php,html,js -u https://target 采用指定路径的wordlist且拓展名为php,html,js的字典扫描目标url python3 dirsearch.py -e php,html,js -u https://target -w /path/to/wordlist\n递归扫描 python3 dirsearch.py -e php,html,js -u https://target -r 设置递归层数为3 python3 dirsearch.py -e php,html,js -u https://target -r -R 3\n指定线程(不建议线程数调整过大，可能会影响扫描的结果) python3 dirsearch.py -e bak,zip,tgz,txt -u https://target -t 30\n使用前缀后缀 python3 dirsearch.py -e php -u https://target –prefixes .,admin,_,~(前缀)\n","wordCount":"1206","inLanguage":"zh","datePublished":"2025-03-10T00:00:00Z","dateModified":"2025-03-10T00:00:00Z","author":{"@type":"Person","name":"AuranLu"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/dirsearch%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"},"publisher":{"@type":"Organization","name":"🌇 Endless Soar.","logo":{"@type":"ImageObject","url":"https://auranlu.cc/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://auranlu.cc/ accesskey=h title="⛺Home (Alt + H)">⛺Home</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://auranlu.cc/posts/ title=/posts><span>POSTS 🗯</span></a></li><li><a href=https://auranlu.cc/archives/ title=/Archives🕑><span>ARCHIVES📄</span></a></li><li><a href=https://auranlu.cc/tags/ title=Tags><span>TAGS🔖</span></a></li><li><a href=https://auranlu.cc/search/ title=/SEARCH><span>SEARCH🔍</span></a></li><li><a href=https://auranlu.cc/about/ title=👇🤓👆康康驾到👇🤓👆通通闪开><span>ABOUT👇🤓👆</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://auranlu.cc/>主页</a>&nbsp;»&nbsp;<a href=https://auranlu.cc/posts/>/posts</a></div><h1 class="post-title entry-hint-parent">dirsearch使用手册</h1><div class=post-meta><span title='2025-03-10 00:00:00 +0000 UTC'>2025-03-10</span>&nbsp;·&nbsp;AuranLu</div></header><div class=post-content><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>扫描的目标
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-u,--url                    目标url
+</span></span><span class=line><span class=cl>-l,--url-list=FILE          目标url文件路径 
+</span></span><span class=line><span class=cl>--stdin                     从标准输入中指定url
+</span></span><span class=line><span class=cl>--cidr                      目标网段
+</span></span><span class=line><span class=cl>--raw=File                  从文件中读取request报文,通过-schema指定策略(如--schema https)
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>扫描的字典类型
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-e,--extensions             包含的文件拓展名(逗号分隔)  如-e php,asp  
+</span></span><span class=line><span class=cl>-X,--exclude-extensions     排除的文件拓展名(逗号分隔)  如-X asp,jsp
+</span></span><span class=line><span class=cl>-f,--force-extensions       在字典的每条记录后面添加文件拓展名
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>dirsearch默认只会替换字典中%EXT%为指定的extensions 
+</span></span><span class=line><span class=cl>如-e php  Wishlist.%EXT%--&gt;Wishlist.php
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>字典格式设置
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>-w,--wordlists              自定义wordlist(以逗号分隔)
+</span></span><span class=line><span class=cl>--prefixes                  添加自定义前缀
+</span></span><span class=line><span class=cl>--suffixes			        添加自定义后缀
+</span></span><span class=line><span class=cl>--only-selected      	    筛选出指定的文件拓展名或无文件拓展名的目录
+</span></span><span class=line><span class=cl>--remove-extensions   	    移除所有wordlist的后缀名 (admin.php --&gt; admin)
+</span></span><span class=line><span class=cl>-U, --uppercase      	    将字典转换为大写
+</span></span><span class=line><span class=cl>-L, --lowercase		 	    将字典转换为小写
+</span></span><span class=line><span class=cl>-C, --capital        	    第一个字母大写剩下字母小写
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>响应结果的过滤
+</span></span><span class=line><span class=cl>-i                    		保留的响应状态码(以逗号分隔,支持指定范围) 如(-i 200,300-399)
+</span></span><span class=line><span class=cl>-x                    		排除的响应状态码(以逗号分隔,支持指定范围)  如(-x 301,500-599)
+</span></span><span class=line><span class=cl>--exclude-sizes             通过大小排除(以逗号分隔) 如(123B,4KB)
+</span></span><span class=line><span class=cl>--exclude-texts     		通过文本内容排除响应(&#39;Not found&#39;, &#39;Error&#39;)
+</span></span><span class=line><span class=cl>--exclude-regexps  			通过正则匹配排除响应(&#39;Not foun[a-z]{1}&#39;, &#39;^Error$&#39;)
+</span></span><span class=line><span class=cl>--exclude-redirects 		通过正则跳转目标排除响应(&#39;https://okta.com/*&#39;)
+</span></span><span class=line><span class=cl>--minimal 					最小响应报文长度
+</span></span><span class=line><span class=cl>--maximal 					最大响应报文长度
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>请求相关设置
+</span></span><span class=line><span class=cl>-m,--http-method    	    HTTP请求方法 默认为GET
+</span></span><span class=line><span class=cl>-d,--data   				HTTP请求数据
+</span></span><span class=line><span class=cl>-H,--header  				请求头 如(-H &#39;Referer: example.com&#39; -H &#39;Accept: */*&#39;)
+</span></span><span class=line><span class=cl>--header-list=FILE  		从文件中读取请求头
+</span></span><span class=line><span class=cl>-F,--follow-redirects  	    跟随HTTP跳转
+</span></span><span class=line><span class=cl>--user-agent  			    设置user-agent字段
+</span></span><span class=line><span class=cl>--cookie  				 	设置cookie
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>连接相关设置
+</span></span><span class=line><span class=cl>--timeout=TIMEOUT     		连接超时时间
+</span></span><span class=line><span class=cl>--ip=IP   					服务器ip地址
+</span></span><span class=line><span class=cl>-s DELAY, --delay=DELAY     每次请求间隔的时间
+</span></span><span class=line><span class=cl>--proxy=PROXY   			代理url 支持HTTP和SOCKS代理 如(localhost:8080, socks5://localhost:8088)
+</span></span><span class=line><span class=cl>--proxy-list=FILE 		    包含代理服务器的地址
+</span></span><span class=line><span class=cl>--matches-proxy=PROXY       Proxy to replay with found paths
+</span></span><span class=line><span class=cl>--scheme   					默认的策略 用于从文件中导入请求或url中不包含协议
+</span></span><span class=line><span class=cl>--max-retries 			    最大重连次数
+</span></span><span class=line><span class=cl>-b,--request-by-hostname 	强制通过域名连接，(默认为了速度,使用ip连接)
+</span></span><span class=line><span class=cl>--exit-on-error    		    出现错误时退出
+</span></span><span class=line><span class=cl>--debug					    Debug模式
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>通用设置
+</span></span><span class=line><span class=cl>--version  显示dirsearch的版本
+</span></span><span class=line><span class=cl>-h --help   帮助提示
+</span></span><span class=line><span class=cl>-r,--recursive        	    递归爆破
+</span></span><span class=line><span class=cl>-R,--recursion-depth  		最大递归的层数
+</span></span><span class=line><span class=cl>-t,--threads         		线程数
+</span></span><span class=line><span class=cl>--subdirs             		扫描子目录 如(admin/ 则www.example.com/admin/+字典)
+</span></span><span class=line><span class=cl>--exclude-subdirs     		在递归扫描中排除的子目录
+</span></span><span class=line><span class=cl>-q,--quiet-mode             安静模式
+</span></span><span class=line><span class=cl>--full-url                  打印出完整的url
+</span></span><span class=line><span class=cl>--no-color                  无颜色输出信息
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>输出模式
+</span></span><span class=line><span class=cl>--simple-report=OUTPUTFILE
+</span></span><span class=line><span class=cl>--plain-text-report=OUTPUTFILE
+</span></span><span class=line><span class=cl>--json-report=OUTPUTFILE
+</span></span><span class=line><span class=cl>--xml-report=OUTPUTFILE
+</span></span><span class=line><span class=cl>--markdown-report=OUTPUTFILE
+</span></span><span class=line><span class=cl>--csv-report=OUTPUTFILE
+</span></span></code></pre></td></tr></table></div></div><br><p>可以通过修改default.conf文件去修改dirsearch的默认配置(默认文件拓展名，超时时间，wordlist所在目录等)</p><br><p><strong>简单用法</strong>
+采用默认设置扫描目标url
+python3 dirsearch.py -u https://target
+使用文件拓展名为php,html,js的字典扫描目标url
+python3 dirsearch.py -e php,html,js -u https://target
+采用指定路径的wordlist且拓展名为php,html,js的字典扫描目标url
+python3 dirsearch.py -e php,html,js -u https://target -w /path/to/wordlist</p><p><strong>递归扫描</strong>
+python3 dirsearch.py -e php,html,js -u https://target -r
+设置递归层数为3
+python3 dirsearch.py -e php,html,js -u https://target -r -R 3</p><p><strong>指定线程</strong>(不建议线程数调整过大，可能会影响扫描的结果)
+python3 dirsearch.py -e bak,zip,tgz,txt -u https://target -t 30</p><p><strong>使用前缀后缀</strong>
+python3 dirsearch.py -e php -u https://target &ndash;prefixes .,admin,_,~(前缀)</p></div><footer class=post-footer></footer></article></main><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="复制";function s(){t.innerHTML="已复制！",setTimeout(()=>{t.innerHTML="复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
