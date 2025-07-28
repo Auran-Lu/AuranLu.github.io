@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Burpsuite_intruder爆破 on 🌇 Endless Soar.</title>
+    <link>https://auranlu.cc/tags/burpsuite_intruder%E7%88%86%E7%A0%B4/</link>
+    <description>Recent content in Burpsuite_intruder爆破 on 🌇 Endless Soar.</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh</language>
+    <copyright>©2024 auranlu&amp;rsquo;s Blog</copyright>
+    <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://auranlu.cc/tags/burpsuite_intruder%E7%88%86%E7%A0%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>burpsuite_intruder爆破</title>
+      <link>https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/burpsuite_intruder%E7%88%86%E7%A0%B4/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/burpsuite_intruder%E7%88%86%E7%A0%B4/</guid>
+      <description>&lt;p&gt;Burp Intruder主要有四个模块组成:&lt;/p&gt;
+&lt;p&gt;1：Target 用于配置目标服务器进行攻击的详细信息。
+2：Positions  设置Payloads的插入点以及攻击类型（攻击模式）。
+3：Payloads  设置payload，配置字典
+4：Opetions   此选项卡包含了request headers，request engine，attack results ，grep match，grep_extrack，grep payloads和redirections。你可以发动攻击之前，在主要Intruder的UI上编辑这些选项，大部分设置也可以在攻击时对已在运行的窗口进行修改。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

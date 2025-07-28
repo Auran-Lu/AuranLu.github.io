@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Php探针 on 🌇 Endless Soar.</title>
+    <link>https://auranlu.cc/tags/php%E6%8E%A2%E9%92%88/</link>
+    <description>Recent content in Php探针 on 🌇 Endless Soar.</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh</language>
+    <copyright>©2024 auranlu&amp;rsquo;s Blog</copyright>
+    <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://auranlu.cc/tags/php%E6%8E%A2%E9%92%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web16</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web16/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web16/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/90d1702027192ee1e8942863df21b0ee.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;对于测试用的探针，使用完毕后要及时删除，可能会造成信息泄露&lt;/code&gt;，访问靶场，查看源码结合Wappalyzer分析可知源码语言为PHP，那么此处使用的探针大概率为&lt;a href=&#34;#ZgotmplZ&#34;&gt;PHP探针&lt;/a&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/144717886122944282e592dbe144b529.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;使用御剑扫描靶场后台php文件，同目录下发现tz.php（探针），尝试打开&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/db14a94eabfdb373a1d376b481c01739.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;分析发现为雅黑探针页面，寻找phpinfo并访问&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/75d9c5f5b8adfb2194cee2a0369c22fb.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;查询获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/59ecf6e3d34f7ca63860ba2b60207121.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>测试探针泄露_php探针</title>
+      <link>https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%B5%8B%E8%AF%95%E6%8E%A2%E9%92%88%E6%B3%84%E9%9C%B2_php%E6%8E%A2%E9%92%88/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%B5%8B%E8%AF%95%E6%8E%A2%E9%92%88%E6%B3%84%E9%9C%B2_php%E6%8E%A2%E9%92%88/</guid>
+      <description>&lt;h1 id=&#34;原理&#34;&gt;原理&lt;/h1&gt;
+&lt;p&gt;PHP探针实际上是一种Web脚本程序，主要是用来探测虚拟空间、服务器的运行状况，而本质上是通过PHP语言实现探测PHP服务器敏感信息的脚本文件，通常用于探测网站目录、服务器操作系统、PHP版本、数据库版本、CPU、内存、组件支持等，基本能够很全面的了解服务器的各项信息。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>信息搜集 on 🌇 Endless Soar.</title>
+    <link>https://auranlu.cc/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/</link>
+    <description>Recent content in 信息搜集 on 🌇 Endless Soar.</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh</language>
+    <copyright>©2024 auranlu&amp;rsquo;s Blog</copyright>
+    <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://auranlu.cc/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web01</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web01/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web01/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185131129&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185131129.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目提示：开发注释未及时删除&lt;/strong&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;1.连接至题目所给靶场&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/fe385108f879529fda325ab0ff809bac.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;2.尝试查看源代码，发现flag&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/3d77fcd6e2e2393426bb157876f81200.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web02</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web02/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web02/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185152243&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185152243.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目提示：&lt;a href=&#34;#ZgotmplZ&#34;&gt;js前台拦截&lt;/a&gt; === 无效操作&lt;/strong&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;连接至靶场后发现无法直接查看源码&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/70e348f1a4bced8bd7f0586a276bb3bc.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试关闭chrome的JavaScript功能，刷新靶场&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/229d320da8d96ff1fe8b17c82ccec937.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;成功绕过js拦截，查看源码获得flag&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d997f5e20f8c471badacf99b464e063a.png&#34; alt=&#34;截图&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/7f60e77885ff13c2e3b157046965005e.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web03</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web03/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web03/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185217139&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185217139.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目提示：没思路的时候抓个包看看，可能会有意外收获&lt;/strong&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;链接至题目靶场，尝试查看源码及url，并未发现可利用项&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/c23d4809107b10707994d5779d0d0fc5.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试使用BurpSuite进行抓包，重放将请求包放出，查看服务器的响应包，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/f30d83c913061b2f8306a0f55a8a7a32.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web04</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web04/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web04/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185258093&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185258093.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目提示：总有人把后台地址写入robots，帮黑阔大佬们引路。&lt;/strong&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;链接至题目所给靶场尝试查看源码和URL，并未发现可利用项&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/e80d2fd112ed1d2d951e7f6abe88eb1e.png&#34; alt=&#34;截图&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问&lt;a href=&#34;#ZgotmplZ&#34;&gt;robots.txt&lt;/a&gt;，获得提示&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/fbe84328f09812a27f6bbd987d7fcc41.png&#34; alt=&#34;截图&#34; style=&#34;zoom:150%;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问/flagishere.txt，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/a02a126afe29a83d285798f875579e54.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web05</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web05/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web05/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185332833&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185332833.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;查看URL及源代码未发现可用项&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/b48fd2d471d6279b9f7c9a1430f209d6.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问同名&lt;a href=&#34;#ZgotmplZ&#34;&gt;.phps&lt;/a&gt;文件，下载靶场发送的phps文件，查看，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/acf519bff1a68207dc66954ec7002487.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web06</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web06/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web06/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185345764&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185345764.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;连接靶场，尝试查看源代码及URL，未发现利用点&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/fb71e0e5bd3d4881c050ebd9eed6f3f4.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;已知题目提示&lt;code&gt;解压源码到当前目录，测试正常，收工&lt;/code&gt;，可知网站主页源码和源码压缩包在同一目录下。尝试猜测常见源码压缩包名进行穷举，访问www.zip成功。下载源码压缩包进行解压并查看源码，得到flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/a5b4c13d120e074c8ac3bc2dc5375f4c.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;strong&gt;题目提示：考察代码泄露。直接访问url/www.zip,获得flag&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web07</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web07/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web07/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185402277&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185402277.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;连接靶场，尝试查看源代码及URL，未发现利用点&lt;/li&gt;
+&lt;li&gt;题目提示&lt;code&gt;版本控制很重要，但不要部署到生产环境更重要。&lt;/code&gt;，生产环境大概率存在&lt;a href=&#34;#ZgotmplZ&#34;&gt;git泄露或svn泄露&lt;/a&gt;，尝试访问当前目录下.git目录，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/6cba7737c603998c8ab093fba10ca4ee.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web08</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web08/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web08/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185419241&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185419241.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;连接靶场，尝试查看源代码及URL，未发现利用点&lt;/li&gt;
+&lt;li&gt;题目提示&lt;code&gt;版本控制很重要，但不要部署到生产环境更重要。&lt;/code&gt;，生产环境大概率存在&lt;a href=&#34;#ZgotmplZ&#34;&gt;git泄露或svn泄露&lt;/a&gt;，尝试访问当前目录下.git目录，无反馈。&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/8ed9b554a5996f236e71ecbe76562c15.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问当前目录下.svn目录，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;./assets/47b0d4a72e4db2f06989e5dcf194cfe7.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web09</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web09/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web09/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185431465&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185431465.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;发现网页有个错别字？赶紧在生产环境vim改下，不好，死机了&lt;/code&gt;猜测为vim缓存文件导致的源码泄露，尝试访问主页同名的&lt;a href=&#34;#ZgotmplZ&#34;&gt;缓存文件index.php.swp&lt;/a&gt;，下载后获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/95114960c779ac50fe4a52e4babf89c2.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web10</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web10/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web10/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185447509&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185447509.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;cookie 只是一块饼干，不能存放任何隐私数据&lt;/code&gt;，尝试访问靶场进行抓包&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/3b3453da8729f714e57c383087f258eb.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;将请求包重放得到响应包，观察cookie字段得到url编码下的flag，解码。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/1c9fcd1123191fd77fdefbd182feecc6.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web11</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web11/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web11/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185508692&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185508692.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web12</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web12/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web12/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185515766&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185515766.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据提示&lt;code&gt;有时候网站上的公开信息，就是管理员常用密码&lt;/code&gt;，浏览靶场可发现尾部存在疑似密码的数字。&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/5cc24fac732997d2f6020b4f082c5afa.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试使用Dirbuster对靶场进行后台扫描发现公告文件robots.txt及疑似登录目录的/admin&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/4d58a2764ad0caf5bfd46497a8270c57.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问robots.txt，提示访问/admin目录&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/7411587d996c4b97ab00293a74b8b45c.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;访问/admin目录&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/4ddecf2cfbf0cd60851eddacfb3016a4.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;将之前记下的密码输入，猜测用户名为admin尝试登录，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/76579602d90fe19ed71c215090f874f2.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web13</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web13/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web13/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185542272&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185542272.png&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;技术文档里面不要出现敏感信息，部署到生产环境后及时修改默认密码&lt;/code&gt;，尝试查看源码并搜索&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;常见技术文档文件格式，发现文件vedio.pdf&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/65e03c924d2b6b9dd467889211f588c0.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web14</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web14/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web14/</guid>
+      <description>&lt;br/&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250310185602105&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185602105.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;由题目提示&lt;code&gt;有时候源码里面就能不经意间泄露重要(editor)的信息，默认配置害死人&lt;/code&gt;，查看靶场源码并定位editor字段&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/8a68d859da52a430a2551027c421109e.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问&lt;a href=&#34;#ZgotmplZ&#34;&gt;editor编辑器&lt;/a&gt;目录/editor并查看文件空间，遍历成功&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/0d0a7435a1542226798edfb0601868aa.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;查看网站根目录，发现notinghere文件夹，尝试访问，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/ebd1934f0ec6d2d637e2f6b884e2dd62.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web15</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web15/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web15/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/13b2bb9eaf3e19872b550a1097e68e43.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;根据题目提示&lt;code&gt;公开的信息比如邮箱，可能造成信息泄露，产生严重后果&lt;/code&gt;访问靶场主页，于页尾获得靶场公开的邮箱信息&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/b5d38c6f29aee09c8951264fafdca8e3.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查询相关QQ账号，获得信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用dirbuster扫描靶场后台，得到疑似管理员目录/admin&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/3f5f0d8dc3e7482b35716d6ca27aab63.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web16</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web16/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web16/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/90d1702027192ee1e8942863df21b0ee.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;对于测试用的探针，使用完毕后要及时删除，可能会造成信息泄露&lt;/code&gt;，访问靶场，查看源码结合Wappalyzer分析可知源码语言为PHP，那么此处使用的探针大概率为&lt;a href=&#34;#ZgotmplZ&#34;&gt;PHP探针&lt;/a&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/144717886122944282e592dbe144b529.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;使用御剑扫描靶场后台php文件，同目录下发现tz.php（探针），尝试打开&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/db14a94eabfdb373a1d376b481c01739.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;分析发现为雅黑探针页面，寻找phpinfo并访问&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/75d9c5f5b8adfb2194cee2a0369c22fb.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;查询获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/59ecf6e3d34f7ca63860ba2b60207121.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web17</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web17/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web17/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/5e0a6a6935f01eab2ebd6c5e0553f998.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据提示&lt;code&gt;备份的sql文件会泄露敏感信息&lt;/code&gt;，使用dirsearch扫描靶场目录，发现同目录下的&lt;a href=&#34;#ZgotmplZ&#34;&gt;backup.sql&lt;/a&gt;的数据库备份文件&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/fb693e255efa44fb595596fcda7476a4.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;访问backup.sql&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/1d93a4ea3480f1d111e860ae215879b5.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;查看backup.sql，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d7192b61c018357e84a63fbfdae284d7.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web18</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web18/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web18/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/9c5d371b7e4b851a1b3790f5e89a89f2.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;题目提示&lt;code&gt;不要着急，休息，休息一会儿，玩101分给你flag&lt;/code&gt;，访问靶场发现为flybird问题。根据提示，猜想需要抓包更改分数提交判断，尝试抓个任意分数的包&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/47555e525473fe132451dfd5316097ea.png&#34; alt=&#34;截图&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;抓包后发现无可利用点&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/a11ea1b90d57f9409b32726d5eb6c8bc.png&#34;&gt;，尝试访问并下载Flappy_js.js源码进行代码审计。&lt;/li&gt;
+&lt;li&gt;代码审计寻找分数判断或游戏启停判断部分，审计源码发现得分大于101后的条件函数输出部分存在Unicode编码&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/f68cba986e02037d6cee331d10212a85.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试解码得到提示&lt;code&gt;你赢了，去幺幺零点皮爱吃皮看看&lt;/code&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/c13ac8195a574d96d67fc610d61c8fad.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;访问110.php，获得flag&lt;img alt=&#34;image-20250310185940989&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185940989.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web19</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web19/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web19/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/8f06a5e4e7b82262a8cc872b6cba6ed7.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;题目提示：密钥什么的，就不要放在前端了&lt;/code&gt;，根据提示首先查看网页源码，在注释中发现用户名及秘钥&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d71b601229b3fa18e4897187b8d7b861.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;根据源码，使用POST方式提交username及pazzword，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/bdc979cc21b1589429e808d720ce74fe.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web20</title>
+      <link>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web20/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web20/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d5e63d870567365a23b321c9eb5be2b8.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;访问靶场获得提示，&lt;a href=&#34;#ZgotmplZ&#34;&gt;数据库和前端语言的搭配&lt;/a&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/199825175f8869fcbdd00bccacb6be42.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;mdb文件是早期asp+access构架的数据库文件，文件泄露相当于数据库被脱裤了。&lt;/code&gt;尝试使用dirsearch扫描靶场目录发现数据库文件&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d78aaf8694d8be1cf09f5d2729a645b3.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问db/db.mdb下载后使用ACESS打开，浏览数据表，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/55444fba33edcfa74b0484fcab3e3d0f.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>常用字符替换 on 🌇 Endless Soar.</title>
+    <link>https://auranlu.cc/tags/%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E6%9B%BF%E6%8D%A2/</link>
+    <description>Recent content in 常用字符替换 on 🌇 Endless Soar.</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh</language>
+    <copyright>©2024 auranlu&amp;rsquo;s Blog</copyright>
+    <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://auranlu.cc/tags/%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E6%9B%BF%E6%8D%A2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用字符替换</title>
+      <link>https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%85%B6%E6%9B%BF%E6%8D%A2/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/posts/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%85%B6%E6%9B%BF%E6%8D%A2/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;；&lt;/code&gt;封号&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;：
+&lt;ol&gt;
+&lt;li&gt;在PHP中&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;代表执行两个命令，让后面的命令进入黑洞。&lt;/li&gt;
+&lt;li&gt;在shell及bash脚本中&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;（逻辑与）：只有前一个命令成功（返回值 &lt;code&gt;0&lt;/code&gt;）时，后一个命令才会执行。如果前一个命令永远不会失败（如 &lt;code&gt;echo&lt;/code&gt;），则 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; 和 &lt;code&gt;;&lt;/code&gt; 看起来就像是等价的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;%0a&lt;/code&gt;即&lt;code&gt;\n&lt;/code&gt;换行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Space&lt;/code&gt;空格&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
