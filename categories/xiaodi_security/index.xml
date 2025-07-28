@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>XiaoDi_Security on My New Hugo Site</title>
+    <link>http://localhost:1313/categories/xiaodi_security/</link>
+    <description>Recent content in XiaoDi_Security on My New Hugo Site</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/xiaodi_security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XDay5_反弹SHELL&amp;不回显带�?正反向连�?防火墙出入站&amp;文件下载</title>
+      <link>http://localhost:1313/posts/auran_lu/xiaodi_security/day5_%E5%8F%8D%E5%BC%B9shell%E4%B8%8D%E5%9B%9E%E6%98%BE%E5%B8%A6%E5%A4%96%E6%AD%A3%E5%8F%8D%E5%90%91%E8%BF%9E%E6%8E%A5%E9%98%B2%E7%81%AB%E5%A2%99%E5%87%BA%E5%85%A5%E7%AB%99%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/xiaodi_security/day5_%E5%8F%8D%E5%BC%B9shell%E4%B8%8D%E5%9B%9E%E6%98%BE%E5%B8%A6%E5%A4%96%E6%AD%A3%E5%8F%8D%E5%90%91%E8%BF%9E%E6%8E%A5%E9%98%B2%E7%81%AB%E5%A2%99%E5%87%BA%E5%85%A5%E7%AB%99%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</guid>
+      <description>&lt;h2 id=&#34;反弹shell&#34;&gt;反弹shell&lt;/h2&gt;
+&lt;h3 id=&#34;原理&#34;&gt;原理&lt;/h3&gt;
+&lt;p&gt;反弹shell（reverse shell），就是控制端监听在某TCP/UDP端口，被控端发起请求到该端口，并将其命令行的输入输出转到控制端。reverse shell与telnet，ssh等标准shell对应，本质上是网络概念的客户端与服务端的角色反转�?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://forum.ywhack.com/bountytips.php?download&#34;&gt;~]#棱角:反弹shell生成下载&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;nc使用手册&#34;&gt;NC使用手册&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nc.exe -h 即可看到各参数的使用方法�?
+基本格式：nc [-options] hostname port[s] [ports] ...
+nc -l -p port [options] [hostname] [port]
+-d          后台模式
+-e          程序重定向，一旦连接，就执�?[危险!!]
+-g gateway  source-routing hop point[s], up to 8    设置路由器跃程通信网关，最多可设置8个�?
+-G num      source-routing pointer: 4, 8, 12, ...   设置来源路由指向器，其数值为4的倍数�?
+-h          帮助信息
+-i secs     延时的间�?
+-l          监听模式，用于入站连�?(监听本地端口)
+-L          连接关闭�?仍然继续监听
+-n          指定数字的IP地址，不能用hostname。即直接使用IP地址，而不通过域名服务器�?
+-o file     指定文件名称，把往来传输的数据�?6进制字码倾倒成该文件保存�?
+-p port     本地端口�?(指定本地端口 )
+-r          随机本地及远程端�?
+-s addr     本地源地址
+-t          使用TELNET交互方式(用telnet来回�?)
+-u          UDP模式
+-v          详细输出--用两�?v( -vv)可得到更详细的内�? 获得端口信息
+-w secs     timeout的时�?
+-z          将输入输出关�?-只用于扫�? 端口的表示方法可写为M-N的范围格式�?
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;连接方式&#34;&gt;连接方式&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;正向连接&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;linux控制windows&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

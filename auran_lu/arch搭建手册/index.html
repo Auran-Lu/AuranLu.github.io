@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>My New Hugo Site</title>
+<meta name="keywords" content="">
+<meta name="description" content="本体安装
+流程参考：http://blog.ccyg.studio/article/4f6cfa0a-ad98-4adb-af08-79a8a5b1d674/
+分区、格式化、挂�?
+lsbsk #查看磁盘信息
+fdisk /dev/sda #创建sda分区
+mkfs.ext4 /dev/sda1 #将sda1格式�?
+fdisk
+
+
+-l：显示设备的分区表信息�?
+
+
+-n：创建一个新的分区�?
+
+
+-d：删除一个分区�?
+
+
+-p：打印分区表的内容�?
+
+
+-t：更改分区的类型�?
+
+
+-u：以扇区单位显示分区信息�?
+
+
+-w：将分区表写入磁盘�?
+
+
+实例2：创建一个新的分�?
+要创建一个新的分区，可以使用以下命令�?
+[linux@bashcommandnotfound.cn ~]# fdisk /dev/sdb
+
+# 进入fdisk交互界面后，依次输入以下命令�?
+n  # 创建新分区，可以默认直接回车
+p  # 创建主分区，可以默认直接回车
+1  # 输入分区号，这里设置�?，可以默认直接回�?
+[起始扇区]  # 设置起始扇区，可以默认直接回�?
+[结束扇区]  # 设置结束扇区，可以默认直接回�?
+w  # 将分区表写入磁盘并退�?
+请将[起始扇区]和[结束扇区]替换为实际的数值�?
+实例3：删除一个分�?
+要删除一个分区，可以使用以下命令�?
+[linux@bashcommandnotfound.cn ~]# fdisk /dev/sdb
+
+# 进入fdisk交互界面后，依次输入以下命令�?
+d  # 删除分区
+[分区号]  # 要删除的分区�?
+w  # 将分区表写入磁盘并退�?
+AI写代码bash123456
+请将[分区号]替换为要删除的分区号�?
+实例4：创建分区、格式化系统、挂载分�?
+# 创建分区
+[linux@bashcommandnotfound.cn ~]# fdisk /dev/sdb #执行后按n，然后一直回车到没有选项，最后按w
+欢迎使用 fdisk (util-linux 2.23.2)�?
+
+更改将停留在内存中，直到您决定将更改写入磁盘�?
+使用写入命令前请三思�?
+
+Device does not contain a recognized partition table
+使用磁盘标识�?0x917df835 创建新的 DOS 磁盘标签�?
+
+命令(输入 m 获取帮助)：n
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): 
+Using default response p
+分区�?(1-4，默�?1)�?
+起始 扇区 (2048-1048575999，默认为 2048)�?
+将使用默认�?2048
+Last 扇区, &#43;扇区 or &#43;size{K,M,G} (2048-1048575999，默认为 1048575999)�?
+将使用默认�?1048575999
+分区 1 已设置为 Linux 类型，大小设�?500 GiB
+
+命令(输入 m 获取帮助)�?
+命令(输入 m 获取帮助)�?
+命令(输入 m 获取帮助)�?
+命令(输入 m 获取帮助)：w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+正在同步磁盘�?
+
+# 格式化系�?
+[linux@bashcommandnotfound.cn ~]# mkfs.xfs /dev/sdb1 #设置文件系统在这里设置xfs，也可以设置ext4
+
+# 创建挂载目录
+[linux@bashcommandnotfound.cn ~]# mkdir /ssd 
+#手动临时挂载
+[linux@bashcommandnotfound.cn ~]#  mount /dev/sdb1 /ssd 
+# 或永久挂�?
+# 设置分区�?
+[linux@bashcommandnotfound.cn ~]# echo &#34;/dev/sdb1 /ssd xfs defaults 0 0&#34; &gt;&gt;/etc/fstab
+# 使分区表生效
+[linux@bashcommandnotfound.cn ~]# mount -a
+
+# 查看块设备以及挂载点信息
+[linux@bashcommandnotfound.cn ~]# lsblk
+AI写代码bash
+mkfs
+
+磁盘分区完毕后自然就是要进行文件系统的格式化
+**格式�?*其实就是创建文件系统。命令就�?==&gt;mkfs（make fileststem），这个命令只是个综合命令。它会调用正确的文件系统格式化工�?
+**功能�?*mkfs是个综合命令
+使用
+
+mkfs [tab] [tab]：按下两下tab键查看系统支持哪些文件系统的格式化功�?
+mkfs -t [文件系统格式名]===&gt;等同于mkfs.文件系统格式�?
+mkfs -t xfs �?mkfs.xfs相同
+
+
+
+mount
+语法">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/auran_lu/arch%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/auran_lu/arch%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="本体安装">本体安装<a hidden class="anchor" aria-hidden="true" href="#本体安装">#</a></h1>
+<p>流程参考：http://blog.ccyg.studio/article/4f6cfa0a-ad98-4adb-af08-79a8a5b1d674/</p>
+<h2 id="分区格式化挂">分区、格式化、挂�?<a hidden class="anchor" aria-hidden="true" href="#分区格式化挂">#</a></h2>
+<pre tabindex="0"><code>lsbsk #查看磁盘信息
+fdisk /dev/sda #创建sda分区
+mkfs.ext4 /dev/sda1 #将sda1格式�?
+</code></pre><h3 id="fdisk">fdisk<a hidden class="anchor" aria-hidden="true" href="#fdisk">#</a></h3>
+<ul>
+<li>
+<p><code>-l</code>：显示设备的分区表信息�?</p>
+</li>
+<li>
+<p><code>-n</code>：创建一个新的分区�?</p>
+</li>
+<li>
+<p><code>-d</code>：删除一个分区�?</p>
+</li>
+<li>
+<p><code>-p</code>：打印分区表的内容�?</p>
+</li>
+<li>
+<p><code>-t</code>：更改分区的类型�?</p>
+</li>
+<li>
+<p><code>-u</code>：以扇区单位显示分区信息�?</p>
+</li>
+<li>
+<p><code>-w</code>：将分区表写入磁盘�?</p>
+</li>
+</ul>
+<p>实例2：创建一个新的分�?</p>
+<p>要创建一个新的分区，可以使用以下命令�?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>linux@bashcommandnotfound.cn ~<span style="color:#f92672">]</span><span style="color:#75715e"># fdisk /dev/sdb</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 进入fdisk交互界面后，依次输入以下命令�?</span>
+</span></span><span style="display:flex;"><span>n  <span style="color:#75715e"># 创建新分区，可以默认直接回车</span>
+</span></span><span style="display:flex;"><span>p  <span style="color:#75715e"># 创建主分区，可以默认直接回车</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>  <span style="color:#75715e"># 输入分区号，这里设置�?，可以默认直接回�?</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>起始扇区<span style="color:#f92672">]</span>  <span style="color:#75715e"># 设置起始扇区，可以默认直接回�?</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>结束扇区<span style="color:#f92672">]</span>  <span style="color:#75715e"># 设置结束扇区，可以默认直接回�?</span>
+</span></span><span style="display:flex;"><span>w  <span style="color:#75715e"># 将分区表写入磁盘并退�?</span>
+</span></span></code></pre></div><p>请将<code>[起始扇区]</code>和<code>[结束扇区]</code>替换为实际的数值�?</p>
+<p>实例3：删除一个分�?</p>
+<p>要删除一个分区，可以使用以下命令�?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>linux@bashcommandnotfound.cn ~<span style="color:#f92672">]</span><span style="color:#75715e"># fdisk /dev/sdb</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 进入fdisk交互界面后，依次输入以下命令�?</span>
+</span></span><span style="display:flex;"><span>d  <span style="color:#75715e"># 删除分区</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>分区号<span style="color:#f92672">]</span>  <span style="color:#75715e"># 要删除的分区�?</span>
+</span></span><span style="display:flex;"><span>w  <span style="color:#75715e"># 将分区表写入磁盘并退�?</span>
+</span></span><span style="display:flex;"><span>AI写代码bash123456
+</span></span></code></pre></div><p>请将<code>[分区号]</code>替换为要删除的分区号�?</p>
+<p>实例4：创建分区、格式化系统、挂载分�?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 创建分区</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>linux@bashcommandnotfound.cn ~<span style="color:#f92672">]</span><span style="color:#75715e"># fdisk /dev/sdb #执行后按n，然后一直回车到没有选项，最后按w</span>
+</span></span><span style="display:flex;"><span>欢迎使用 fdisk <span style="color:#f92672">(</span>util-linux 2.23.2<span style="color:#f92672">)</span>�?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>更改将停留在内存中，直到您决定将更改写入磁盘�?
+</span></span><span style="display:flex;"><span>使用写入命令前请三思�?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Device does not contain a recognized partition table
+</span></span><span style="display:flex;"><span>使用磁盘标识�?0x917df835 创建新的 DOS 磁盘标签�?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>命令<span style="color:#f92672">(</span>输入 m 获取帮助<span style="color:#f92672">)</span>：n
+</span></span><span style="display:flex;"><span>Partition type:
+</span></span><span style="display:flex;"><span>   p   primary <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span> primary, <span style="color:#ae81ff">0</span> extended, <span style="color:#ae81ff">4</span> free<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   e   extended
+</span></span><span style="display:flex;"><span>Select <span style="color:#f92672">(</span>default p<span style="color:#f92672">)</span>: 
+</span></span><span style="display:flex;"><span>Using default response p
+</span></span><span style="display:flex;"><span>分区�?<span style="color:#f92672">(</span>1-4，默�?1<span style="color:#f92672">)</span>�?
+</span></span><span style="display:flex;"><span>起始 扇区 <span style="color:#f92672">(</span>2048-1048575999，默认为 2048<span style="color:#f92672">)</span>�?
+</span></span><span style="display:flex;"><span>将使用默认�?2048
+</span></span><span style="display:flex;"><span>Last 扇区, +扇区 or +size<span style="color:#f92672">{</span>K,M,G<span style="color:#f92672">}</span> <span style="color:#f92672">(</span>2048-1048575999，默认为 1048575999<span style="color:#f92672">)</span>�?
+</span></span><span style="display:flex;"><span>将使用默认�?1048575999
+</span></span><span style="display:flex;"><span>分区 <span style="color:#ae81ff">1</span> 已设置为 Linux 类型，大小设�?500 GiB
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>命令<span style="color:#f92672">(</span>输入 m 获取帮助<span style="color:#f92672">)</span>�?
+</span></span><span style="display:flex;"><span>命令<span style="color:#f92672">(</span>输入 m 获取帮助<span style="color:#f92672">)</span>�?
+</span></span><span style="display:flex;"><span>命令<span style="color:#f92672">(</span>输入 m 获取帮助<span style="color:#f92672">)</span>�?
+</span></span><span style="display:flex;"><span>命令<span style="color:#f92672">(</span>输入 m 获取帮助<span style="color:#f92672">)</span>：w
+</span></span><span style="display:flex;"><span>The partition table has been altered!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Calling ioctl<span style="color:#f92672">()</span> to re-read partition table.
+</span></span><span style="display:flex;"><span>正在同步磁盘�?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 格式化系�?</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>linux@bashcommandnotfound.cn ~<span style="color:#f92672">]</span><span style="color:#75715e"># mkfs.xfs /dev/sdb1 #设置文件系统在这里设置xfs，也可以设置ext4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建挂载目录</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>linux@bashcommandnotfound.cn ~<span style="color:#f92672">]</span><span style="color:#75715e"># mkdir /ssd </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#手动临时挂载</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>linux@bashcommandnotfound.cn ~<span style="color:#f92672">]</span><span style="color:#75715e">#  mount /dev/sdb1 /ssd </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或永久挂�?</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置分区�?</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>linux@bashcommandnotfound.cn ~<span style="color:#f92672">]</span><span style="color:#75715e"># echo &#34;/dev/sdb1 /ssd xfs defaults 0 0&#34; &gt;&gt;/etc/fstab</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使分区表生效</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>linux@bashcommandnotfound.cn ~<span style="color:#f92672">]</span><span style="color:#75715e"># mount -a</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看块设备以及挂载点信息</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>linux@bashcommandnotfound.cn ~<span style="color:#f92672">]</span><span style="color:#75715e"># lsblk</span>
+</span></span><span style="display:flex;"><span>AI写代码bash
+</span></span></code></pre></div><h3 id="mkfs">mkfs<a hidden class="anchor" aria-hidden="true" href="#mkfs">#</a></h3>
+<ul>
+<li>磁盘分区完毕后自然就是要进行文件系统的格式化</li>
+<li>**格式�?*其实就是创建文件系统。命令就�?==&gt;mkfs（make fileststem），这个命令只是个综合命令。它会调用正确的文件系统格式化工�?</li>
+<li>**功能�?*mkfs是个综合命令</li>
+<li><strong>使用</strong>
+<ul>
+<li>mkfs [tab] [tab]：按下两下tab键查看系统支持哪些文件系统的格式化功�?</li>
+<li>mkfs -t [文件系统格式名]===&gt;等同于mkfs.文件系统格式�?</li>
+<li>mkfs -t xfs �?mkfs.xfs相同</li>
+</ul>
+</li>
+</ul>
+<h3 id="mount">mount<a hidden class="anchor" aria-hidden="true" href="#mount">#</a></h3>
+<p><strong>语法</strong></p>
+<pre tabindex="0"><code>mount [-hV]
+mount -a [-fFnrsvw] [-t vfstype]
+mount [-fnrsvw] [-o options [,...]] device | dir
+mount [-fnrsvw] [-t vfstype] [-o options] device dir
+</code></pre><p>*<em>参数说明�?</em></p>
+<ul>
+<li>-V：显示程序版�?</li>
+<li>-h：显示辅助讯�?</li>
+<li>-v：显示较讯息，通常�?-f 用来除错�?</li>
+<li>-a：将 /etc/fstab 中定义的所有档案系统挂上�?</li>
+<li>-F：这个命令通常�?-a 一起使用，它会为每一�?mount 的动作产生一个行程负责执行。在系统需要挂上大�?NFS 档案系统时可以加快挂上的动作�?</li>
+<li>-f：通常用在除错的用途。它会使 mount 并不执行实际挂上的动作，而是模拟整个挂上的过程。通常会和 -v 一起使用�?</li>
+<li>-n：一般而言，mount 在挂上后会在 /etc/mtab 中写入一笔资料。但在系统中没有可写入档案系统存在的情况下可以用这个选项取消这个动作�?</li>
+<li>-s-r：等�?-o ro</li>
+<li>-w：等�?-o rw</li>
+<li>-L：将含有特定标签的硬盘分割挂上�?</li>
+<li>-U：将档案分割序号�?的档案系统挂下�?L �?-U 必须�?proc/partition 这种档案存在时才有意义�?</li>
+<li>-t：指定档案系统的型态，通常不必指定。mount 会自动选择正确的型态�?</li>
+<li>-o async：打开非同步模式，所有的档案读写动作都会用非同步模式执行�?</li>
+<li>-o sync：在同步模式下执行�?</li>
+<li>-o atime�?o noatime：当 atime 打开时，系统会在每次读取档案时更新档案的『上一次调用时间』。当我们使用 flash 档案系统时可能会选项把这个选项关闭以减少写入的次数�?</li>
+<li>-o auto�?o noauto：打开/关闭自动挂上模式�?</li>
+<li>-o defaults:使用预设的选项 rw, suid, dev, exec, auto, nouser, and async.</li>
+<li>-o dev�?o nodev-o exec�?o noexec允许执行档被执行�?</li>
+<li>-o suid�?o nosuid�?</li>
+<li>允许执行档在 root 权限下执行�?</li>
+<li>-o user�?o nouser：使用者可以执�?mount/umount 的动作�?</li>
+<li>-o remount：将一个已经挂下的档案系统重新用不同的方式挂上。例如原先是唯读的系统，现在用可读写的模式重新挂上�?</li>
+<li>-o ro：用唯读模式挂上�?</li>
+<li>-o rw：用可读写模式挂上�?</li>
+<li>-o loop=：使�?loop 模式用来将一个档案当成硬盘分割挂上系统�?</li>
+</ul>
+<p><strong>实例</strong></p>
+<p>�?/dev/hda1 挂在 /mnt 之下�?</p>
+<pre tabindex="0"><code>#mount /dev/hda1 /mnt
+</code></pre><p>�?/dev/hda1 用唯读模式挂�?/mnt 之下�?</p>
+<pre tabindex="0"><code>#mount -o ro /dev/hda1 /mnt
+</code></pre><p>�?/tmp/image.iso 这个光碟�?image 档使�?loop 模式挂在 /mnt/cdrom之下。用这种方法可以将一般网络上可以找到�?Linux �?�?ISO 档在不烧录成光碟的情况下检视其内容�?</p>
+<pre tabindex="0"><code>#mount -o loop /tmp/image.iso /mnt/cdrom
+</code></pre><h2 id="换源装">换源、装�?<a hidden class="anchor" aria-hidden="true" href="#换源装">#</a></h2>
+<pre tabindex="0"><code># 同步软件包数据库 
+pacman -Sy 
+# 在软件包数据库中搜索包含关键�?“mirrorlist�?的包�?
+pacman -Ss mirrorlist 
+# 安装或重新安�?pacman-mirrorlist 包�?
+pacman -S pacman-mirrorlist 
+# 将CN源前24条覆盖进源表
+cat mirrorlist.pacnew | grep China -A 24 &gt; mirrorlist 
+# 反注释掉可用�?
+nano mirrorlist
+# 用于向挂载好的新系统分区/mnt安装基础软件�?
+pacstrap -i /mnt base base-devel linux linux-firmware 
+</code></pre><h3 id="pacman">pacman<a hidden class="anchor" aria-hidden="true" href="#pacman">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>-b</th>
+          <th>设置数据库位�?</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>-c</td>
+          <td>显示软件包的更新日志</td>
+      </tr>
+      <tr>
+          <td>-d</td>
+          <td>显示所有依赖的软件�?</td>
+      </tr>
+      <tr>
+          <td>-e</td>
+          <td>显示所有单独指定安装的软件�?</td>
+      </tr>
+      <tr>
+          <td>-i</td>
+          <td>显示已安装的包的详细信息</td>
+      </tr>
+      <tr>
+          <td>-k</td>
+          <td>检查软件包的文�?</td>
+      </tr>
+      <tr>
+          <td>-I</td>
+          <td>显示已安装包的所有文件列�?</td>
+      </tr>
+      <tr>
+          <td>-m</td>
+          <td>显示在同步数据库时没找到的软件包</td>
+      </tr>
+      <tr>
+          <td>-n</td>
+          <td>显示在同步数据库时找到的软件�?</td>
+      </tr>
+      <tr>
+          <td>-o</td>
+          <td>显示指定文件属于哪个软件�?</td>
+      </tr>
+      <tr>
+          <td>-p</td>
+          <td>显示指定软件包文件信�?</td>
+      </tr>
+      <tr>
+          <td>-g</td>
+          <td>显示软件包组信息</td>
+      </tr>
+      <tr>
+          <td>-q</td>
+          <td>显示结果简要信�?</td>
+      </tr>
+      <tr>
+          <td>-Q</td>
+          <td>显示已经安装的软件包</td>
+      </tr>
+      <tr>
+          <td>-r</td>
+          <td>设置安装的根目录</td>
+      </tr>
+      <tr>
+          <td>-R</td>
+          <td>删除指定软件�?</td>
+      </tr>
+      <tr>
+          <td>-s</td>
+          <td>搜索相关依赖�?</td>
+      </tr>
+      <tr>
+          <td>-S</td>
+          <td>安装指定软件�?</td>
+      </tr>
+      <tr>
+          <td>-u</td>
+          <td>显示所有可升级的软件包</td>
+      </tr>
+      <tr>
+          <td>-v</td>
+          <td>显示执行过程详细信息</td>
+      </tr>
+  </tbody>
+</table>
+<pre tabindex="0"><code>1. 更新系统
+�?Archlinux �?使用一条命令即可对整个系统进行更新:
+
+pacman -Syu
+
+如果你已经使�?pacman -Sy 将本地的包数据库与远程的仓库进行了同�?也可以只执行:
+
+pacman -Su
+
+2. 安装�?
+# pacman -S 包名:例如,执行 pacman -S firefox 将安�?Firefox。你也可以同时安装多个包, 只需以空格分隔包名即可�?
+# pacman -Sy 包名:与上面命令不同的�?该命令将在同步包数据库后再执行安装�?
+# pacman -Sv 包名:在显示一些操作信息后执行安装�?
+# pacman -U:安装本地�?其扩展名�?pkg.tar.gz�?
+
+3. 删除�?
+# pacman -R 包名:该命令将只删除包,不包含该包的依赖�?
+# pacman -Rs 包名:在删除包的同�?也将删除其依赖�?
+# pacman -Rd 包名:在删除包时不检查依赖�?
+
+4. 搜索�?
+# pacman -Ss 关键�?这将搜索含关键字的包�?
+# pacman -Qi 包名:查看有关包的信息�?
+# pacman -Ql 包名:列出该包的文件�?
+
+5. 其他用法
+
+# pacman -Sw 包名:只下载包,不安装�?
+# pacman -Sc:Pacman 下载的包文件位于 /var/cache/pacman/pkg/ 目录。该命令将清理未安装的包文件�?
+# pacman -Scc:清理所有的缓存文件�?
+# pacman -Ss mirrorlist
+# pacman -S pacman-mirrorlist
+</code></pre><h3 id="pacstrap">pacstrap<a hidden class="anchor" aria-hidden="true" href="#pacstrap">#</a></h3>
+<h2 id="配置系统">配置系统<a hidden class="anchor" aria-hidden="true" href="#配置系统">#</a></h2>
+<pre tabindex="0"><code># 生成文件系统�?
+genfstab -U -p /mnt &gt; /mnt/etc/fstab 
+# 进入新系�?
+arch-chroot /mnt 
+# 选择文字编码（反注释zh_CN字段�?
+nano /etc/locale.gen 
+# 载入编码
+locale-gen 
+# 在文�?/etc/locale.conf 中写�?LANG=en_US.UTF-8 保存
+echo LANG=en_US.UTF-8 &gt; /etc/locale.conf 
+# 删除�?UTC 时区
+rm -f /etc/localtime 
+# 设置计算机系统时区为上海
+ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+# 设置硬件时间为本地时�?
+hwclock --systohc --localtime
+# 配置主机�?
+echo AuranLu &gt; /etc/hostname
+# 安装 ntfs 文件系统，以便访�?Windows 磁盘
+pacman -S ntfs-3g
+# 安装网络工具
+pacman -S iw wpa_supplicant wireless_tools net-tools
+# 安装终端对话�?
+pacman -S dialog
+# 启动DHCP自动配置
+systemctl start dhcpcd@ens33
+</code></pre><h2 id="其他配置">其他配置<a hidden class="anchor" aria-hidden="true" href="#其他配置">#</a></h2>
+<pre tabindex="0"><code># 新建用户并加入root用户�?
+useradd -G root -m auranlu
+# 以root用户登陆，输入命令，取消文件只读
+chmod +w /etc/sudoers
+# 修改文件 /etc/sudoers，在 root ALL=(ALL) ALL 下加入一�?auranlu ALL=(ALL) ALL 后保�?
+# 输入命令，文件只�?
+chmod -w /etc/sudoers
+# 安装NetworkManager
+pacman -S networkmanager
+# 启动和自启动 NetworkManager
+systemctl start NetworkManager
+systemctl enable NetworkManager
+# 安装openssh
+pacman -S openssh
+# 启动ssh服务
+systemctl start sshd
+# 设置开机启动ssh服务
+systemctl enable sshd
+</code></pre><ul>
+<li>NetworkManager：自动配置网络，省去了一些复杂的操作</li>
+<li>openssh: 支持 ssh 可以远程操作 Archlinux</li>
+<li>添加用户: ssh 默认不支�?root 登录，所以有必要新加一个普通用�?</li>
+<li>sudo: 普通用户可能需要以 root 用户的身份执行命令，所以这个必不可�?</li>
+</ul>
+<h2 id="引导配置">引导配置<a hidden class="anchor" aria-hidden="true" href="#引导配置">#</a></h2>
+<pre tabindex="0"><code># 安装引导程序
+pacman -S grub
+# 安装 BIOS 引导
+grub-install --target=i386-pc /dev/sda
+# 生成配置文件
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre><h1 id="hyprland-安装及配">hyprland 安装及配�?<a hidden class="anchor" aria-hidden="true" href="#hyprland-安装及配">#</a></h1>
+<pre tabindex="0"><code># 更新索引 
+sudo pacman -Syy 
+# 安装hyparland
+sudo pacman -S hyprland
+# 安装kitty
+sudo pacman -S kitty
+# 普通用户下启动hyprland -h帮助列表
+Hyprland 
+# 安装sddm登录器，font选择ttf-dejavu
+sudo pacman -S sddm
+# 安装kone/waylandji&#39;qi
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

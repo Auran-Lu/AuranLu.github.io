@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PicGo on My New Hugo Site</title>
+    <link>http://localhost:1313/tags/picgo/</link>
+    <description>Recent content in PicGo on My New Hugo Site</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/picgo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hexo&#43;GitAciton&#43;Pages</title>
+      <link>http://localhost:1313/posts/auran_lu/hexohugo&#43;github%E6%9E%B6%E6%9E%84blog%E9%83%A8%E7%BD%B2%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/hexo&#43;gitaciton&#43;pages/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/auran_lu/hexohugo&#43;github%E6%9E%B6%E6%9E%84blog%E9%83%A8%E7%BD%B2%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/hexo&#43;gitaciton&#43;pages/</guid>
+      <description>&lt;h1 id=&#34;hexo使用手册&#34;&gt;Hexo使用手册&lt;/h1&gt;
+&lt;h2 id=&#34;hexo优势&#34;&gt;Hexo优势&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;中文杜区支持完善：拥有大量中文教程和主题资源，适合中文用户�?- 丰富的主题生态：支持300+主题，可快速实现个性化页面设计�?- 基于Node.js生态系统：插件和模块丰富，安装配置简单�?- 插件系统灵活：可扩展性强，满足SEO、图片处理、搜索等多种需求�?- 低学习曲线：上手简单，适合初学者快速构建博客�?  Markdown渲染性能优秀：书写体验流畅，渲染效果出色�?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装部署&#34;&gt;安装部署&lt;/h2&gt;
+&lt;h4 id=&#34;1安装nodejs及pandoc&#34;&gt;&lt;strong&gt;1.安装node.js及pandoc&lt;/strong&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;windows&#34;&gt;Windows&lt;/h5&gt;
+&lt;p&gt;访问&lt;a href=&#34;https://nodejs.org/&#34;&gt;node.js&lt;/a&gt;和&lt;a href=&#34;https://pandoc.org/installing.html&#34;&gt;pandoc&lt;/a&gt;官网进行下载安装(==魔法==)&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250310190248176&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/Auran-Lu/Blog_img/main/image-20250310190248176.png&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;linux&#34;&gt;linux&lt;/h5&gt;
+&lt;p&gt;使用nvm命令安装&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 安装 nvm&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 安装 Node.js LTS 版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nvm install --lts
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nvm use --lts
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#安装pandoc&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo dnf install pandoc -y
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 验证安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;node --version
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm --versio
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2设置npm镜像&#34;&gt;*&lt;em&gt;2.设置npm镜像�?&lt;/em&gt;&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm config set registry https://registry.npmmirror.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;3安装hexo&#34;&gt;&lt;strong&gt;3.安装Hexo&lt;/strong&gt;&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 全局安装 Hexo CLI 工具&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install -g hexo-cli
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 验证安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hexo versio
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;项目启动&#34;&gt;项目启动&lt;/h2&gt;
+&lt;p&gt;初始�?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

