@@ -6,9 +6,37 @@
     <description>Recent content in Tags on 🌇 Endless Soar.</description>
     <generator>Hugo -- 0.148.1</generator>
     <language>zh</language>
-    <copyright>©2024 auranlu&amp;rsquo;s Blog</copyright>
-    <lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <copyright>©2025 auranlu&amp;rsquo;s Blog</copyright>
+    <lastBuildDate>Fri, 25 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://auranlu.cc/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog</title>
+      <link>https://auranlu.cc/tags/blog/</link>
+      <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Github_action</title>
+      <link>https://auranlu.cc/tags/github_action/</link>
+      <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/tags/github_action/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Github_pages</title>
+      <link>https://auranlu.cc/tags/github_pages/</link>
+      <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/tags/github_pages/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://auranlu.cc/tags/hugo/</link>
+      <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://auranlu.cc/tags/hugo/</guid>
+      <description></description>
+    </item>
     <item>
       <title>$(())=0构造</title>
       <link>https://auranlu.cc/tags/0%E6%9E%84%E9%80%A0/</link>

@@ -2,11 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://auranlu.cc/</loc>
+    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://auranlu.cc/posts/</loc>
     <lastmod>2025-07-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://auranlu.cc/</loc>
-    <lastmod>2025-07-26T00:00:00+00:00</lastmod>
+    <loc>https://auranlu.cc/tags/blog/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://auranlu.cc/tags/github_action/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://auranlu.cc/tags/github_pages/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://auranlu.cc/tags/hugo/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://auranlu.cc/posts/hexo&#43;github%E6%9E%B6%E6%9E%84blog%E9%83%A8%E7%BD%B2%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/hugo_githubpages_papermod%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://auranlu.cc/tags/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web71/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
@@ -42,9 +60,6 @@
     <lastmod>2025-03-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://auranlu.cc/tags/preg_match%E7%BB%95%E8%BF%87/</loc>
-    <lastmod>2025-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://auranlu.cc/tags/</loc>
     <lastmod>2025-03-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://auranlu.cc/posts/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web56/</loc>
@@ -449,10 +464,10 @@
     <loc>https://auranlu.cc/tags/%E5%AD%97%E5%85%B8/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://auranlu.cc/about/</loc>
+  </url><url>
     <loc>https://auranlu.cc/archives/</loc>
   </url><url>
     <loc>https://auranlu.cc/search/</loc>
-  </url><url>
-    <loc>https://auranlu.cc/about/</loc>
   </url>
 </urlset>
